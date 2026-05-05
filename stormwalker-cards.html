@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Stormwalker Medicine Cards — The Heyoka Mirror</title>
+  <meta name="description" content="Pre-order the Stormwalker Medicine Deck — The Heyoka Mirror. An oracle deck designed to reflect truth, cut through distortion, and support intentional transformation." />
+  <style>
+    :root{
+      --midnight:#122f79; --ink:#eef2ff; --muted:#aab6d9;
+      --violet:#871db8; --gold:#ebbd0c;
+      --panel:rgba(8,12,22,.75); --ring:rgba(255,255,255,.08);
+      --shadow:0 18px 40px rgba(0,0,0,.45); --max:1120px;
+    }
+    html,body{
+      margin:0;
+      background:
+        radial-gradient(1200px 700px at 10% -10%, rgba(135,29,184,.18), transparent 60%),
+        radial-gradient(1000px 600px at 90% 0%, rgba(235,189,12,.10), transparent 55%),
+        linear-gradient(180deg,#0b0f14 0%, var(--midnight) 100%);
+      color:var(--ink);
+      font:16px/1.65 system-ui,Segoe UI,Roboto,Helvetica,Arial;
+    }
+    a{color:var(--gold);text-decoration:none}
+    .wrap{max-width:var(--max);margin:0 auto;padding:0 20px}
+    header{
+      position:sticky;top:0;
+      backdrop-filter:blur(8px);
+      background:rgba(5,8,16,.55);
+      border-bottom:1px solid var(--ring);
+      z-index:5;
+    }
+    .nav{display:flex;align-items:center;justify-content:space-between;height:70px}
+    .brand{font-weight:800;letter-spacing:.2px;font-size:20px;color:var(--ink)}
+    .menu a{margin:0 10px;color:var(--ink)}
+    .menu a:hover{color:var(--gold)}
+    main section{padding:48px 0}
+    .panel{
+      background:var(--panel);
+      border:1px solid var(--ring);
+      border-radius:18px;
+      padding:28px;
+      box-shadow:var(--shadow);
+    }
+    h1{font-size:clamp(30px,5vw,52px);line-height:1.12;margin:0 0 12px;font-family:Georgia,serif}
+    h2{font-size:clamp(22px,3.2vw,32px);margin:0 0 10px}
+    h3{font-size:1.25rem;margin:0 0 8px}
+    .eyebrow{text-transform:uppercase;letter-spacing:.16em;color:#e7d7b4;font-size:.8rem;margin:0 0 10px}
+    .lead{color:var(--muted)}
+    .btn{
+      display:inline-block;
+      padding:13px 22px;
+      border-radius:12px;
+      font-weight:800;
+      background:linear-gradient(135deg,var(--violet),var(--gold));
+      color:#0a0d12;
+      box-shadow:0 6px 20px rgba(0,0,0,.35);
+    }
+    .btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--ring)}
+    footer{
+      border-top:1px solid var(--ring);
+      padding:28px 0 56px;
+      text-align:center;
+      color:var(--muted);
+    }
+
+    .hero{padding-top:56px}
+    .hero-inner{text-align:center;max-width:780px;margin:0 auto}
+    .hero-inner .sub{font-family:Georgia,serif;font-style:italic;color:#e7d7b4;font-size:clamp(1.1rem,2.2vw,1.45rem);margin:0 0 22px}
+    .truth{font-size:1.05rem;color:var(--ink)}
+    .price-row{display:flex;gap:14px;align-items:center;justify-content:center;flex-wrap:wrap;margin:22px 0 6px}
+    .price{
+      font-size:1.4rem;font-weight:800;
+      background:linear-gradient(135deg,#fff 0%, var(--gold) 70%);
+      -webkit-background-clip:text;background-clip:text;color:transparent;
+    }
+    .price-note{color:var(--muted);font-size:.95rem;font-style:italic}
+
+    .gallery{
+      display:grid;
+      gap:18px;
+      grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+      margin-top:8px;
+    }
+    .card-img{
+      position:relative;
+      border-radius:18px;
+      overflow:hidden;
+      border:1px solid var(--ring);
+      background:rgba(255,255,255,.03);
+      box-shadow:var(--shadow);
+      aspect-ratio:3/5;
+      transition:transform 300ms ease, box-shadow 300ms ease;
+    }
+    .card-img img{width:100%;height:100%;object-fit:contain;display:block}
+    .card-img:hover{transform:translateY(-4px);box-shadow:0 24px 48px rgba(0,0,0,.55)}
+    .gallery .card-img:nth-child(1){transform:rotate(-1.2deg)}
+    .gallery .card-img:nth-child(2){transform:rotate(.8deg)}
+    .gallery .card-img:nth-child(3){transform:rotate(-.6deg)}
+    .gallery .card-img:nth-child(4){transform:rotate(1deg)}
+    .gallery .card-img:nth-child(5){transform:rotate(-1deg)}
+    .gallery .card-img:hover{transform:translateY(-4px) rotate(0)}
+
+    .limited{
+      margin-top:14px;
+      display:inline-block;
+      padding:10px 16px;
+      border-radius:12px;
+      border:1px solid rgba(235,189,12,.45);
+      background:rgba(235,189,12,.10);
+      font-size:.95rem;
+    }
+
+    .guidebook{
+      display:grid;
+      gap:28px;
+      align-items:center;
+      grid-template-columns: minmax(220px, 300px) 1fr;
+    }
+    .guidebook .qr-frame{
+      background:#fff;
+      padding:18px;
+      border-radius:20px;
+      border:1px solid var(--ring);
+      box-shadow:var(--shadow);
+      display:flex;
+      justify-content:center;
+      align-items:center;
+    }
+    .guidebook .qr-frame img{
+      width:100%;
+      height:auto;
+      display:block;
+      border-radius:8px;
+    }
+    .guidebook .qr-caption{
+      text-align:center;
+      color:#0a0d12;
+      font-weight:700;
+      font-size:.85rem;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      margin-top:10px;
+    }
+    @media (max-width: 720px){
+      .guidebook{grid-template-columns:1fr;justify-items:center;text-align:center}
+    }
+
+    @media (max-width: 820px){ .menu{display:none} }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap nav">
+      <a class='brand' href='/'>Empowered Transcendence</a>
+      <nav class="menu">
+        <a href='/'>Home</a>
+        <a href='/enter-the-temple'>Stormwalker Medicine</a>
+        <a href='/stormwalker-medicine#dreammirror'>Storm Mirror</a>
+        <a href='/art'>Art</a>
+        <a href='/#schedule'>Book</a>
+        <a href='/#contact'>Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="wrap panel hero-inner">
+        <p class="eyebrow">New — Pre-Order</p>
+        <h1>Stormwalker Medicine Cards</h1>
+        <p class="sub">The Heyoka Mirror</p>
+
+        <p class="truth">
+          You don't come to these cards for comfort.<br>
+          You come for truth.
+        </p>
+
+        <p class="lead">
+          The Stormwalker Medicine Deck is a mirror — designed to reflect what you already feel… but haven't fully faced.
+        </p>
+        <p class="lead">
+          Each card cuts through patterns, distortion, and emotional noise so you can see clearly, choose differently, and move forward with intention.
+        </p>
+        <p class="truth">
+          This isn't passive guidance.<br>
+          <strong>This is participation.</strong>
+        </p>
+
+        <div class="price-row">
+          <span class="price">Pre-Order Price: $36</span>
+        </div>
+        <p class="price-note">Price increases after pre-sale</p>
+
+        <p style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:18px">
+          <a class="btn" href="https://square.link/u/gq3Hnpbn" target="_blank" rel="noopener">Pre-Order Your Deck</a>
+          <a class='btn ghost' href='/enter-the-temple'>Stormwalker Medicine</a>
+        </p>
+
+        <p class="limited">Limited first run. Each deck is part of the original Stormwalker release.</p>
+      </div>
+    </section>
+
+    <section id="gallery">
+      <div class="wrap panel">
+        <p class="eyebrow">A Glimpse of the Deck</p>
+        <h2>From the Heyoka Mirror</h2>
+        <p class="lead" style="margin-bottom:22px">A handful of cards from the original Stormwalker release — painted, numbered, and carried with intention.</p>
+
+        <div class="gallery">
+          <div class="card-img"><img src="assets/card-heyoka-01.png" alt="Stormwalker Medicine card 18 featuring mountains beneath an aurora" loading="lazy"></div>
+          <div class="card-img"><img src="assets/card-heyoka-02.png" alt="Stormwalker Medicine card 3 featuring a crow" loading="lazy"></div>
+          <div class="card-img"><img src="assets/card-heyoka-03.png" alt="Stormwalker Medicine question card — What are you attached to?" loading="lazy"></div>
+          <div class="card-img"><img src="assets/card-heyoka-04.png" alt="Stormwalker Medicine card 36 featuring a luminous forest path" loading="lazy"></div>
+          <div class="card-img"><img src="assets/card-heyoka-05.png" alt="Stormwalker Medicine card 35 featuring a purple and blue ink-drip painting" loading="lazy"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="guidebook">
+      <div class="wrap panel">
+        <div class="guidebook">
+          <div>
+            <div class="qr-frame">
+              <img src="assets/guidebook-qr.jpg" alt="QR code linking to the Stormwalker Medicine Cards digital guidebook">
+            </div>
+            <p class="qr-caption">Scan for the Digital Guidebook</p>
+          </div>
+          <div>
+            <p class="eyebrow">Companion Guidebook</p>
+            <h2>Walk with the deck — on paper and on screen.</h2>
+            <p class="lead">
+              Every deck pairs with a digital guidebook so you can carry the full card meanings, reflection prompts, and Heyoka interpretations with you anywhere.
+            </p>
+            <p class="lead">
+              Scan the QR code with your phone camera to open the guidebook, or tap the link below.
+            </p>
+            <p style="display:flex;gap:10px;flex-wrap:wrap;margin-top:14px">
+              <a class="btn ghost" href="assets/guidebook-qr.jpg" target="_blank" rel="noopener">Open the QR Code</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="interactive-support">
+      <div class="wrap panel">
+        <p class="eyebrow">Stormwalker Interactive Support</p>
+        <h2>These cards don't just give you insight—they help you go deeper when you need it.</h2>
+        <p class="lead">
+          Each deck includes access to guided AI-assisted interpretation support, allowing you to expand on your readings and explore what may not be immediately visible.
+        </p>
+        <p class="lead">
+          You can use simple prompts to receive additional perspective, clarify patterns, and uncover what you may be avoiding or not yet seeing.
+        </p>
+        <p class="truth">
+          This is not a replacement for your intuition—it's a tool to deepen it.
+        </p>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap panel" style="text-align:center">
+        <h2>Ready to walk with the deck?</h2>
+        <p class="lead">Reserve your copy from the original Stormwalker release before the pre-sale closes.</p>
+        <p style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:14px">
+          <a class="btn" href="https://square.link/u/gq3Hnpbn" target="_blank" rel="noopener">Pre-Order Your Deck</a>
+          <a class='btn ghost' href='/#contact'>Ask a Question</a>
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © <script>document.write(new Date().getFullYear());</script> Empowered Transcendence — Stormwalker Medicine Cards
+  </footer>
+</body>
+</html>

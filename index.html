@@ -1,0 +1,764 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Empowered Transcendence — The Stormwalker Method</title>
+  <meta name="description" content="Kelly Trett-Thomason — Spiritual Empowerment Coach & Reiki Practitioner. The Stormwalker Method: guided statework, energy alignment, and empowerment coaching to help you navigate life's storms." />
+  <style>
+    :root{
+      --midnight:#122f79; --ink:#eef2ff; --muted:#aab6d9;
+      --violet:#871db8; --gold:#ebbd0c;
+      --panel:rgba(8,12,22,.75); --ring:rgba(255,255,255,.08);
+      --shadow:0 18px 40px rgba(0,0,0,.45); --max:1120px;
+    }
+    html,body{
+      margin:0;
+      background:
+        radial-gradient(1200px 700px at 10% -10%, rgba(135,29,184,.18), transparent 60%),
+        radial-gradient(1000px 600px at 90% 0%, rgba(235,189,12,.10), transparent 55%),
+        linear-gradient(180deg,#0b0f14 0%, var(--midnight) 100%);
+      color:var(--ink);
+      font:16px/1.65 system-ui,Segoe UI,Roboto,Helvetica,Arial;
+    }
+    a{color:var(--gold);text-decoration:none}
+    .wrap{max-width:var(--max);margin:0 auto;padding:0 20px}
+    header{
+      position:sticky;top:0;
+      backdrop-filter:blur(8px);
+      background:rgba(5,8,16,.55);
+      border-bottom:1px solid var(--ring);
+      z-index:5;
+    }
+    .nav{display:flex;align-items:center;justify-content:space-between;height:70px}
+    .brand{font-weight:800;letter-spacing:.2px;font-size:20px}
+    .menu a{margin:0 10px;color:var(--ink)}
+    .menu a:hover{color:var(--gold)}
+    main section{padding:64px 0}
+    .panel{
+      background:var(--panel);
+      border:1px solid var(--ring);
+      border-radius:18px;
+      padding:28px;
+      box-shadow:var(--shadow);
+    }
+    h1{font-size:clamp(28px,5vw,46px);line-height:1.2;margin:0 0 12px}
+    h2{font-size:clamp(22px,3.2vw,32px);margin:0 0 10px}
+    .lead{color:var(--muted)}
+    .btn{
+      display:inline-block;
+      padding:12px 18px;
+      border-radius:12px;
+      font-weight:800;
+      background:linear-gradient(135deg,var(--violet),var(--gold));
+      color:#0a0d12;
+      box-shadow:0 6px 20px rgba(0,0,0,.35);
+    }
+    .btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--ring)}
+    ul{margin:10px 0 0 18px}
+    form{display:grid;gap:14px;margin-top:6px}
+    .row{display:grid;gap:12px;grid-template-columns:1fr 1fr}
+    input,textarea{
+      width:100%;
+      padding:12px 14px;
+      border-radius:12px;
+      border:1px solid var(--ring);
+      background:rgba(255,255,255,.04);
+      color:var(--ink);
+      outline:1px solid transparent;
+    }
+    input:focus,textarea:focus{
+      outline:1px solid var(--violet);
+      box-shadow:0 0 0 3px rgba(135,29,184,.25);
+    }
+    textarea{min-height:140px;resize:vertical}
+    .success{
+      display:none;
+      margin:12px 0 0;
+      padding:14px;
+      border-radius:12px;
+      background:rgba(235,189,12,.12);
+      border:1px solid rgba(235,189,12,.35);
+      color:#fff;
+    }
+    footer{
+      border-top:1px solid var(--ring);
+      padding:28px 0 56px;
+      text-align:center;
+      color:var(--muted);
+    }
+    .promo{
+      margin-top:10px;
+      padding:10px 14px;
+      border-radius:12px;
+      border:1px solid rgba(235,189,12,.45);
+      background:rgba(235,189,12,.10);
+      display:inline-block;
+      font-size:0.95rem;
+      color:var(--ink);
+    }
+    .faq-item{
+      margin-bottom:18px;
+    }
+    .faq-item h3{
+      margin:0 0 6px;
+      font-size:18px;
+    }
+
+    /* --- Medicine Cards hero --- */
+    .eyebrow{
+      text-transform:uppercase;
+      letter-spacing:.16em;
+      color:#e7d7b4;
+      font-size:.8rem;
+      margin:0 0 10px;
+    }
+    .cards-hero{padding-top:56px}
+    .cards-hero h1{font-family:Georgia,serif;font-size:clamp(30px,5vw,52px);line-height:1.12}
+    .cards-hero .sub{
+      font-family:Georgia,serif;font-style:italic;
+      color:#e7d7b4;
+      font-size:clamp(1.1rem,2.2vw,1.45rem);
+      margin:0 0 18px;
+    }
+    .truth{font-size:1.05rem;color:var(--ink)}
+    .price-row{display:flex;gap:14px;align-items:center;justify-content:center;flex-wrap:wrap;margin:22px 0 6px}
+    .price{
+      font-size:1.4rem;font-weight:800;
+      background:linear-gradient(135deg,#fff 0%, var(--gold) 70%);
+      -webkit-background-clip:text;background-clip:text;color:transparent;
+    }
+    .price-note{color:var(--muted);font-size:.95rem;font-style:italic}
+    .limited{
+      margin-top:14px;
+      display:inline-block;
+      padding:10px 16px;
+      border-radius:12px;
+      border:1px solid rgba(235,189,12,.45);
+      background:rgba(235,189,12,.10);
+      font-size:.95rem;
+    }
+    .gallery{
+      display:grid;
+      gap:18px;
+      grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+      margin-top:8px;
+    }
+    .card-img{
+      position:relative;
+      border-radius:18px;
+      overflow:hidden;
+      border:1px solid var(--ring);
+      background:rgba(255,255,255,.03);
+      box-shadow:var(--shadow);
+      aspect-ratio:3/5;
+      transition:transform 300ms ease, box-shadow 300ms ease;
+    }
+    .card-img img{width:100%;height:100%;object-fit:contain;display:block}
+    .gallery .card-img:nth-child(1){transform:rotate(-1.2deg)}
+    .gallery .card-img:nth-child(2){transform:rotate(.8deg)}
+    .gallery .card-img:nth-child(3){transform:rotate(-.6deg)}
+    .gallery .card-img:nth-child(4){transform:rotate(1deg)}
+    .gallery .card-img:nth-child(5){transform:rotate(-1deg)}
+    .gallery .card-img:hover{transform:translateY(-4px) rotate(0);box-shadow:0 24px 48px rgba(0,0,0,.55)}
+
+    /* --- Added: divider symbols + art teaser --- */
+    .divider{
+      display:flex;
+      justify-content:center;
+      padding: 26px 0;
+    }
+    .divider img{
+      width: 300px;
+      max-width: 70vw;
+      height: auto;
+      border-radius: 22px;
+      box-shadow: 0 10px 26px rgba(0,0,0,.35);
+    }
+    .art-grid{
+      display:grid;
+      gap:18px;
+      align-items:start;
+      grid-template-columns: 1.2fr 1fr;
+    }
+    @media (max-width: 860px){
+      .art-grid{ grid-template-columns: 1fr; }
+    }
+    .art-thumb{
+      width:100%;
+      height:auto;
+      border-radius: 18px;
+      border: 1px solid var(--ring);
+      box-shadow: var(--shadow);
+    }
+    .small-note{
+      color: var(--muted);
+      font-size: .95rem;
+      margin-top: 10px;
+    }
+
+    .guidebook{
+      display:grid;
+      gap:28px;
+      align-items:center;
+      grid-template-columns: minmax(220px, 300px) 1fr;
+    }
+    .guidebook .qr-frame{
+      background:#fff;
+      padding:18px;
+      border-radius:20px;
+      border:1px solid var(--ring);
+      box-shadow:var(--shadow);
+      display:flex;
+      justify-content:center;
+      align-items:center;
+    }
+    .guidebook .qr-frame img{
+      width:100%;
+      height:auto;
+      display:block;
+      border-radius:8px;
+    }
+    .guidebook .qr-caption{
+      text-align:center;
+      color:#0a0d12;
+      font-weight:700;
+      font-size:.85rem;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      margin-top:10px;
+    }
+    @media (max-width: 720px){
+      .guidebook{grid-template-columns:1fr;justify-items:center;text-align:center}
+    }
+
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap nav">
+      <div class="brand">Empowered Transcendence</div>
+      <nav class="menu">
+        <a href="#about">About</a>
+        <a href="#stormwalker">Method</a>
+        <a href="#symbols">Symbols</a>
+        <a href='/enter-the-temple'>Stormwalker Medicine</a>
+        <a href='/stormwalker-cards'>Cards</a>
+        <a href="#audio">Audio</a>
+        <a href="#art">Art</a>
+        <!-- <a href="#academy">Academy</a> -->
+        <a href="#faq">FAQ</a>
+        <a href="#schedule">Book</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO: Stormwalker Medicine Cards -->
+    <section class="cards-hero">
+      <div class="wrap panel" style="text-align:center;">
+        <p class="eyebrow">New — Pre-Order</p>
+        <h1>Stormwalker Medicine Cards</h1>
+        <p class="sub">The Heyoka Mirror</p>
+
+        <p class="truth">
+          You don&apos;t come to these cards for comfort.<br>
+          You come for truth.
+        </p>
+
+        <p class="lead">
+          The Stormwalker Medicine Deck is a mirror — designed to reflect what you already feel… but haven&apos;t fully faced.
+        </p>
+        <p class="lead">
+          Each card cuts through patterns, distortion, and emotional noise so you can see clearly, choose differently, and move forward with intention.
+        </p>
+        <p class="truth">
+          This isn&apos;t passive guidance.<br>
+          <strong>This is participation.</strong>
+        </p>
+
+        <div class="price-row">
+          <span class="price">Pre-Order Price: $36</span>
+        </div>
+        <p class="price-note">Price increases after pre-sale</p>
+
+        <p style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:18px">
+          <a class="btn" href="https://square.link/u/gq3Hnpbn" target="_blank" rel="noopener">Pre-Order Your Deck</a>
+          <a class='btn ghost' href='/stormwalker-cards'>Learn More</a>
+        </p>
+
+        <p class="limited">Limited first run. Each deck is part of the original Stormwalker release.</p>
+      </div>
+    </section>
+
+    <!-- CARD GALLERY -->
+    <section id="deck-gallery">
+      <div class="wrap panel">
+        <p class="eyebrow">A Glimpse of the Deck</p>
+        <h2>From the Heyoka Mirror</h2>
+        <p class="lead" style="margin-bottom:22px">A handful of cards from the original Stormwalker release — painted, numbered, and carried with intention.</p>
+
+        <div style="display:flex;justify-content:center;">
+          <img src="assets/cards-showcase.png" alt="A selection of Stormwalker Medicine cards including mountains beneath an aurora, a crow, a question card, a luminous forest path, and an ink-drip painting" style="max-width:100%;height:auto;border-radius:18px;border:1px solid var(--ring);box-shadow:var(--shadow);" loading="lazy">
+        </div>
+
+        <p style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:22px">
+          <a class="btn" href="https://square.link/u/gq3Hnpbn" target="_blank" rel="noopener">Pre-Order Your Deck</a>
+          <a class='btn ghost' href='/stormwalker-cards'>See the Full Cards Page</a>
+        </p>
+      </div>
+    </section>
+
+    <!-- GUIDEBOOK QR -->
+    <section id="guidebook">
+      <div class="wrap panel">
+        <div class="guidebook">
+          <div>
+            <div class="qr-frame">
+              <img src="assets/guidebook-qr.jpg" alt="QR code linking to the Stormwalker Medicine Cards digital guidebook">
+            </div>
+            <p class="qr-caption">Scan for the Digital Guidebook</p>
+          </div>
+          <div>
+            <p class="eyebrow">Companion Guidebook</p>
+            <h2>A guidebook that walks with your deck.</h2>
+            <p class="lead">
+              Every deck pairs with a digital guidebook so you can carry the full card meanings, reflection prompts, and Heyoka interpretations with you anywhere.
+            </p>
+            <p class="lead">
+              Scan the QR code with your phone camera to open the guidebook.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="divider" aria-hidden="true">
+      <div class="wrap" style="display:flex;justify-content:center;">
+        <img src="assets/divider-path.png" alt="">
+      </div>
+    </section>
+
+    <!-- COACHING INTRO -->
+    <section id="coaching">
+      <div class="wrap panel" style="text-align:center;">
+        <p class="lead">Kelly Trett-Thomason — Spiritual Empowerment Coach &amp; Reiki Practitioner</p>
+        <h2>Stormwalker Coaching for Real-Life Storms.</h2>
+        <p class="lead">
+          This is not therapy and it&apos;s not traditional life coaching.<br>
+          The Stormwalker Method is spiritual, grounded, no-fluff support for the seasons of life that feel heavy, chaotic, or in-between.
+        </p>
+        <p class="lead">
+          Together, we navigate the storm, honor the lesson, and help you rise into a clearer, steadier version of yourself.
+        </p>
+        <p style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap">
+          <a class="btn" href="#schedule">Book Online</a>
+          <a class="btn ghost" href="tel:+17069630606">Call (706) 963-0606</a>
+        </p>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about">
+      <div class="wrap panel">
+        <h2>About Kelly</h2>
+
+        <p class="lead">
+          Kelly Trett-Thomason, CHt., is a Spiritual Empowerment Coach, Reiki Practitioner,
+          Appalachian Energy &amp; Folk Medicine Practitioner, and creator of The Stormwalker Method.
+        </p>
+
+        <p>
+          Kelly works with people who are moving through real-life storms — grief, transition, burnout,
+          spiritual awakening, and the kind of stuckness that doesn&apos;t lift just because you read
+          something inspirational online. Her work is grounded, intuitive, and designed to help you
+          find your center again when life feels “too much.”
+        </p>
+
+        <p>
+          Stormwalker Coaching isn&apos;t about chasing a perfect life. It&apos;s about learning how to
+          walk through the hard seasons with more clarity, regulation, and self-trust. Sessions may weave
+          together guided statework (trance-like relaxation), energy awareness, simple somatic tools,
+          spiritual perspective, and practical next steps you can actually use in your day-to-day life.
+        </p>
+
+        <p>
+          Kelly honors that while she has been placed here as a healer, all true healing comes from the Divine —
+          the Great Mystery, the Universe, God. Her role is to show up, hold space, and do the work she is guided
+          to do, while the act of healing itself remains in the hands of the Divine.
+        </p>
+
+        <p>
+          She also carries ancestral knowledge from Appalachian folk medicine — including speaking out fire,
+          easing burns, reducing irritation from poison ivy or oak, calming thrush discomfort, and energy work
+          from mountain conjure-root lineage. These practices are honored as part of her heritage and are used
+          as spiritual and energetic support, not as medical treatment or a substitute for appropriate medical care.
+        </p>
+
+        <p class="lead" style="margin-top:20px;">
+          <strong>Training &amp; Lineage:</strong><br>
+          Certified Hypnotherapist (CHt.) • Spiritual Empowerment Coach • Reiki Practitioner •
+          Crystal Energy Work • Appalachian Energy &amp; Folk Medicine Practitioner
+        </p>
+      </div>
+    </section>
+
+<section class="divider" aria-hidden="true">
+      <div class="wrap" style="display:flex;justify-content:center;">
+        <img src="assets/divider-path.png" alt="">
+      </div>
+    </section>
+
+    <!-- METHOD -->
+    <section id="stormwalker">
+      <div class="wrap panel">
+        <h2>The Stormwalker Method</h2>
+        <p class="lead">Five phases to transmute challenge into clarity:</p>
+        <ul>
+          <li><strong>Recognition</strong> — Identify the storm and its cycle.</li>
+          <li><strong>Descent</strong> — Guided statework to safely enter the root of the storm.</li>
+          <li><strong>Transmutation</strong> — Release emotional charge and rewrite inner contracts.</li>
+          <li><strong>Integration</strong> — Anchor the new pattern with daily practice.</li>
+          <li><strong>Emergence</strong> — Step forward renewed and embodied.</li>
+        </ul>
+      </div>
+    </section>
+
+<section class="divider" aria-hidden="true">
+      <div class="wrap" style="display:flex;justify-content:center;">
+        <img src="assets/divider-wing.png" alt="">
+      </div>
+    </section>
+
+    <!-- SYMBOLS / MYTHOS -->
+    <section id="symbols">
+      <div class="wrap panel">
+        <h2>Symbols Behind the Stormwalker Path</h2>
+
+        <p class="lead">
+          The Stormwalker path is built on three core symbols — the Phoenix, the Dragon, and the Dragonfly — each representing
+          a different phase of transformation.
+        </p>
+
+        <p>
+          <strong>The Phoenix</strong> reminds us that some endings are really beginnings in disguise. Fire strips away what cannot remain
+          and makes room for what is meant to rise. Many Stormwalker journeys begin in those moments of collapse — when what once felt
+          stable no longer holds, and you're left standing in the ashes of “what used to be.” This work honors that fire, not as punishment,
+          but as a doorway into rebirth.
+        </p>
+
+        <p>
+          <strong>The Dragon</strong> represents strength, protection, and the courage to stand fully in one’s power. Where the Phoenix speaks
+          to rebirth, the Dragon speaks to sovereignty — learning to hold your ground, protect what matters, and move through life with intention
+          instead of fear. It is the steady force that walks beside transformation, reminding us that power and compassion can exist together.
+        </p>
+
+        <p>
+          <strong>The Dragonfly</strong> spends most of its life unseen, underwater, before it ever takes flight. It symbolizes awakening, clarity
+          of sight, and the moment you realize you cannot stay who you were. Dragonfly medicine is about seeing through illusion, trusting your own timing,
+          and allowing yourself to become something freer, lighter, and more true.
+        </p>
+
+        <p>
+          Together, these symbols shape the Stormwalker path: we acknowledge the fire, claim our strength, honor the becoming,
+          and learn to walk through life’s storms with more courage, compassion, and spiritual perspective. This isn’t only a coaching framework —
+          it’s a rebirth journey Kelly has lived through herself, now offered as a guided path for others.
+        </p>
+      </div>
+    </section>
+
+    <section class="divider" aria-hidden="true">
+      <div class="wrap" style="display:flex;justify-content:center;">
+        <img src="assets/divider-wing.png" alt="">
+      </div>
+    </section>
+
+    <!-- GUIDED AUDIO EXPERIENCES -->
+    <section id="audio">
+      <div class="wrap panel">
+        <p class="eyebrow">Guided Audio Experiences</p>
+        <h2>You Can Let Go Now</h2>
+        <p class="sub" style="font-family:Georgia,serif;font-style:italic;color:#e7d7b4;font-size:clamp(1.05rem,2vw,1.3rem);margin:0 0 18px">
+          You don&rsquo;t have to carry everything all the time.
+        </p>
+
+        <p>
+          <em>You Can Let Go Now</em> is a calming guided audio experience created to help you release what
+          you&rsquo;ve been carrying and return to a more grounded, relaxed state.
+        </p>
+        <p>
+          This session uses a gentle, conversational hypnotic approach, allowing your mind and body to settle
+          naturally without pressure or force. It is designed as a focused 8&ndash;9 minute reset that fits easily
+          into your day while still creating a noticeable shift in how you feel.
+        </p>
+        <p>
+          Perfect for moments when your thoughts feel overwhelming, your body feels tense, or you simply need
+          a place to pause and reset.
+        </p>
+        <p>
+          Even a few minutes with this can create a noticeable shift.
+        </p>
+
+        <ul>
+          <li><strong>Format:</strong> Digital MP3</li>
+          <li><strong>Runtime:</strong> Approximately 9 minutes</li>
+          <li><strong>Best with:</strong> Earbuds or headphones, so you can fully settle in and focus.</li>
+        </ul>
+
+        <p class="small-note">
+          <strong>Delivery:</strong> After purchase, your recording will be sent to the email provided at checkout
+          within 24 hours (often sooner).
+        </p>
+
+        <div class="price-row" style="justify-content:flex-start">
+          <span class="price">$9</span>
+          <span class="price-note">Digital MP3 &middot; ~9 min</span>
+        </div>
+
+        <p style="font-family:Georgia,serif;font-style:italic;color:#e7d7b4;margin-top:14px;margin-bottom:6px">
+          Give yourself a moment. Press play.
+        </p>
+        <p style="display:flex;gap:10px;flex-wrap:wrap;margin-top:0">
+          <a class="btn" href="https://square.link/u/PxoZXULH" target="_blank" rel="noopener">Purchase MP3 &ndash; $9</a>
+        </p>
+      </div>
+    </section>
+
+    <section id="audio-quiet-mind">
+      <div class="wrap panel">
+        <p class="eyebrow">Guided Audio Experiences</p>
+        <h2>Enter the Quiet Mind</h2>
+        <p class="sub" style="font-family:Georgia,serif;font-style:italic;color:#e7d7b4;font-size:clamp(1.05rem,2vw,1.3rem);margin:0 0 18px">
+          Your mind doesn&rsquo;t have to be this loud.
+        </p>
+
+        <p>
+          <em>Enter the Quiet Mind</em> is a guided audio experience designed to help you step out of mental
+          noise and into a calmer, more settled state.
+        </p>
+        <p>
+          This session uses a gentle, conversational hypnotic approach to allow your thoughts to slow naturally&mdash;without
+          force, frustration, or trying to &ldquo;shut your mind off.&rdquo;
+        </p>
+        <p>
+          Instead of resisting your mind, you begin to move with it until it softens on its own.
+        </p>
+        <p>
+          Even a few minutes with this can create a noticeable shift in how your mind feels.
+        </p>
+
+        <p style="margin-bottom:6px">Perfect for moments when:</p>
+        <ul>
+          <li>your thoughts won&rsquo;t stop racing</li>
+          <li>you feel mentally overwhelmed</li>
+          <li>you&rsquo;re stuck in overthinking</li>
+          <li>or you just need a few minutes of quiet</li>
+        </ul>
+
+        <ul>
+          <li><strong>Format:</strong> Digital MP3</li>
+          <li><strong>Runtime:</strong> Approximately 8 minutes</li>
+          <li><strong>Best with:</strong> Earbuds or headphones, so you can fully settle in and focus.</li>
+        </ul>
+
+        <p class="small-note">
+          <strong>Delivery:</strong> After purchase, your recording will be sent to the email provided at checkout
+          within 24 hours (often sooner).
+        </p>
+
+        <div class="price-row" style="justify-content:flex-start">
+          <span class="price">$9</span>
+          <span class="price-note">Digital MP3 &middot; ~8 min</span>
+        </div>
+
+        <p style="font-family:Georgia,serif;font-style:italic;color:#e7d7b4;margin-top:14px;margin-bottom:6px">
+          Step in. Let it quiet.
+        </p>
+        <p style="display:flex;gap:10px;flex-wrap:wrap;margin-top:0">
+          <a class="btn" href="https://square.link/u/4duns99h" target="_blank" rel="noopener">Purchase MP3 &ndash; $9</a>
+        </p>
+      </div>
+    </section>
+
+    <section class="divider" aria-hidden="true">
+      <div class="wrap" style="display:flex;justify-content:center;">
+        <img src="assets/divider-dragonfly.png" alt="">
+      </div>
+    </section>
+
+
+
+    <section id="dream-portal">
+      <div class="wrap panel">
+        <h2>Step into Stormwalker Medicine</h2>
+        <p class="lead">Dreams, symbols, art, and reflection now have their own portal inside Empowered Transcendence.</p>
+        <p>Enter a moonlit forest clearing where stormwater gathers into a still pool. When the storm clears and moonlight brightens, the Storm Mirror reflects what could not be seen before.</p>
+        <p style="display:flex;gap:10px;flex-wrap:wrap">
+          <a class='btn' href='/enter-the-temple'>Enter Stormwalker Medicine</a>
+          <a class='btn ghost' href='/stormwalker-medicine#dreammirror'>Go to Storm Mirror</a>
+          <a class='btn ghost' href='/stormwalker-cards'>Stormwalker Medicine Cards</a>
+        </p>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="art">
+      <div class="wrap panel">
+        <h2>Stormwalker Collection</h2>
+
+        <div class="art-grid">
+          <div>
+            <img class="art-thumb" src="assets/aceo-grid.png" alt="Stormwalker Collection — original artworks by Kelly Trett-Thomason">
+            <p class="small-note">
+              Artwork featured throughout this site is original work by Kelly Trett-Thomason. Selected pieces may be available.
+            </p>
+          </div>
+
+          <div>
+            <p class="lead">
+              This artwork isn’t here as decoration — it’s part of the Stormwalker path. If a piece stirs something in you, you’re not imagining it.
+            </p>
+            <p>
+              Many visitors ask whether the artwork is just a graphic or something they can actually own. It’s real, and it’s part of the living story behind this work.
+            </p>
+
+            <p style="margin-top:14px;">
+              <a class='btn' href='/art'>Explore the Art Collection</a>
+              <span style="display:inline-block;width:10px"></span>
+              <a class="btn ghost" href="#contact">Ask about a piece</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq">
+      <div class="wrap panel">
+        <h2>Stormwalker Coaching — FAQ</h2>
+
+        <div class="faq-item">
+          <h3>Is this therapy?</h3>
+          <p>
+            No. Stormwalker Coaching is not therapy, counseling, or psychiatry. It does not diagnose, treat, or
+            manage mental health conditions. This work sits in the realm of spiritual guidance, emotional
+            navigation, and personal empowerment. If you are in crisis or need clinical support, please reach out
+            to a licensed mental health professional or emergency service in your area.
+          </p>
+        </div>
+
+        <div class="faq-item">
+          <h3>Is this traditional life coaching?</h3>
+          <p>
+            No. Traditional coaching often focuses on goals, productivity, and performance. Stormwalker Coaching
+            is different. It is for people who are in the middle of something big — grief, transition, burnout,
+            spiritual awakening, identity shifts — and need steady, grounded support as they move through it.
+            This work is less “how to crush your to-do list” and more “how to survive the storm and come out
+            clearer and more yourself on the other side.”
+          </p>
+        </div>
+
+        <div class="faq-item">
+          <h3>What does a session feel like?</h3>
+          <p>
+            Sessions are calm, honest, and judgment-free. We talk, map what you&apos;re walking through, and
+            then use tools like guided statework, energy awareness, simple somatic practices, and spiritual
+            perspective to help your system settle and re-orient. You stay in control the whole time. The goal
+            is not to “fix” you — it&apos;s to help you feel safer inside your own life and more equipped to
+            navigate what&apos;s in front of you.
+          </p>
+        </div>
+
+        <div class="faq-item">
+          <h3>Who is this for?</h3>
+          <p>
+            Stormwalker Coaching is for people who feel like they&apos;re in the middle of a storm — emotionally,
+            spiritually, or situationally. It&apos;s especially supportive for sensitives, empaths, spiritual
+            seekers, and those rebuilding after hard seasons. If you&apos;re tired of pretending you&apos;re fine
+            and ready to walk with someone who has lived through their own storms, this path may be a good fit.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ACADEMY (temporarily hidden) -->
+    <!--
+    <section id="academy">
+      <div class="wrap panel">
+        <h2>Stormwalker Academy</h2>
+        <p class="lead">Training and mentorship for those called to walk beside others in the storm.</p>
+
+        <p>
+          Stormwalker Academy is the training pathway for intuitive helpers, emerging coaches, and energy-guided
+          practitioners who feel called to support others through emotional upheaval, awakening, and major life transitions —
+          without diluting their gifts or abandoning practicality.
+        </p>
+
+        <p>
+          Students learn the Stormwalker Method framework, trauma-aware support principles, ethical energetic
+          practice, grounding and protection methods, and how to support clients in real-world integration.
+        </p>
+
+        <p class="lead" style="margin-top:18px;">
+          Interested in joining the Academy?<br>
+          Email <a href="mailto:kelly@empoweredtranscendence.com">kelly@empoweredtranscendence.com</a>
+          with the subject line <em>Stormwalker Academy</em>.
+        </p>
+      </div>
+    </section>
+    -->
+
+    <!-- SCHEDULE -->
+    <section id="schedule">
+      <div class="wrap panel">
+        <h2>Schedule Online</h2>
+        <p class="lead">
+          You can book directly through the embedded scheduler below.
+        </p>
+        <p style="margin-bottom:14px">
+          <a class="btn" href="https://app.squareup.com/appointments/book/s82ktrtrxnqn9u/L305XZM89A4GW/start" target="_blank">Open Booking Page</a>
+        </p>
+        <div class="square-wrap">
+          <script src="https://square.site/appointments/buyer/widget/s82ktrtrxnqn9u/L305XZM89A4GW.js"></script>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <div class="wrap panel">
+        <h2>Contact Kelly</h2>
+        <p class="lead">
+          Send a message and I’ll reply from <strong>kelly@empoweredtranscendence.com</strong>.
+        </p>
+
+        <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+          <input type="hidden" name="form-name" value="contact">
+          <div style="display:none"><input name="bot-field" /></div>
+
+          <div class="row">
+            <div><label>Name</label><input name="name" required /></div>
+            <div><label>Email</label><input type="email" name="email" required /></div>
+          </div>
+
+          <div class="row">
+            <div><label>Phone (optional)</label><input name="phone" /></div>
+            <div><label>Topic</label><input name="topic" placeholder="Stormwalker Session / Question" /></div>
+          </div>
+
+          <div>
+            <label>Message</label>
+            <textarea name="message" required></textarea>
+          </div>
+
+          <button class="btn" type="submit">Send Message</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © <script>document.write(new Date().getFullYear());</script> Empowered Transcendence — The Stormwalker Method
+  </footer>
+</body>
+</html>
