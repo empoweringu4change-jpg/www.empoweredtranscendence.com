@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Storm Mirror — Stormwalker Medicine</title>
+  <meta name="description" content="Look into the water and stir the surface to reveal what moves beneath." />
+  <style>
+    :root{--ink:#eef2ff;--muted:#c7d0ef;--gold:#ebbd0c;--violet:#871db8;--ring:rgba(255,255,255,.09);--panel:rgba(8,12,22,.68);--shadow:0 20px 50px rgba(0,0,0,.55);--max:1100px;}
+    html,body{margin:0;min-height:100%;background:radial-gradient(900px 500px at 50% 0%, rgba(110,140,255,.10), transparent 60%),radial-gradient(1200px 800px at 20% 0%, rgba(135,29,184,.14), transparent 60%),linear-gradient(180deg,#05070d 0%, #0a1020 52%, #08101a 100%);color:var(--ink);font:16px/1.65 system-ui,Segoe UI,Roboto,Helvetica,Arial;}
+    a{color:var(--gold);text-decoration:none}
+    .wrap{max-width:var(--max);margin:0 auto;padding:0 20px}
+    header{position:sticky;top:0;z-index:5;backdrop-filter:blur(8px);background:rgba(5,8,16,.52);border-bottom:1px solid var(--ring)}
+    .nav{display:flex;align-items:center;justify-content:space-between;height:70px}
+    .brand{font-weight:800;font-size:20px;letter-spacing:.2px;color:var(--ink)}
+    .menu a{margin-left:16px;color:var(--ink)} .menu a:hover{color:var(--gold)}
+    main{padding:42px 0 64px}
+    .hero{display:grid;grid-template-columns:1.02fr .98fr;gap:26px;align-items:stretch}
+    @media (max-width:900px){.hero{grid-template-columns:1fr}}
+    .panel{background:var(--panel);border:1px solid var(--ring);border-radius:24px;padding:28px;box-shadow:var(--shadow)}
+    .eyebrow{margin:0 0 12px;color:#d6bc7f;letter-spacing:.16em;text-transform:uppercase;font-size:.78rem;font-weight:700}
+    h1{margin:0 0 16px;font-size:clamp(2.2rem,5.6vw,4.4rem);line-height:1.08;font-family:Georgia,serif}
+    .lead{color:var(--muted);font-size:1.06rem}
+    .mirror{position:relative;overflow:hidden;min-height:540px;background:radial-gradient(circle at 50% 30%, rgba(148,169,255,.14), transparent 28%),linear-gradient(180deg, rgba(30,40,70,.55) 0%, rgba(7,9,16,.88) 72%);}
+    .mirror:before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 88%, rgba(178,203,255,.16), rgba(44,66,110,.10) 28%, rgba(4,6,12,.0) 45%), linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,0));opacity:.9;pointer-events:none}
+    .input-wrap{position:relative;margin-top:22px}
+    textarea{width:100%;min-height:160px;padding:18px 18px;border-radius:18px;border:1px solid rgba(255,255,255,.12);background:rgba(7,10,18,.58);color:var(--ink);font:16px/1.65 system-ui,Segoe UI,Roboto,Helvetica,Arial;box-sizing:border-box;resize:vertical;box-shadow:inset 0 0 0 1px rgba(255,255,255,.03)}
+    textarea:focus{outline:none;border-color:rgba(235,189,12,.55);box-shadow:0 0 0 3px rgba(235,189,12,.10)}
+    .btn{display:inline-block;margin-top:16px;padding:14px 22px;border-radius:999px;font-weight:900;letter-spacing:.03em;background:linear-gradient(135deg,var(--violet),var(--gold));color:#0a0d12;border:none;cursor:pointer;box-shadow:0 8px 24px rgba(0,0,0,.35)}
+    .result{margin-top:22px;padding:22px;border-radius:20px;border:1px solid rgba(255,255,255,.08);background:rgba(5,8,16,.48);display:none}
+    .result.show{display:block;animation:rise .9s ease both}
+    @keyframes rise{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+    .tone{font-size:.82rem;letter-spacing:.16em;text-transform:uppercase;color:#d6bc7f;font-weight:700;margin-bottom:6px}
+    .result h2{margin:0 0 10px;font-size:clamp(1.4rem,2.5vw,2rem)}
+    .ripple{position:absolute;left:50%;top:74%;transform:translate(-50%,-50%);width:130px;height:130px;border-radius:50%;border:1px solid rgba(187,219,255,.24);opacity:0}
+    .mirror.active .ripple,.mirror.active .ripple2,.mirror.active .ripple3{animation:ripple 1.6s ease-out forwards}
+    .ripple2{position:absolute;left:50%;top:74%;transform:translate(-50%,-50%);width:130px;height:130px;border-radius:50%;border:1px solid rgba(187,219,255,.18);opacity:0;animation-delay:.18s}
+    .ripple3{position:absolute;left:50%;top:74%;transform:translate(-50%,-50%);width:130px;height:130px;border-radius:50%;border:1px solid rgba(187,219,255,.14);opacity:0;animation-delay:.36s}
+    @keyframes ripple{0%{opacity:.0;transform:translate(-50%,-50%) scale(.4)}25%{opacity:.9}100%{opacity:0;transform:translate(-50%,-50%) scale(4.6)}}
+    .moon{position:absolute;top:36px;right:42px;width:84px;height:84px;border-radius:50%;background:radial-gradient(circle at 35% 35%, rgba(255,255,255,.9), rgba(212,228,255,.44) 45%, rgba(190,210,255,.18) 62%, rgba(190,210,255,.0) 74%);filter:blur(.4px);opacity:.74;transition:all .8s ease}
+    .mirror.active .moon{opacity:1;transform:scale(1.08)}
+    .waterline{position:absolute;left:0;right:0;bottom:0;height:42%;background:linear-gradient(180deg, rgba(18,28,50,.08), rgba(6,10,18,.35) 28%, rgba(2,6,12,.72));}
+    .landing{margin-top:26px;display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:start}
+    @media (max-width:900px){.landing{grid-template-columns:1fr}}
+    .landing-card{background:rgba(8,12,22,.68);border:1px solid var(--ring);border-radius:22px;padding:18px;box-shadow:var(--shadow)}
+    .landing-card img{width:100%;display:block;border-radius:16px;margin-bottom:14px}
+    .small{color:var(--muted);font-size:.97rem}
+  </style>
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <a class='brand' href='/'>Empowered Transcendence</a>
+    <nav class="menu">
+      <a href='/'>Home</a>
+      <a href='/stormwalker-medicine'>Stormwalker Medicine</a>
+      <a href='/enter-the-temple'>Temple Entrance</a>
+      <a href='/stormwalker-cards'>Cards</a>
+    </nav>
+  </div>
+</header>
+<main>
+  <div class="wrap hero">
+    <section class="panel">
+      <p class="eyebrow">Storm Mirror</p>
+      <h1>Look into the water…<br>truth moves beneath the surface.</h1>
+      <p class="lead">Stormwater holds what the storm has stirred. Enter what you saw, then stir the water and let the meaning rise on its own.</p>
+      <form id="mirrorForm" class="input-wrap">
+        <label for="dream" class="small">What did you see?</label>
+        <textarea id="dream" placeholder="Water, flying, falling, an ex love, someone who has passed, standing exposed in public... what did the dream show you?"></textarea>
+        <button class="btn" type="submit">STIR THE WATER</button>
+      </form>
+      <div id="result" class="result" aria-live="polite">
+        <div class="tone" id="tone"></div>
+        <h2 id="title"></h2>
+        <p id="body"></p>
+        <p class="small" id="prompt"></p>
+      </div>
+    </section>
+    <section class="panel mirror" id="mirrorVisual">
+      <div class="moon"></div>
+      <div class="ripple"></div><div class="ripple2"></div><div class="ripple3"></div>
+      <div class="waterline"></div>
+    </section>
+  </div>
+
+  <div class="wrap landing">
+    <section class="landing-card" id="softLanding" style="display:none">
+      <img src="assets/integration-floral.jpg" alt="Soft floral integration artwork" />
+      <h3>Let the water settle.</h3>
+      <p class="small">Some dreams ask for gentleness, not force. Sit with what surfaced. You do not have to solve it all at once.</p>
+    </section>
+    <section class="landing-card" id="dragonflyLanding" style="display:none">
+      <img src="assets/dragonfly-frame.jpg" alt="Dragonfly transformation artwork" />
+      <h3>Something is shifting.</h3>
+      <p class="small">The mirror shows movement when you are ready to see differently. Let clarity come one layer at a time.</p>
+    </section>
+  </div>
+</main>
+<script>
+const interpretations = [
+  {
+    test: t => /water|ocean|river|lake|waves|stormwater|sea|flood/.test(t),
+    tone: 'Water',
+    title: 'Emotion is moving beneath the surface.',
+    body: 'Water in dreams reflects your emotional world. Calm water can speak of clarity or peace. Rough or overwhelming water often points to emotion you have been holding back, carrying too long, or trying to control. You are not meant to fight the current. You are meant to understand what it is carrying.',
+    prompt: 'Ask yourself: what feeling has been asking for your attention instead of your control?',
+    landing: 'dragonfly'
+  },
+  {
+    test: t => /flying|flew|soaring|floating|falling|fell|drop|dropped/.test(t),
+    tone: 'Movement',
+    title: 'Trust and control are meeting in the same dream.',
+    body: 'Flying speaks of expansion, freedom, and stepping into your power. Falling often reflects fear of losing control, or being pulled toward something unresolved. When both energies are close, the dream may be asking where you are still gripping when you are actually being asked to trust.',
+    prompt: 'Where in your life are you trying to hold on when you may be ready to let the deeper current carry you?',
+    landing: 'dragonfly'
+  },
+  {
+    test: t => /naked|undressed|no clothes|without clothes/.test(t),
+    tone: 'Exposure',
+    title: 'This dream is about being seen.',
+    body: 'Dreams of being naked in public usually reflect vulnerability, exposure, fear of judgment, or the sense that something private is too visible. But sometimes they also mark a shedding of what is false. This dream may be asking whether you feel exposed… or whether you are becoming more honest than you used to be.',
+    prompt: 'Ask yourself: am I hiding, or am I becoming?',
+    landing: 'soft'
+  },
+  {
+    test: t => /dead|died|passed|deceased|funeral|grave|graveyard/.test(t),
+    tone: 'Connection',
+    title: 'Love may be speaking through memory, grief, or presence.',
+    body: 'Dreams of someone who is no longer living can carry grief, longing, unresolved feeling, or a deep sense of connection. Sometimes they are memory. Sometimes they are a way the heart continues the conversation. Pay close attention to how you felt in the dream. Sometimes they come not to haunt you, but to remind you that love does not end where the body does.',
+    prompt: 'What feeling stayed with you most strongly when you woke?',
+    landing: 'soft'
+  },
+  {
+    test: t => /ex|old love|former love|former partner|old boyfriend|old girlfriend|past relationship/.test(t),
+    tone: 'Attachment',
+    title: 'The dream may be showing you what still lingers.',
+    body: 'Dreams of an ex are rarely about the person alone. They often reflect the part of you that was shaped by that relationship—what was learned, what was lost, what still echoes, and what may finally be ready to be released. This is not always about going back. Sometimes it is about understanding what the connection was trying to teach you.',
+    prompt: 'What part of that relationship still seems to live in you now?',
+    landing: 'soft'
+  }
+];
+
+const fallback = {
+  tone: 'Reflection',
+  title: 'Something in the dream wants a quieter look.',
+  body: 'Not every dream speaks in obvious symbols. Some show feeling, atmosphere, or a truth that is not ready to be named directly. Sit with the strongest image, the strongest emotion, or the moment that stayed with you after waking. That is often where the thread begins.',
+  prompt: 'What part of the dream continues to echo, even now?',
+  landing: 'dragonfly'
+};
+
+document.getElementById('mirrorForm').addEventListener('submit', function(e){
+  e.preventDefault();
+  const text = document.getElementById('dream').value.toLowerCase().trim();
+  const pick = interpretations.find(item => item.test(text)) || fallback;
+  document.getElementById('tone').textContent = pick.tone;
+  document.getElementById('title').textContent = pick.title;
+  document.getElementById('body').textContent = pick.body;
+  document.getElementById('prompt').textContent = pick.prompt;
+  document.getElementById('result').classList.add('show');
+  document.getElementById('mirrorVisual').classList.add('active');
+  document.getElementById('softLanding').style.display = pick.landing === 'soft' ? 'block' : 'none';
+  document.getElementById('dragonflyLanding').style.display = pick.landing === 'dragonfly' ? 'block' : 'none';
+  document.getElementById('result').scrollIntoView({behavior:'smooth', block:'start'});
+});
+</script>
+</body>
+</html>

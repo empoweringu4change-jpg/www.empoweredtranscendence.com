@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Stormwalker Collection — Art</title>
+  <meta name="description" content="Stormwalker Collection — original art by Kelly Trett-Thomason." />
+  <style>
+    :root{
+      --midnight:#122f79; --ink:#eef2ff; --muted:#aab6d9;
+      --violet:#871db8; --gold:#ebbd0c;
+      --panel:rgba(8,12,22,.75); --ring:rgba(255,255,255,.08);
+      --shadow:0 18px 40px rgba(0,0,0,.45); --max:1120px;
+    }
+    html,body{
+      margin:0;
+      background:
+        radial-gradient(1200px 700px at 10% -10%, rgba(135,29,184,.18), transparent 60%),
+        radial-gradient(1000px 600px at 90% 0%, rgba(235,189,12,.10), transparent 55%),
+        linear-gradient(180deg,#0b0f14 0%, var(--midnight) 100%);
+      color:var(--ink);
+      font:16px/1.65 system-ui,Segoe UI,Roboto,Helvetica,Arial;
+    }
+    a{color:var(--gold);text-decoration:none}
+    .wrap{max-width:var(--max);margin:0 auto;padding:0 20px}
+    header{
+      position:sticky;top:0;
+      backdrop-filter:blur(8px);
+      background:rgba(5,8,16,.55);
+      border-bottom:1px solid var(--ring);
+      z-index:5;
+    }
+    .nav{display:flex;align-items:center;justify-content:space-between;height:70px}
+    .brand{font-weight:800;letter-spacing:.2px;font-size:20px}
+    .menu a{margin:0 10px;color:var(--ink)}
+    .menu a:hover{color:var(--gold)}
+    main section{padding:64px 0}
+    .panel{
+      background:var(--panel);
+      border:1px solid var(--ring);
+      border-radius:18px;
+      padding:28px;
+      box-shadow:var(--shadow);
+    }
+    h1{font-size:clamp(28px,5vw,46px);line-height:1.2;margin:0 0 12px}
+    h2{font-size:clamp(22px,3.2vw,32px);margin:0 0 10px}
+    .lead{color:var(--muted)}
+    .btn{
+      display:inline-block;
+      padding:12px 18px;
+      border-radius:12px;
+      font-weight:800;
+      background:linear-gradient(135deg,var(--violet),var(--gold));
+      color:#0a0d12;
+      box-shadow:0 6px 20px rgba(0,0,0,.35);
+    }
+    .btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--ring)}
+    ul{margin:10px 0 0 18px}
+    form{display:grid;gap:14px;margin-top:6px}
+    .row{display:grid;gap:12px;grid-template-columns:1fr 1fr}
+    input,textarea{
+      width:100%;
+      padding:12px 14px;
+      border-radius:12px;
+      border:1px solid var(--ring);
+      background:rgba(255,255,255,.04);
+      color:var(--ink);
+      outline:1px solid transparent;
+    }
+    input:focus,textarea:focus{
+      outline:1px solid var(--violet);
+      box-shadow:0 0 0 3px rgba(135,29,184,.25);
+    }
+    textarea{min-height:140px;resize:vertical}
+    .success{
+      display:none;
+      margin:12px 0 0;
+      padding:14px;
+      border-radius:12px;
+      background:rgba(235,189,12,.12);
+      border:1px solid rgba(235,189,12,.35);
+      color:#fff;
+    }
+    footer{
+      border-top:1px solid var(--ring);
+      padding:28px 0 56px;
+      text-align:center;
+      color:var(--muted);
+    }
+    .promo{
+      margin-top:10px;
+      padding:10px 14px;
+      border-radius:12px;
+      border:1px solid rgba(235,189,12,.45);
+      background:rgba(235,189,12,.10);
+      display:inline-block;
+      font-size:0.95rem;
+      color:var(--ink);
+    }
+    .faq-item{
+      margin-bottom:18px;
+    }
+    .faq-item h3{
+      margin:0 0 6px;
+      font-size:18px;
+    }
+  
+    /* --- Added: divider symbols + art teaser --- */
+    .divider{
+      display:flex;
+      justify-content:center;
+      padding: 26px 0;
+    }
+    .divider img{
+      width: 300px;
+      max-width: 70vw;
+      height: auto;
+      border-radius: 22px;
+      box-shadow: 0 10px 26px rgba(0,0,0,.35);
+    }
+    .art-grid{
+      display:grid;
+      gap:18px;
+      align-items:start;
+      grid-template-columns: 1.2fr 1fr;
+    }
+    @media (max-width: 860px){
+      .art-grid{ grid-template-columns: 1fr; }
+    }
+    .art-thumb{
+      width:100%;
+      height:auto;
+      border-radius: 18px;
+      border: 1px solid var(--ring);
+      box-shadow: var(--shadow);
+    }
+    .small-note{
+      color: var(--muted);
+      font-size: .95rem;
+      margin-top: 10px;
+    }
+
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap top">
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <div>
+          <div style="font-weight:900;letter-spacing:.2px">Stormwalker Collection</div>
+          <div style="color:var(--muted);font-size:.95rem">Original artwork by Kelly Trett‑Thomason</div>
+        </div>
+      </div>
+      <nav class="menu">
+        <a href='/'>← Back to main site</a>
+        <a href='/stormwalker-medicine'>Stormwalker Medicine</a>
+        <a href='/stormwalker-cards'>Cards</a>
+        <a href='/#contact'>Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section>
+      <div class="wrap panel">
+        <h1 style="margin:0 0 8px">Stormwalker Collection</h1>
+        <p class="lead" style="margin:0 0 16px">
+          These pieces are part of the Stormwalker path — symbols, stories, and transmissions created by hand.
+          If a piece calls to you, you can inquire about availability.
+        </p>
+
+        <img class="art-thumb" src="assets/aceo-grid.png" alt="Stormwalker Collection grid — original artworks by Kelly Trett-Thomason">
+
+        <p class="small-note">
+          © <script>document.write(new Date().getFullYear());</script> Kelly Trett‑Thomason. Please don’t reuse artwork without permission.
+        </p>
+
+        <div class="grid" style="margin-top:18px">
+          <div class="card">
+            <h3>Want to purchase a piece?</h3>
+            <p>
+              Send a quick message with (1) the piece you’re drawn to and (2) whether you’d like an original or a print (if available).
+            </p>
+            <p style="margin-top:12px">
+              <a class='btn' href='/#contact'>Ask about availability</a>
+              <span style="display:inline-block;width:10px"></span>
+              <a class='btn ghost' href='/'>Return to main site</a>
+            </p>
+          </div>
+
+          <div class="card">
+            <h3>Coming next</h3>
+            <ul>
+              <li>Individual piece pages (story + meaning)</li>
+              <li>Availability tags (Available / Sold / Prints)</li>
+              <li>Simple shop option when you’re ready</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © <script>document.write(new Date().getFullYear());</script> Empowered Transcendence — The Stormwalker Method
+  </footer>
+</body>
+</html>
