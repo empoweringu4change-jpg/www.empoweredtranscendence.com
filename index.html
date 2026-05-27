@@ -265,6 +265,66 @@
       font-size:clamp(1rem,2vw,1.2rem);
       margin:0;
     }
+    .personalized-audio-banner{
+      margin:28px auto 0;
+      max-width:920px;
+      background:var(--panel);
+      border:1px solid var(--ring);
+      border-radius:18px;
+      box-shadow:var(--shadow);
+      overflow:hidden;
+      display:grid;
+      grid-template-columns:minmax(180px, 280px) 1fr;
+      align-items:stretch;
+    }
+    .personalized-audio-image{
+      padding:24px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+    .personalized-audio-image img{
+      max-width:280px;
+      width:100%;
+      height:auto;
+      object-fit:contain;
+      display:block;
+    }
+    .personalized-audio-copy{
+      padding:28px;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+    }
+    .personalized-audio-copy h3{
+      font-family:Georgia,serif;
+      font-size:clamp(1.35rem,2.6vw,1.75rem);
+      line-height:1.2;
+      margin:0 0 12px;
+      color:var(--ink);
+    }
+    .personalized-audio-copy p{
+      color:var(--muted);
+      font-size:.96rem;
+      line-height:1.6;
+      margin:0 0 12px;
+    }
+    .personalized-audio-copy .btn{
+      align-self:flex-start;
+      margin-top:8px;
+    }
+    @media(max-width:720px){
+      .personalized-audio-banner{grid-template-columns:1fr}
+      .personalized-audio-image{
+        padding:22px 22px 0;
+      }
+      .personalized-audio-copy{padding:24px 22px}
+      .personalized-audio-copy .btn{
+        width:100%;
+        box-sizing:border-box;
+        text-align:center;
+      }
+    }
     .calm-grid{
       display:flex;
       flex-wrap:wrap;
@@ -712,6 +772,19 @@
           <p class="eyebrow">Guided Audio Experiences</p>
           <h2>The Calm Series</h2>
           <p class="calm-sub">Gentle resets for your mind, body, and nervous system.</p>
+        </div>
+
+        <div class="personalized-audio-banner">
+          <div class="personalized-audio-image">
+            <img src="assets/personalized-recording-cover.png" alt="Personalized Audio Experience cover art" loading="lazy">
+          </div>
+          <div class="personalized-audio-copy">
+            <h3>Personalized Audio Experience</h3>
+            <p>Need something created specifically for you? Personalized guided audio recordings are available by request for your personal goal, emotional season, or area of support.</p>
+            <p>These custom recordings may support grounding, sleep, emotional reset, confidence, grief, transition, stress relief, spiritual alignment, habit change, nervous system regulation, or another focused intention.</p>
+            <p>Pricing varies depending on recording length, customization level, intended use, and project needs.</p>
+            <a class="btn" href="https://square.link/u/QV36OjBX" target="_blank" rel="noopener">Request a Personalized Audio</a>
+          </div>
         </div>
 
         <div class="calm-grid">
