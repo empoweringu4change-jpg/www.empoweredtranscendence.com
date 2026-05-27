@@ -197,6 +197,24 @@
       margin-top: 10px;
     }
 
+    .featured-book-grid{
+      display:grid;
+      gap:60px;
+      align-items:center;
+      grid-template-columns: 380px 1fr;
+    }
+    .featured-book-grid img{
+      width:100%;
+      height:auto;
+      display:block;
+      border-radius:18px;
+      border:1px solid var(--ring);
+      box-shadow:var(--shadow);
+    }
+    @media (max-width: 860px){
+      .featured-book-grid{grid-template-columns:1fr;justify-items:center;text-align:center}
+    }
+
     .guidebook{
       display:grid;
       gap:28px;
@@ -774,6 +792,27 @@
               <a class='btn' href='/art'>Explore the Art Collection</a>
               <span style="display:inline-block;width:10px"></span>
               <a class="btn ghost" href="#contact">Ask about a piece</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURED BOOK -->
+    <section id="featured-book">
+      <div class="wrap panel">
+        <p class="eyebrow">From Kelly Trett-Thomason</p>
+        <h2>Featured Book</h2>
+        <div class="featured-book-grid">
+          <div>
+            <img src="assets/colton-blue-train-website.jpg" alt="Grams' Sleepy Time Stories: Colton and the Magic Train Ride — book cover" loading="lazy">
+          </div>
+          <div>
+            <h3 style="margin-top:0">Grams&rsquo; Sleepy Time Stories</h3>
+            <p class="lead">Colton and the Magic Train Ride</p>
+            <p>A cozy bedtime journey through moonlit tracks, sleepy landscapes, and gentle wonder. Written with love by Kelly Trett-Thomason.</p>
+            <p style="margin-top:18px">
+              <a class="btn" href="https://www.amazon.com" target="_blank" rel="noopener">Available on Amazon</a>
             </p>
           </div>
         </div>
