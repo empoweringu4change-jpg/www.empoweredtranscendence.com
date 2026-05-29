@@ -36,6 +36,8 @@
     .menu a{margin:0 10px;color:var(--ink)}
     .menu a:hover{color:var(--gold)}
     main section{padding:64px 0}
+    /* Offset in-page anchor jumps so the target heading lands below the sticky header instead of underneath it */
+    #dream-portal{scroll-margin-top:90px}
     .panel{
       background:var(--panel);
       border:1px solid var(--ring);
@@ -214,6 +216,24 @@
     }
     @media (max-width: 860px){
       .featured-book-grid{grid-template-columns:1fr;justify-items:center;text-align:center}
+    }
+
+    .dream-portal-grid{
+      display:grid;
+      gap:40px;
+      align-items:center;
+      grid-template-columns: 1fr 420px;
+    }
+    .dream-portal-grid img{
+      width:100%;
+      height:auto;
+      display:block;
+      border-radius:18px;
+      border:1px solid var(--ring);
+      box-shadow:var(--shadow);
+    }
+    @media (max-width: 860px){
+      .dream-portal-grid{grid-template-columns:1fr}
     }
 
     .guidebook{
@@ -471,6 +491,10 @@
       margin-bottom:12px;
       display:block;
     }
+    a.offering-card{
+      color:var(--ink);
+      text-decoration:none;
+    }
 
   </style>
 </head>
@@ -482,13 +506,13 @@
         <a href="#about">About</a>
         <a href="#stormwalker">Method</a>
         <a href="#symbols">Symbols</a>
-        <a href='/enter-the-temple'>Stormwalker Medicine</a>
-        <a href='/stormwalker-cards'>Cards</a>
-        <a href="#audio">Audio</a>
+        <a href="#dream-portal">Stormwalker Medicine</a>
+        <a href="#deck-gallery">Cards</a>
+        <a href="index.html#audio">Audio</a>
         <a href="#art">Art</a>
         <!-- <a href="#academy">Academy</a> -->
         <a href="#faq">FAQ</a>
-        <a href="#schedule">Book</a>
+        <a href="#featured-book">Book</a>
         <a href="#contact">Contact</a>
       </nav>
     </div>
@@ -517,31 +541,31 @@
     <section id="offerings">
       <div class="wrap" style="text-align:center;">
         <div class="offerings-grid">
-          <div class="offering-card">
+          <a class="offering-card" href="index.html#audio">
             <span class="offering-icon" aria-hidden="true">&#127911;</span>
             <h3>The Calm Series</h3>
             <p>Guided audio resets for your mind, body, and nervous system.</p>
-          </div>
-          <div class="offering-card">
+          </a>
+          <a class="offering-card" href="index.html#stormwalker">
             <span class="offering-icon" aria-hidden="true">&#9889;</span>
             <h3>The Stormwalker Method&trade;</h3>
             <p>Five phases to transmute challenge into clarity.</p>
-          </div>
-          <div class="offering-card">
+          </a>
+          <a class="offering-card" href="#deck-gallery">
             <span class="offering-icon" aria-hidden="true">&#127183;</span>
             <h3>Stormwalker Medicine Cards</h3>
             <p>A mirror deck designed to reflect what you already feel.</p>
-          </div>
-          <div class="offering-card">
+          </a>
+          <a class="offering-card" href="#art">
             <span class="offering-icon" aria-hidden="true">&#127912;</span>
             <h3>Art &amp; Creations</h3>
             <p>Original artwork woven into the Stormwalker path.</p>
-          </div>
-          <div class="offering-card">
+          </a>
+          <a class="offering-card" href="index.html#contact">
             <span class="offering-icon" aria-hidden="true">&#128156;</span>
             <h3>Coaching &amp; Sessions</h3>
             <p>Grounded, intuitive support for life&apos;s hardest seasons.</p>
-          </div>
+          </a>
         </div>
       </div>
     </section>
@@ -576,7 +600,7 @@
 
         <p style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:18px">
           <a class="btn" href="https://square.link/u/gq3Hnpbn" target="_blank" rel="noopener">Pre-Order Your Deck</a>
-          <a class='btn ghost' href='/stormwalker-cards'>Learn More</a>
+          <a class='btn ghost' href='#deck-gallery'>Learn More</a>
         </p>
 
         <p class="limited">Limited first run. Each deck is part of the original Stormwalker release.</p>
@@ -596,7 +620,7 @@
 
         <p style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:22px">
           <a class="btn" href="https://square.link/u/gq3Hnpbn" target="_blank" rel="noopener">Pre-Order Your Deck</a>
-          <a class='btn ghost' href='/stormwalker-cards'>See the Full Cards Page</a>
+          <a class='btn ghost' href='#deck-gallery'>See the Full Cards Page</a>
         </p>
       </div>
     </section>
@@ -897,7 +921,7 @@
                 <svg viewBox="0 0 24 24"><path d="M12 1a9 9 0 0 0-9 9v7c0 1.66 1.34 3 3 3h1c1.1 0 2-.9 2-2v-4c0-1.1-.9-2-2-2H5v-2a7 7 0 0 1 14 0v2h-2c-1.1 0-2 .9-2 2v4c0 1.1.9 2 2 2h1c1.66 0 3-1.34 3-3v-7a9 9 0 0 0-9-9z"/></svg>
                 Best experienced with earbuds or headphones
               </p>
-              <span class="btn coming-soon">Coming Soon</span>
+              <a class="btn" href="https://square.link/u/ArI3fGkB" target="_blank" rel="noopener">Purchase MP3 &ndash; $9</a>
             </div>
           </div>
 
@@ -911,7 +935,7 @@
                 <svg viewBox="0 0 24 24"><path d="M12 1a9 9 0 0 0-9 9v7c0 1.66 1.34 3 3 3h1c1.1 0 2-.9 2-2v-4c0-1.1-.9-2-2-2H5v-2a7 7 0 0 1 14 0v2h-2c-1.1 0-2 .9-2 2v4c0 1.1.9 2 2 2h1c1.66 0 3-1.34 3-3v-7a9 9 0 0 0-9-9z"/></svg>
                 Best experienced with earbuds or headphones
               </p>
-              <span class="btn coming-soon">Coming Soon</span>
+              <a class="btn" href="https://square.link/u/ASSuSSXf" target="_blank" rel="noopener">Purchase MP3 &ndash; $9</a>
             </div>
           </div>
 
@@ -924,7 +948,7 @@
                 <svg viewBox="0 0 24 24"><path d="M12 1a9 9 0 0 0-9 9v7c0 1.66 1.34 3 3 3h1c1.1 0 2-.9 2-2v-4c0-1.1-.9-2-2-2H5v-2a7 7 0 0 1 14 0v2h-2c-1.1 0-2 .9-2 2v4c0 1.1.9 2 2 2h1c1.66 0 3-1.34 3-3v-7a9 9 0 0 0-9-9z"/></svg>
                 Best experienced with earbuds or headphones
               </p>
-              <span class="btn coming-soon">Coming Soon</span>
+              <a class="btn" href="https://square.link/u/hrRB46wt" target="_blank" rel="noopener">Purchase MP3 &ndash; $9</a>
             </div>
           </div>
 
@@ -946,14 +970,20 @@
 
     <section id="dream-portal">
       <div class="wrap panel">
-        <h2>Step into Stormwalker Medicine</h2>
-        <p class="lead">Dreams, symbols, art, and reflection now have their own portal inside Empowered Transcendence.</p>
-        <p>Enter a moonlit forest clearing where stormwater gathers into a still pool. When the storm clears and moonlight brightens, the Storm Mirror reflects what could not be seen before.</p>
-        <p style="display:flex;gap:10px;flex-wrap:wrap">
-          <a class='btn' href='/enter-the-temple'>Enter Stormwalker Medicine</a>
-          <a class='btn ghost' href='/stormwalker-medicine#dreammirror'>Go to Storm Mirror</a>
-          <a class='btn ghost' href='/stormwalker-cards'>Stormwalker Medicine Cards</a>
-        </p>
+        <div class="dream-portal-grid">
+          <div>
+            <h2>Step into Stormwalker Medicine</h2>
+            <p class="lead">Stormwalker Medicine is where dreams, symbols, art, reflection, and intuitive guidance come together inside Empowered Transcendence.</p>
+            <p>This is the place for the deeper work — the meanings beneath the surface, the messages that arrive through dreams, and the symbols that keep appearing when your inner knowing is trying to speak.</p>
+            <p>The Stormwalker Medicine Cards are part of that path: a mirror deck designed to help you recognize what is already moving through your life, your spirit, and your storm.</p>
+            <p style="display:flex;gap:10px;flex-wrap:wrap">
+              <a class='btn ghost' href='#deck-gallery'>Stormwalker Medicine Cards</a>
+            </p>
+          </div>
+          <div>
+            <img src="assets/stormwalker-medicine-dragon.png" alt="Purple storm dragon guardian representing Stormwalker Medicine" loading="lazy">
+          </div>
+        </div>
       </div>
     </section>
 
@@ -979,7 +1009,7 @@
             </p>
 
             <p style="margin-top:14px;">
-              <a class='btn' href='/art'>Explore the Art Collection</a>
+              <a class='btn' href='#art'>Explore the Art Collection</a>
               <span style="display:inline-block;width:10px"></span>
               <a class="btn ghost" href="#contact">Ask about a piece</a>
             </p>
