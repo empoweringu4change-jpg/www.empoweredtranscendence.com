@@ -324,6 +324,41 @@
       font-size:clamp(1rem,2vw,1.2rem);
       margin:0;
     }
+    /* --- Free sample audio player --- */
+    .sample-audio{
+      margin:28px auto 0;
+      max-width:920px;
+      background:var(--panel);
+      border:1px solid var(--ring);
+      border-radius:18px;
+      box-shadow:var(--shadow);
+      padding:30px 32px;
+      text-align:center;
+    }
+    .sample-audio h3{
+      font-family:Georgia,serif;
+      font-size:clamp(1.4rem,2.8vw,1.9rem);
+      line-height:1.2;
+      margin:0 0 12px;
+      color:var(--ink);
+    }
+    .sample-audio p{
+      color:var(--muted);
+      font-size:.98rem;
+      line-height:1.65;
+      margin:0 auto 8px;
+      max-width:620px;
+    }
+    .sample-audio audio{
+      width:100%;
+      max-width:560px;
+      margin:20px auto 0;
+      display:block;
+    }
+    @media(max-width:720px){
+      .sample-audio{padding:24px 20px}
+    }
+
     .personalized-audio-banner{
       margin:28px auto 0;
       max-width:920px;
@@ -835,6 +870,17 @@
           <p class="eyebrow">Guided Audio Experiences</p>
           <h2>The Calm Series</h2>
           <p class="calm-sub">Gentle resets for your mind, body, and nervous system.</p>
+        </div>
+
+        <div class="sample-audio">
+          <h3>🎧 Listen to a Free Sample</h3>
+          <p>Not sure if my style is right for you?</p>
+          <p>Listen to a short sample below and experience the voice, pacing, and atmosphere used throughout The Calm Series before choosing a recording.</p>
+          <audio controls preload="none" controlslist="nodownload">
+            <source src="assets/audio-samples/calm-series-sample.mp3" type="audio/mpeg">
+            Your browser does not support the audio element. You can
+            <a href="assets/audio-samples/calm-series-sample.mp3">play the sample here</a>.
+          </audio>
         </div>
 
         <div class="personalized-audio-banner">
