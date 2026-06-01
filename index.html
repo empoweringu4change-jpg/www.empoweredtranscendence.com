@@ -217,6 +217,45 @@
     @media (max-width: 860px){
       .featured-book-grid{grid-template-columns:1fr;justify-items:center;text-align:center}
     }
+    .series-badge{
+      display:inline-block;
+      margin:0 0 14px;
+      padding:6px 14px;
+      border-radius:999px;
+      border:1px solid rgba(235,189,12,.45);
+      background:rgba(235,189,12,.10);
+      font-size:.78rem;
+      font-weight:700;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      color:#e7d7b4;
+    }
+    .book-tagline{
+      font-family:Georgia,serif;
+      font-style:italic;
+      color:#e7d7b4;
+      font-size:1.15rem;
+      margin:2px 0 16px;
+    }
+    .book-series-note{
+      margin-top:18px;
+      padding:14px 16px;
+      border-radius:12px;
+      border:1px solid var(--ring);
+      background:rgba(255,255,255,.04);
+      color:var(--ink);
+      font-size:.97rem;
+    }
+    .book-series-note strong{color:var(--gold)}
+    .book-cta{
+      display:flex;
+      flex-wrap:wrap;
+      gap:14px;
+      margin-top:22px;
+    }
+    @media (max-width: 860px){
+      .book-cta{justify-content:center}
+    }
 
     .dream-portal-grid{
       display:grid;
@@ -1021,19 +1060,35 @@
     <!-- FEATURED BOOK -->
     <section id="featured-book">
       <div class="wrap panel">
-        <p class="eyebrow">From Kelly Trett-Thomason</p>
-        <h2>Featured Book</h2>
+        <p class="eyebrow">Grams&rsquo; Sleepy Time Stories</p>
+        <h2>A Children&rsquo;s Book Series</h2>
         <div class="featured-book-grid">
           <div>
             <img src="assets/colton-blue-train-website.jpg" alt="Grams' Sleepy Time Stories: Colton and the Magic Train Ride — book cover" loading="lazy">
           </div>
           <div>
-            <h3 style="margin-top:0">Grams&rsquo; Sleepy Time Stories</h3>
-            <p class="lead">Colton and the Magic Train Ride</p>
-            <p>A cozy bedtime journey through moonlit tracks, sleepy landscapes, and gentle wonder. Written with love by Kelly Trett-Thomason.</p>
-            <p style="margin-top:18px">
-              <a class="btn" href="https://www.amazon.com" target="_blank" rel="noopener">Available on Amazon</a>
+            <span class="series-badge">Book One of the Series</span>
+            <h3 style="margin-top:0">Colton and the Magic Train Ride</h3>
+            <p class="book-tagline">Creating gentle bedtime adventures for little dreamers.</p>
+            <p>
+              <em>Colton and the Magic Train Ride</em> is the first book in the <strong>Grams&rsquo; Sleepy Time Stories</strong>
+              collection &mdash; a growing series created to help children relax, imagine, and drift peacefully to sleep.
+              Climb aboard for a cozy journey through moonlit tracks, sleepy landscapes, and quiet wonder, written with
+              love by Grams herself, Kelly Trett-Thomason.
             </p>
+            <p>
+              Made for the people who tuck little ones in &mdash; parents, grandparents, and caregivers &mdash; these
+              are stories meant to be read aloud, snuggled close, and returned to night after night. Soft rhythms and
+              warm, comforting moments help busy little minds slow down and settle in for rest.
+            </p>
+            <div class="book-series-note">
+              <strong>This is just the beginning.</strong> Colton&rsquo;s first adventure opens a whole series of
+              sleepy time stories, with more gentle journeys on the way for your family to share.
+            </div>
+            <div class="book-cta">
+              <a class="btn" href="https://www.amazon.com/dp/B0H2KDHBHP" target="_blank" rel="noopener">Buy on Amazon</a>
+              <a class="btn ghost" href="https://amazon.com/author/kellytrettthomason" target="_blank" rel="noopener">Follow the Author</a>
+            </div>
           </div>
         </div>
       </div>
