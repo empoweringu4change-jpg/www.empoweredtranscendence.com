@@ -141,6 +141,43 @@
       background:rgba(235,189,12,.10);
       font-size:.95rem;
     }
+    /* --- Shop the Stormwalker Collection --- */
+    .shop-grid{
+      display:grid;
+      gap:22px;
+      grid-template-columns:repeat(3,1fr);
+      margin-top:24px;
+    }
+    @media (max-width:760px){
+      .shop-grid{grid-template-columns:1fr}
+    }
+    .shop-card{
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      text-align:center;
+      background:rgba(8,12,22,.55);
+      border:1px solid var(--ring);
+      border-radius:18px;
+      padding:20px;
+      box-shadow:var(--shadow);
+      transition:transform 300ms ease, box-shadow 300ms ease;
+    }
+    .shop-card:hover{transform:translateY(-4px);box-shadow:0 24px 48px rgba(0,0,0,.55)}
+    .shop-card img{
+      width:100%;
+      max-width:240px;
+      height:auto;
+      border-radius:12px;
+      border:1px solid var(--ring);
+      box-shadow:0 10px 26px rgba(0,0,0,.35);
+    }
+    .shop-card h3{
+      margin:16px 0 14px;
+      font-size:1.1rem;
+      line-height:1.3;
+    }
+    .shop-card .btn{margin-top:auto}
     .gallery{
       display:grid;
       gap:18px;
@@ -608,6 +645,31 @@
           <a class="btn" href="#calm-series">Explore The Calm Series</a>
           <a class="btn ghost" href="#stormwalker">Discover The Stormwalker Method&trade;</a>
         </p>
+      </div>
+    </section>
+
+    <!-- SHOP THE STORMWALKER COLLECTION -->
+    <section id="shop">
+      <div class="wrap panel" style="text-align:center;">
+        <p class="eyebrow">Shop the Collection</p>
+        <h2>Shop the Stormwalker Collection</h2>
+        <div class="shop-grid">
+          <div class="shop-card">
+            <img src="assets/stormwalker-medicine-book.jpg" alt="Stormwalker Medicine book cover" loading="lazy" />
+            <h3>Stormwalker Medicine</h3>
+            <a class="btn" href="https://square.link/u/tYWZXXUn" target="_blank" rel="noopener">Buy the Book</a>
+          </div>
+          <div class="shop-card">
+            <img src="assets/stormwalker-medicine-journal.jpg" alt="Stormwalker Medicine Journal cover" loading="lazy" />
+            <h3>Stormwalker Medicine Journal</h3>
+            <a class="btn" href="https://square.link/u/pYWMTZNE" target="_blank" rel="noopener">Buy the Journal</a>
+          </div>
+          <div class="shop-card">
+            <img src="assets/colton-magic-train-ride.jpg" alt="Colton and the Magic Train Ride book cover" loading="lazy" />
+            <h3>Colton and the Magic Train Ride</h3>
+            <a class="btn" href="https://square.link/u/6yGaelnk" target="_blank" rel="noopener">Buy the Children&apos;s Book</a>
+          </div>
+        </div>
       </div>
     </section>
 
