@@ -35,9 +35,12 @@
     .brand{font-weight:800;letter-spacing:.2px;font-size:20px}
     .menu a{margin:0 10px;color:var(--ink)}
     .menu a:hover{color:var(--gold)}
+    @media (max-width:760px){
+      .nav{height:auto;min-height:70px;align-items:flex-start;gap:12px;flex-direction:column;padding:14px 0}
+      .menu{display:flex;flex-wrap:wrap;gap:8px 12px}
+      .menu a{margin:0;font-size:.95rem}
+    }
     main section{padding:64px 0}
-    /* Offset in-page anchor jumps so the target heading lands below the sticky header instead of underneath it */
-    #dream-portal{scroll-margin-top:90px}
     .panel{
       background:var(--panel);
       border:1px solid var(--ring);
@@ -108,7 +111,6 @@
       font-size:18px;
     }
 
-    /* --- Medicine Cards hero --- */
     .eyebrow{
       text-transform:uppercase;
       letter-spacing:.16em;
@@ -116,120 +118,16 @@
       font-size:.8rem;
       margin:0 0 10px;
     }
-    .cards-hero{padding-top:56px}
-    .cards-hero h1{font-family:Georgia,serif;font-size:clamp(30px,5vw,52px);line-height:1.12}
-    .cards-hero .sub{
-      font-family:Georgia,serif;font-style:italic;
-      color:#e7d7b4;
-      font-size:clamp(1.1rem,2.2vw,1.45rem);
-      margin:0 0 18px;
+    .section-divider{
+      max-width:var(--max);
+      margin:0 auto;
+      padding:0 20px;
     }
-    .truth{font-size:1.05rem;color:var(--ink)}
-    .price-row{display:flex;gap:14px;align-items:center;justify-content:center;flex-wrap:wrap;margin:22px 0 6px}
-    .price{
-      font-size:1.4rem;font-weight:800;
-      background:linear-gradient(135deg,#fff 0%, var(--gold) 70%);
-      -webkit-background-clip:text;background-clip:text;color:transparent;
-    }
-    .price-note{color:var(--muted);font-size:.95rem;font-style:italic}
-    .limited{
-      margin-top:14px;
-      display:inline-block;
-      padding:10px 16px;
-      border-radius:12px;
-      border:1px solid rgba(235,189,12,.45);
-      background:rgba(235,189,12,.10);
-      font-size:.95rem;
-    }
-    /* --- Shop the Stormwalker Collection --- */
-    .shop-grid{
-      display:grid;
-      gap:22px;
-      grid-template-columns:repeat(3,1fr);
-      margin-top:24px;
-    }
-    @media (max-width:760px){
-      .shop-grid{grid-template-columns:1fr}
-    }
-    .shop-card{
-      display:flex;
-      flex-direction:column;
-      align-items:center;
-      text-align:center;
-      background:rgba(8,12,22,.55);
-      border:1px solid var(--ring);
-      border-radius:18px;
-      padding:20px;
-      box-shadow:var(--shadow);
-      transition:transform 300ms ease, box-shadow 300ms ease;
-    }
-    .shop-card:hover{transform:translateY(-4px);box-shadow:0 24px 48px rgba(0,0,0,.55)}
-    .shop-card img{
-      width:100%;
-      max-width:240px;
-      height:auto;
-      border-radius:12px;
-      border:1px solid var(--ring);
-      box-shadow:0 10px 26px rgba(0,0,0,.35);
-    }
-    .shop-card h3{
-      margin:16px 0 14px;
-      font-size:1.1rem;
-      line-height:1.3;
-    }
-    .shop-card .btn{margin-top:auto}
-    .gallery{
-      display:grid;
-      gap:18px;
-      grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-      margin-top:8px;
-    }
-    .card-img{
-      position:relative;
-      border-radius:18px;
-      overflow:hidden;
-      border:1px solid var(--ring);
-      background:rgba(255,255,255,.03);
-      box-shadow:var(--shadow);
-      aspect-ratio:3/5;
-      transition:transform 300ms ease, box-shadow 300ms ease;
-    }
-    .card-img img{width:100%;height:100%;object-fit:contain;display:block}
-    .gallery .card-img:nth-child(1){transform:rotate(-1.2deg)}
-    .gallery .card-img:nth-child(2){transform:rotate(.8deg)}
-    .gallery .card-img:nth-child(3){transform:rotate(-.6deg)}
-    .gallery .card-img:nth-child(4){transform:rotate(1deg)}
-    .gallery .card-img:nth-child(5){transform:rotate(-1deg)}
-    .gallery .card-img:hover{transform:translateY(-4px) rotate(0);box-shadow:0 24px 48px rgba(0,0,0,.55)}
-
-    /* --- Added: divider symbols + art teaser --- */
-    .divider{
-      display:flex;
-      justify-content:center;
-      padding: 26px 0;
-    }
-    .divider img{
-      width: 300px;
-      max-width: 70vw;
-      height: auto;
-      border-radius: 22px;
-      box-shadow: 0 10px 26px rgba(0,0,0,.35);
-    }
-    .art-grid{
-      display:grid;
-      gap:18px;
-      align-items:start;
-      grid-template-columns: 1.2fr 1fr;
-    }
-    @media (max-width: 860px){
-      .art-grid{ grid-template-columns: 1fr; }
-    }
-    .art-thumb{
-      width:100%;
-      height:auto;
-      border-radius: 18px;
-      border: 1px solid var(--ring);
-      box-shadow: var(--shadow);
+    .section-divider::before{
+      content:"";
+      display:block;
+      height:1px;
+      background:linear-gradient(90deg, transparent, rgba(235,189,12,.38), rgba(255,255,255,.12), transparent);
     }
     .small-note{
       color: var(--muted);
@@ -253,6 +151,21 @@
     }
     @media (max-width: 860px){
       .featured-book-grid{grid-template-columns:1fr;justify-items:center;text-align:center}
+    }
+    .photo-note{
+      color:var(--muted);
+      font-size:.92rem;
+      margin:0;
+      text-align:center;
+    }
+    .collection-photo{
+      width:100%;
+      height:auto;
+      display:block;
+      border-radius:14px;
+      border:1px solid var(--ring);
+      box-shadow:var(--shadow);
+      margin:20px 0 10px;
     }
     .series-badge{
       display:inline-block;
@@ -293,58 +206,65 @@
     @media (max-width: 860px){
       .book-cta{justify-content:center}
     }
-
-    .dream-portal-grid{
+    .book-paths{
       display:grid;
-      gap:40px;
-      align-items:center;
-      grid-template-columns: 1fr 420px;
+      gap:24px;
+      grid-template-columns:1fr 1fr;
+      margin-top:28px;
     }
-    .dream-portal-grid img{
-      width:100%;
-      height:auto;
-      display:block;
-      border-radius:18px;
+    .book-path{
+      background:rgba(255,255,255,.04);
       border:1px solid var(--ring);
+      border-radius:18px;
+      padding:24px;
+    }
+    .book-path.grams{
+      background:
+        radial-gradient(500px 220px at 10% 0%, rgba(235,189,12,.14), transparent 68%),
+        rgba(255,255,255,.045);
+    }
+    .book-list{
+      margin:16px 0 0;
+      padding:0;
+      list-style:none;
+    }
+    .book-list li{
+      padding:10px 0;
+      border-top:1px solid var(--ring);
+    }
+    .book-list span{
+      color:var(--muted);
+      font-size:.92rem;
+    }
+    .signup-grid{
+      display:grid;
+      gap:24px;
+      grid-template-columns:1fr 1fr;
+      margin-top:24px;
+    }
+    .signup-card{
+      background:rgba(8,12,22,.55);
+      border:1px solid var(--ring);
+      border-radius:18px;
+      padding:24px;
       box-shadow:var(--shadow);
+    }
+    .signup-card.grams{
+      background:
+        radial-gradient(520px 240px at 100% 0%, rgba(235,189,12,.16), transparent 66%),
+        rgba(8,12,22,.55);
+    }
+    .signup-placeholder{
+      margin-top:16px;
+      padding:14px 16px;
+      border:1px dashed rgba(235,189,12,.45);
+      border-radius:12px;
+      color:#e7d7b4;
+      background:rgba(235,189,12,.08);
+      font-size:.95rem;
     }
     @media (max-width: 860px){
-      .dream-portal-grid{grid-template-columns:1fr}
-    }
-
-    .guidebook{
-      display:grid;
-      gap:28px;
-      align-items:center;
-      grid-template-columns: minmax(220px, 300px) 1fr;
-    }
-    .guidebook .qr-frame{
-      background:#fff;
-      padding:18px;
-      border-radius:20px;
-      border:1px solid var(--ring);
-      box-shadow:var(--shadow);
-      display:flex;
-      justify-content:center;
-      align-items:center;
-    }
-    .guidebook .qr-frame img{
-      width:100%;
-      height:auto;
-      display:block;
-      border-radius:8px;
-    }
-    .guidebook .qr-caption{
-      text-align:center;
-      color:#0a0d12;
-      font-weight:700;
-      font-size:.85rem;
-      letter-spacing:.12em;
-      text-transform:uppercase;
-      margin-top:10px;
-    }
-    @media (max-width: 720px){
-      .guidebook{grid-template-columns:1fr;justify-items:center;text-align:center}
+      .book-paths,.signup-grid{grid-template-columns:1fr}
     }
 
     /* --- Calm Series cards --- */
@@ -614,24 +534,19 @@
     <div class="wrap nav">
       <div class="brand">Empowered Transcendence</div>
       <nav class="menu">
-        <a href="#about">About</a>
-        <a href="#stormwalker">Method</a>
-        <a href="#symbols">Symbols</a>
-        <a href="#dream-portal">Stormwalker Medicine</a>
-        <a href="#deck-gallery">Cards</a>
-        <a href="index.html#audio">Audio</a>
-        <a href="#art">Art</a>
-        <!-- <a href="#academy">Academy</a> -->
-        <a href="#faq">FAQ</a>
-        <a href="#featured-book">Book</a>
-        <a href="#contact">Contact</a>
+        <a href="#home">Home</a>
+        <a href="#about">About Kelly</a>
+        <a href="#books">Books</a>
+        <a href="#coaching">Services</a>
+        <a href="#audio">Audio</a>
+        <a href="#contact-book">Contact / Book</a>
       </nav>
     </div>
   </header>
 
   <main>
     <!-- HERO: Empowered Transcendence Intro -->
-    <section class="et-hero">
+    <section class="et-hero" id="home">
       <div class="wrap panel" style="text-align:center;">
         <h1>Empowered Transcendence</h1>
         <p class="et-sub">Move Through the Storm. Return to Your Power.</p>
@@ -639,35 +554,68 @@
           Empowered Transcendence helps people move through life&apos;s storms with greater clarity, calm, confidence, and purpose.
         </p>
         <p class="et-intro">
-          Through coaching, guided audio experiences, The Stormwalker Method&trade;, creative tools, and transformational support, you&apos;ll find practical and spiritual resources to help you heal, grow, and step into the life you&apos;re here to live.
+          Through coaching, guided audio experiences, The Stormwalker Method&trade;, books, and transformational support, you&apos;ll find practical and spiritual resources to help you heal, grow, and step into the life you&apos;re here to live.
         </p>
         <p style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap">
-          <a class="btn" href="#calm-series">Explore The Calm Series</a>
-          <a class="btn ghost" href="#stormwalker">Discover The Stormwalker Method&trade;</a>
+          <a class="btn" href="#featured-book">Meet Stormwalker Medicine</a>
+          <a class="btn ghost" href="#books">Explore All Books</a>
+          <a class="btn ghost" href="#audio">Listen to Guided Audio</a>
         </p>
       </div>
     </section>
 
-    <!-- SHOP THE STORMWALKER COLLECTION -->
-    <section id="shop">
-      <div class="wrap panel" style="text-align:center;">
-        <p class="eyebrow">Shop the Collection</p>
-        <h2>Shop the Stormwalker Collection</h2>
-        <div class="shop-grid">
-          <div class="shop-card">
-            <img src="assets/stormwalker-medicine-book.jpg" alt="Stormwalker Medicine book cover" loading="lazy" />
-            <h3>Stormwalker Medicine</h3>
-            <a class="btn" href="https://square.link/u/tYWZXXUn" target="_blank" rel="noopener">Buy the Book</a>
+    <!-- FEATURED BOOK -->
+    <section id="featured-book">
+      <div class="wrap panel">
+        <p class="eyebrow">Flagship Book</p>
+        <h2>Stormwalker Medicine</h2>
+        <div class="featured-book-grid">
+          <div class="featured-book-image">
+            <img src="assets/stormwalker-medicine-cover.jpg" alt="Stormwalker Medicine book cover — Kelly Trett-Thomason, CHt." loading="lazy">
           </div>
-          <div class="shop-card">
-            <img src="assets/stormwalker-medicine-journal.jpg" alt="Stormwalker Medicine Journal cover" loading="lazy" />
-            <h3>Stormwalker Medicine Journal</h3>
-            <a class="btn" href="https://square.link/u/pYWMTZNE" target="_blank" rel="noopener">Buy the Journal</a>
+          <div>
+            <span class="series-badge">Stormwalker Collection</span>
+            <p class="book-tagline">Walk the storm. Let it clear your path.</p>
+            <p class="lead">
+              The central book of the Stormwalker path, created for reflection, truth-telling, and finding steady ground when life asks you to transform.
+            </p>
+            <div class="book-cta">
+              <a class="btn" href="https://square.link/u/tYWZXXUn" target="_blank" rel="noopener">Order the Book</a>
+              <a class="btn ghost" href="#books">Explore All Books</a>
+            </div>
           </div>
-          <div class="shop-card">
-            <img src="assets/colton-magic-train-ride.jpg" alt="Colton and the Magic Train Ride book cover" loading="lazy" />
-            <h3>Colton and the Magic Train Ride</h3>
-            <a class="btn" href="https://square.link/u/6yGaelnk" target="_blank" rel="noopener">Buy the Children&apos;s Book</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- BOOKS -->
+    <section id="books">
+      <div class="wrap panel">
+        <p class="eyebrow">Books</p>
+        <h2>Choose a Book Path</h2>
+        <div class="book-paths">
+          <div class="book-path">
+            <h3>Stormwalker Collection</h3>
+            <p class="lead">For readers walking through transformation, reflection, and spiritual growth.</p>
+            <ul class="book-list">
+              <li><strong>Stormwalker Medicine</strong><br><a href="https://square.link/u/tYWZXXUn" target="_blank" rel="noopener">Order the Book</a></li>
+              <li><strong>Stormwalker Medicine Journal</strong><br><a href="https://square.link/u/pYWMTZNE" target="_blank" rel="noopener">Order the Journal</a></li>
+              <li><em>More stories coming soon.</em></li>
+            </ul>
+            <img class="collection-photo" src="assets/stormwalker-journal-lifestyle.png" alt="Stormwalker Medicine Journal resting among oracle cards, crystals, and a handwritten bookmark" loading="lazy">
+            <p class="photo-note">The Stormwalker Medicine Journal — an authentic keepsake for reflection.</p>
+          </div>
+          <div class="book-path grams">
+            <h3>Grams&apos; Sleepy Time Stories</h3>
+            <p class="lead">Cozy children&apos;s books for families, bedtime readers, and little dreamers.</p>
+            <ul class="book-list">
+              <li><strong>Colton and the Magic Train Ride</strong><br><a href="https://square.link/u/6yGaelnk" target="_blank" rel="noopener">Order the Book</a></li>
+              <li><strong>Coming Soon: Mermaid Lake</strong><br><span>The first adventure in The Wild Adventures of Princess Bug and the Marvelous Maddie Mae&trade;</span></li>
+              <li><em>More stories coming soon.</em></li>
+            </ul>
+            <div class="book-cta">
+              <a class="btn ghost" href="#grams-stories">Visit Grams&apos; Stories</a>
+            </div>
           </div>
         </div>
       </div>
@@ -687,16 +635,6 @@
             <h3>The Stormwalker Method&trade;</h3>
             <p>Five phases to transmute challenge into clarity.</p>
           </a>
-          <a class="offering-card" href="#deck-gallery">
-            <span class="offering-icon" aria-hidden="true">&#127183;</span>
-            <h3>Stormwalker Medicine Cards</h3>
-            <p>A mirror deck designed to reflect what you already feel.</p>
-          </a>
-          <a class="offering-card" href="#art">
-            <span class="offering-icon" aria-hidden="true">&#127912;</span>
-            <h3>Art &amp; Creations</h3>
-            <p>Original artwork woven into the Stormwalker path.</p>
-          </a>
           <a class="offering-card" href="index.html#contact">
             <span class="offering-icon" aria-hidden="true">&#128156;</span>
             <h3>Coaching &amp; Sessions</h3>
@@ -706,90 +644,7 @@
       </div>
     </section>
 
-    <!-- HERO: Stormwalker Medicine Cards -->
-    <section class="cards-hero">
-      <div class="wrap panel" style="text-align:center;">
-        <p class="eyebrow">New — Pre-Order</p>
-        <h1>Stormwalker Medicine Cards</h1>
-        <p class="sub">The Heyoka Mirror</p>
-
-        <p class="truth">
-          You don&apos;t come to these cards for comfort.<br>
-          You come for truth.
-        </p>
-
-        <p class="lead">
-          The Stormwalker Medicine Deck is a mirror — designed to reflect what you already feel… but haven&apos;t fully faced.
-        </p>
-        <p class="lead">
-          Each card cuts through patterns, distortion, and emotional noise so you can see clearly, choose differently, and move forward with intention.
-        </p>
-        <p class="truth">
-          This isn&apos;t passive guidance.<br>
-          <strong>This is participation.</strong>
-        </p>
-
-        <div class="price-row">
-          <span class="price">Pre-Order Price: $36</span>
-        </div>
-        <p class="price-note">Price increases after pre-sale</p>
-
-        <p style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:18px">
-          <a class="btn" href="https://square.link/u/gq3Hnpbn" target="_blank" rel="noopener">Pre-Order Your Deck</a>
-          <a class='btn ghost' href='#deck-gallery'>Learn More</a>
-        </p>
-
-        <p class="limited">Limited first run. Each deck is part of the original Stormwalker release.</p>
-      </div>
-    </section>
-
-    <!-- CARD GALLERY -->
-    <section id="deck-gallery">
-      <div class="wrap panel">
-        <p class="eyebrow">A Glimpse of the Deck</p>
-        <h2>From the Heyoka Mirror</h2>
-        <p class="lead" style="margin-bottom:22px">A handful of cards from the original Stormwalker release — painted, numbered, and carried with intention.</p>
-
-        <div style="display:flex;justify-content:center;">
-          <img src="assets/cards-showcase.png" alt="A selection of Stormwalker Medicine cards including mountains beneath an aurora, a crow, a question card, a luminous forest path, and an ink-drip painting" style="max-width:100%;height:auto;" loading="lazy">
-        </div>
-
-        <p style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:22px">
-          <a class="btn" href="https://square.link/u/gq3Hnpbn" target="_blank" rel="noopener">Pre-Order Your Deck</a>
-          <a class='btn ghost' href='#deck-gallery'>See the Full Cards Page</a>
-        </p>
-      </div>
-    </section>
-
-    <!-- GUIDEBOOK QR -->
-    <section id="guidebook">
-      <div class="wrap panel">
-        <div class="guidebook">
-          <div>
-            <div class="qr-frame">
-              <img src="assets/guidebook-qr.jpg" alt="QR code linking to the Stormwalker Medicine Cards digital guidebook">
-            </div>
-            <p class="qr-caption">Scan for the Digital Guidebook</p>
-          </div>
-          <div>
-            <p class="eyebrow">Companion Guidebook</p>
-            <h2>A guidebook that walks with your deck.</h2>
-            <p class="lead">
-              Every deck pairs with a digital guidebook so you can carry the full card meanings, reflection prompts, and Heyoka interpretations with you anywhere.
-            </p>
-            <p class="lead">
-              Scan the QR code with your phone camera to open the guidebook.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="divider" aria-hidden="true">
-      <div class="wrap" style="display:flex;justify-content:center;">
-        <img src="assets/divider-path.png" alt="">
-      </div>
-    </section>
+    <div class="section-divider" aria-hidden="true"></div>
 
     <!-- COACHING INTRO -->
     <section id="coaching">
@@ -855,34 +710,9 @@
       </div>
     </section>
 
-<section class="divider" aria-hidden="true">
-      <div class="wrap" style="display:flex;justify-content:center;">
-        <img src="assets/divider-path.png" alt="">
-      </div>
-    </section>
+    <div class="section-divider" aria-hidden="true"></div>
 
-    <!-- METHOD -->
-    <section id="stormwalker">
-      <div class="wrap panel">
-        <h2>The Stormwalker Method</h2>
-        <p class="lead">Five phases to transmute challenge into clarity:</p>
-        <ul>
-          <li><strong>Recognition</strong> — Identify the storm and its cycle.</li>
-          <li><strong>Descent</strong> — Guided statework to safely enter the root of the storm.</li>
-          <li><strong>Transmutation</strong> — Release emotional charge and rewrite inner contracts.</li>
-          <li><strong>Integration</strong> — Anchor the new pattern with daily practice.</li>
-          <li><strong>Emergence</strong> — Step forward renewed and embodied.</li>
-        </ul>
-      </div>
-    </section>
-
-<section class="divider" aria-hidden="true">
-      <div class="wrap" style="display:flex;justify-content:center;">
-        <img src="assets/divider-wing.png" alt="">
-      </div>
-    </section>
-
-    <!-- SYMBOLS / MYTHOS -->
+    <!-- SYMBOLS / MYTHOS (moved to About Kelly) -->
     <section id="symbols">
       <div class="wrap panel">
         <h2>Symbols Behind the Stormwalker Path</h2>
@@ -919,11 +749,24 @@
       </div>
     </section>
 
-    <section class="divider" aria-hidden="true">
-      <div class="wrap" style="display:flex;justify-content:center;">
-        <img src="assets/divider-wing.png" alt="">
+    <div class="section-divider" aria-hidden="true"></div>
+
+    <!-- METHOD -->
+    <section id="stormwalker">
+      <div class="wrap panel">
+        <h2>The Stormwalker Method</h2>
+        <p class="lead">Five phases to transmute challenge into clarity:</p>
+        <ul>
+          <li><strong>Recognition</strong> — Identify the storm and its cycle.</li>
+          <li><strong>Descent</strong> — Guided statework to safely enter the root of the storm.</li>
+          <li><strong>Transmutation</strong> — Release emotional charge and rewrite inner contracts.</li>
+          <li><strong>Integration</strong> — Anchor the new pattern with daily practice.</li>
+          <li><strong>Emergence</strong> — Step forward renewed and embodied.</li>
+        </ul>
       </div>
     </section>
+
+    <div class="section-divider" aria-hidden="true"></div>
 
     <!-- THE CALM SERIES -->
     <section id="calm-series">
@@ -1107,72 +950,17 @@
       </div>
     </section>
 
-    <section class="divider" aria-hidden="true">
-      <div class="wrap" style="display:flex;justify-content:center;">
-        <img src="assets/divider-dragonfly.png" alt="">
-      </div>
-    </section>
+    <div class="section-divider" aria-hidden="true"></div>
 
 
 
-    <section id="dream-portal">
-      <div class="wrap panel">
-        <div class="dream-portal-grid">
-          <div>
-            <h2>Step into Stormwalker Medicine</h2>
-            <p class="lead">Stormwalker Medicine is where dreams, symbols, art, reflection, and intuitive guidance come together inside Empowered Transcendence.</p>
-            <p>This is the place for the deeper work — the meanings beneath the surface, the messages that arrive through dreams, and the symbols that keep appearing when your inner knowing is trying to speak.</p>
-            <p>The Stormwalker Medicine Cards are part of that path: a mirror deck designed to help you recognize what is already moving through your life, your spirit, and your storm.</p>
-            <p style="display:flex;gap:10px;flex-wrap:wrap">
-              <a class='btn ghost' href='#deck-gallery'>Stormwalker Medicine Cards</a>
-            </p>
-          </div>
-          <div>
-            <img src="assets/stormwalker-medicine-dragon.png" alt="Purple storm dragon guardian representing Stormwalker Medicine" loading="lazy">
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- FAQ -->
-    <section id="art">
-      <div class="wrap panel">
-        <h2>Stormwalker Collection</h2>
-
-        <div class="art-grid">
-          <div>
-            <img class="art-thumb" src="assets/aceo-grid.png" alt="Stormwalker Collection — original artworks by Kelly Trett-Thomason">
-            <p class="small-note">
-              Artwork featured throughout this site is original work by Kelly Trett-Thomason. Selected pieces may be available.
-            </p>
-          </div>
-
-          <div>
-            <p class="lead">
-              This artwork isn’t here as decoration — it’s part of the Stormwalker path. If a piece stirs something in you, you’re not imagining it.
-            </p>
-            <p>
-              Many visitors ask whether the artwork is just a graphic or something they can actually own. It’s real, and it’s part of the living story behind this work.
-            </p>
-
-            <p style="margin-top:14px;">
-              <a class='btn' href='#art'>Explore the Art Collection</a>
-              <span style="display:inline-block;width:10px"></span>
-              <a class="btn ghost" href="#contact">Ask about a piece</a>
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- FEATURED BOOK -->
-    <section id="featured-book">
+    <section id="grams-stories">
       <div class="wrap panel">
         <p class="eyebrow">Grams&rsquo; Sleepy Time Stories</p>
-        <h2>A Children&rsquo;s Book Series</h2>
+        <h2>A Cozy Children&rsquo;s Book Shelf</h2>
         <div class="featured-book-grid">
           <div>
-            <img src="assets/colton-blue-train-website.jpg" alt="Grams' Sleepy Time Stories: Colton and the Magic Train Ride — book cover" loading="lazy">
+            <img src="assets/colton-magic-train-cover.jpg" alt="Colton and the Magic Train Ride — book cover by Kelly Trett-Thomason" loading="lazy">
           </div>
           <div>
             <span class="series-badge">Book One of the Series</span>
@@ -1190,13 +978,46 @@
               warm, comforting moments help busy little minds slow down and settle in for rest.
             </p>
             <div class="book-series-note">
-              <strong>This is just the beginning.</strong> Colton&rsquo;s first adventure opens a whole series of
-              sleepy time stories, with more gentle journeys on the way for your family to share.
+              <strong>This is just the beginning.</strong> Colton&rsquo;s first adventure opens the door to a
+              growing collection of gentle bedtime stories. Coming soon is <em>Mermaid Lake</em>, the first
+              adventure in <strong>The Wild Adventures of Princess Bug and the Marvelous Maddie Mae&trade;</strong>,
+              with many more magical journeys still waiting to be discovered.
             </div>
             <div class="book-cta">
-              <a class="btn" href="https://www.amazon.com/dp/B0H2KDHBHP" target="_blank" rel="noopener">Buy on Amazon</a>
+              <a class="btn" href="https://square.link/u/6yGaelnk" target="_blank" rel="noopener">Order the Book</a>
               <a class="btn ghost" href="https://amazon.com/author/kellytrettthomason" target="_blank" rel="noopener">Follow the Author</a>
             </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="updates">
+      <div class="wrap panel">
+        <p class="eyebrow">Stay in the Circle</p>
+        <h2>Updates for Readers and Families</h2>
+        <div class="signup-grid">
+          <div class="signup-card">
+            <h3>Stormwalker Updates</h3>
+            <p class="lead">Join the Stormwalker circle for occasional updates on books, guided audio, services, workshops, and special announcements.</p>
+            <form aria-label="Stormwalker Updates signup">
+              <div class="row">
+                <div><label>Name</label><input name="stormwalker-name" disabled /></div>
+                <div><label>Email</label><input type="email" name="stormwalker-email" disabled /></div>
+              </div>
+              <button class="btn coming-soon" type="button" disabled>Coming Soon</button>
+            </form>
+          </div>
+          <div class="signup-card grams">
+            <h3>Grams&apos; Story Club / Mail From Grams</h3>
+            <p class="lead">Join Grams&apos; Story Club for cozy letters, printable bookmarks, coloring pages, birthday surprises, and gentle bedtime adventures.</p>
+            <form aria-label="Grams Story Club signup">
+              <div class="row">
+                <div><label>Parent Name</label><input name="grams-name" disabled /></div>
+                <div><label>Email</label><input type="email" name="grams-email" disabled /></div>
+              </div>
+              <button class="btn coming-soon" type="button" disabled>Coming Soon</button>
+            </form>
           </div>
         </div>
       </div>
@@ -1278,8 +1099,9 @@
     -->
 
     <!-- SCHEDULE -->
-    <section id="schedule">
+    <section id="contact-book">
       <div class="wrap panel">
+        <span id="schedule"></span>
         <h2>Schedule Online</h2>
         <p class="lead">
           You can book directly through the embedded scheduler below.
