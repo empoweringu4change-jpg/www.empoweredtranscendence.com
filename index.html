@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Empowered Transcendence — The Stormwalker Method</title>
   <meta name="description" content="Kelly Trett-Thomason — Spiritual Empowerment Coach & Reiki Practitioner. The Stormwalker Method: guided statework, energy alignment, and empowerment coaching to help you navigate life's storms." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
   <style>
     :root{
       --midnight:#122f79; --ink:#eef2ff; --muted:#aab6d9;
@@ -32,11 +35,19 @@
       z-index:5;
     }
     .nav{display:flex;align-items:center;justify-content:space-between;height:70px}
-    .brand{font-weight:800;letter-spacing:.2px;font-size:20px}
+    .brand{
+      font-family:'Cinzel Decorative','Cormorant Garamond',Georgia,serif;
+      font-weight:400;
+      text-transform:uppercase;
+      letter-spacing:.18em;
+      font-size:clamp(18px,2.5vw,26px);
+      color:var(--ink);
+    }
     .menu a{margin:0 10px;color:var(--ink)}
     .menu a:hover{color:var(--gold)}
     @media (max-width:760px){
       .nav{height:auto;min-height:70px;align-items:flex-start;gap:12px;flex-direction:column;padding:14px 0}
+      .brand{font-size:clamp(17px,4.6vw,19px);letter-spacing:.11em}
       .menu{display:flex;flex-wrap:wrap;gap:8px 12px}
       .menu a{margin:0;font-size:.95rem}
     }
@@ -459,26 +470,66 @@
     }
 
     /* --- Empowered Transcendence intro --- */
-    .et-hero{padding-top:72px;padding-bottom:0}
-    .et-hero h1{
-      font-family:Georgia,serif;
-      font-size:clamp(32px,5.5vw,54px);
-      line-height:1.1;
-      margin:0 0 10px;
+    .et-hero{position:relative;top:-20px;margin-bottom:-20px;padding-top:22px;padding-bottom:36px;text-align:center}
+    .et-hero .sr-only{
+      position:absolute;width:1px;height:1px;padding:0;margin:-1px;
+      overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;
     }
     .et-hero .et-sub{
-      font-family:Georgia,serif;
+      font-family:'Cormorant Garamond',Georgia,serif;
       font-style:italic;
+      font-weight:500;
       color:#e7d7b4;
-      font-size:clamp(1.1rem,2.2vw,1.45rem);
-      margin:0 0 22px;
+      font-size:clamp(1.45rem,3.2vw,2.15rem);
+      line-height:1.2;
+      margin:0 0 16px;
+    }
+    .et-hero .et-logo{
+      display:block;
+      width:min(679px,90%);
+      height:auto;
+      margin:0 auto;
     }
     .et-hero .et-intro{
-      max-width:760px;
-      margin:0 auto 28px;
-      color:var(--muted);
-      font-size:1.05rem;
-      line-height:1.7;
+      max-width:1020px;
+      margin:0 auto 12px;
+      color:var(--ink);
+      font-family:'Cormorant Garamond',Georgia,serif;
+      font-size:clamp(1.2rem,1.75vw,1.38rem);
+      line-height:1.5;
+    }
+    .et-hero .et-intro + .et-intro{margin-top:4px;margin-bottom:20px}
+    .et-hero .et-actions{
+      display:flex;
+      gap:14px;
+      justify-content:center;
+      align-items:stretch;
+      flex-wrap:wrap;
+      margin:0;
+    }
+    .et-hero .et-actions .btn{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      min-width:220px;
+      min-height:52px;
+      padding:13px 22px;
+      box-sizing:border-box;
+      font-family:'Cormorant Garamond',Georgia,serif;
+      font-size:1.1rem;
+      line-height:1.25;
+    }
+    .et-hero .et-actions .btn:first-child{min-width:280px}
+    .et-hero .et-actions .btn.ghost{border-color:rgba(235,189,12,.62)}
+    @media (max-width:760px){
+      .et-hero{padding-top:16px;padding-bottom:30px}
+      .et-hero .et-logo{width:min(563px,96%)}
+      .et-hero .et-sub{font-size:clamp(1.35rem,6.4vw,1.78rem);margin-bottom:14px}
+      .et-hero .et-intro{font-size:1.12rem;line-height:1.48;margin-bottom:11px}
+      .et-hero .et-intro + .et-intro{margin-top:2px;margin-bottom:18px}
+      .et-hero .et-actions{gap:10px}
+      .et-hero .et-actions .btn,
+      .et-hero .et-actions .btn:first-child{width:100%;min-width:0;max-width:360px}
     }
 
     /* --- Offering cards --- */
@@ -547,19 +598,20 @@
   <main>
     <!-- HERO: Empowered Transcendence Intro -->
     <section class="et-hero" id="home">
-      <div class="wrap panel" style="text-align:center;">
-        <h1>Empowered Transcendence</h1>
+      <div class="wrap" style="text-align:center;">
+        <h1 class="sr-only">Empowered Transcendence — The Stormwalker Method</h1>
+        <img class="et-logo" src="assets/stormwalker-method-logo-transparent.png" alt="The Stormwalker Method&trade;">
         <p class="et-sub">Move Through the Storm. Return to Your Power.</p>
         <p class="et-intro">
-          Empowered Transcendence helps people move through life&apos;s storms with greater clarity, calm, confidence, and purpose.
+          Empowered Transcendence is the home of The Stormwalker Method&trade;&mdash;a philosophy and methodology for navigating life&apos;s hardest storms with practical tools, compassionate guidance, and growing self-trust.
         </p>
         <p class="et-intro">
-          Through coaching, guided audio experiences, The Stormwalker Method&trade;, books, and transformational support, you&apos;ll find practical and spiritual resources to help you heal, grow, and step into the life you&apos;re here to live.
+          Everything within Empowered Transcendence&mdash;from Stormwalker Medicine and the Gold Standard Collection to one-on-one guidance and future resources&mdash;grows from the same foundation: helping you become a confident navigator of your own life.
         </p>
-        <p style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap">
-          <a class="btn" href="#featured-book">Meet Stormwalker Medicine</a>
-          <a class="btn ghost" href="#books">Explore All Books</a>
-          <a class="btn ghost" href="#audio">Listen to Guided Audio</a>
+        <p class="et-actions">
+          <a class="btn" href="#stormwalker">Explore The Stormwalker Method&trade;</a>
+          <a class="btn ghost" href="#featured-book">Stormwalker Medicine</a>
+          <a class="btn ghost" href="#offerings">Choose Your Path</a>
         </p>
       </div>
     </section>
