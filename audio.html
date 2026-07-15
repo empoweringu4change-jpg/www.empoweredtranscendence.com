@@ -31,7 +31,7 @@
     }
 
     * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
+    html { scroll-behavior: smooth; overflow-x: hidden; }
     body {
       margin: 0;
       color: var(--cream);
@@ -159,6 +159,7 @@
       width: 100%;
       height: auto;
     }
+    .mobile-hero-content { display: none; }
     .hero-player-link {
       position: absolute;
       left: 42.2%;
@@ -416,13 +417,85 @@
       .library-heading { grid-template-columns: 1fr; gap: 1rem; }
     }
     @media (max-width: 760px) {
-      body { font-size: 18px; }
-      .nav-shell { min-height: 88px; align-items: flex-start; flex-direction: column; justify-content: center; gap: .5rem; padding-block: .8rem; }
-      .nav-links { width: 100%; gap: 1rem; overflow-x: auto; }
-      .nav-links a { flex: none; }
-      .hero { width: min(calc(100% - 1rem), 1440px); margin-top: .5rem; }
+      body { font-size: 17px; }
+      h2 { font-size: clamp(1.75rem, 8.2vw, 2.15rem); }
+      .nav-shell { min-height: 0; align-items: stretch; flex-direction: column; justify-content: center; gap: .65rem; padding-block: .85rem; }
+      .brand { font-size: .82rem; line-height: 1.35; letter-spacing: .1em; }
+      .nav-links { width: 100%; justify-content: space-between; gap: .5rem; overflow: visible; }
+      .nav-links a { flex: 0 auto; font-size: .78rem; letter-spacing: .02em; white-space: nowrap; }
+      .hero {
+        width: 100%;
+        min-height: 430px;
+        margin-top: 0;
+        border-bottom-color: rgba(215, 180, 102, .45);
+        isolation: isolate;
+      }
+      .hero-media { position: absolute; inset: 0; }
+      .hero-media::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(180deg, rgba(4, 5, 12, .35), rgba(4, 5, 12, .9));
+      }
+      .hero-media img {
+        width: 300%;
+        max-width: none;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        filter: brightness(.48) saturate(.88);
+      }
+      .hero-player-link { display: none; }
+      .mobile-hero-content {
+        position: relative;
+        z-index: 2;
+        display: flex;
+        min-height: 430px;
+        padding: 3.25rem 1.25rem 2.5rem;
+        align-items: center;
+        justify-content: flex-end;
+        flex-direction: column;
+        text-align: center;
+      }
+      .mobile-hero-content .eyebrow { margin-bottom: .8rem; }
+      .mobile-hero-content h1 {
+        max-width: 21rem;
+        margin-bottom: .85rem;
+        font-size: clamp(2rem, 10vw, 2.75rem);
+        line-height: 1.08;
+        text-shadow: 0 3px 20px rgba(0, 0, 0, .95);
+      }
+      .mobile-hero-content p:not(.eyebrow) {
+        max-width: 21rem;
+        margin-bottom: 1.25rem;
+        color: var(--paper);
+        font-size: 1.03rem;
+        line-height: 1.45;
+        text-shadow: 0 2px 12px rgba(0, 0, 0, .95);
+      }
+      .collection-nav { position: relative; }
+      .collection-nav .wrap {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0;
+        padding-block: .4rem;
+        overflow: visible;
+      }
+      .collection-nav a {
+        display: flex;
+        min-height: 48px;
+        padding: .65rem .45rem;
+        align-items: center;
+        justify-content: center;
+        border-bottom: 1px solid rgba(215, 180, 102, .14);
+        font-size: .78rem;
+        line-height: 1.2;
+        text-align: center;
+      }
+      .collection-nav a:nth-last-child(-n + 2) { border-bottom: 0; }
       .welcome-grid, .studio-panel, .gold-grid, .sample-panel { grid-template-columns: 1fr; }
       .welcome-copy { max-width: 620px; }
+      .welcome-copy h2 { max-width: 20rem; font-size: clamp(1.8rem, 8vw, 2.2rem); }
       .studio-mark { min-height: 280px; border-right: 0; border-bottom: 1px solid rgba(215, 180, 102, .24); }
       .shelf-heading { grid-template-columns: 1fr; }
       .record-card { grid-column: 1 / -1; }
@@ -433,6 +506,8 @@
     }
     @media (max-width: 480px) {
       .wrap { width: min(calc(100% - 1.25rem), var(--max)); }
+      .nav-links a { font-size: .73rem; }
+      .mobile-hero-content { padding-inline: 1rem; }
       .player-controls { grid-template-columns: 1fr; justify-items: center; }
       .waveform { width: 100%; }
       .record-grid { padding-inline: .8rem; }
@@ -466,6 +541,12 @@
         <img src="assets/listening-room-wide.png" alt="The Stormwalker Listening Room artwork, including a personal welcome and Begin Here audio player from Kelly.">
       </div>
       <button class="hero-player-link" id="hero-welcome-play" type="button" aria-label="Play Kelly’s personal welcome"></button>
+      <div class="mobile-hero-content">
+        <p class="eyebrow">Spellbound Audio presents</p>
+        <h1>Stormwalker Audio Library</h1>
+        <p>Kick your shoes off. Let your shoulders drop. Stay awhile.</p>
+        <a class="button" href="#welcome">Begin Here</a>
+      </div>
     </section>
 
     <nav class="collection-nav" aria-label="Audio library collections">
@@ -473,7 +554,6 @@
         <a href="#everyday">Everyday Collection</a>
         <a href="#quiet-night">Quiet Night Series</a>
         <a href="#specialty">Specialty Recordings</a>
-        <a href="#member-library">Future Member Library</a>
         <a href="#gold-standard">Gold Standard</a>
       </div>
     </nav>
@@ -614,19 +694,6 @@
           <p class="shelf-note">Personalized recording pricing varies by length, customization, and intended use.</p>
         </section>
 
-        <section class="shelf" id="member-library" aria-labelledby="member-title">
-          <div class="shelf-heading">
-            <h2 id="member-title">Future Member Library</h2>
-            <p>A reserved shelf for the next chapter of the Stormwalker listening experience.</p>
-          </div>
-          <div class="future-card">
-            <div>
-              <p class="eyebrow">The shelf is being prepared</p>
-              <h3>A deeper library is taking shape.</h3>
-              <p>No new recordings are being announced yet. This space remains intentionally reserved for the future member library.</p>
-            </div>
-          </div>
-        </section>
       </div>
     </section>
 
