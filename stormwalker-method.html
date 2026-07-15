@@ -1,0 +1,580 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>The Stormwalker Method — Empowered Transcendence</title>
+  <meta name="description" content="The Stormwalker Method is a philosophy of guided independence for navigating life's storms with awareness, resilience, adaptability, and self-trust." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --midnight:#122f79;
+      --deep-navy:#0d1528;
+      --ink:#eef2ff;
+      --muted:#b7c1dc;
+      --gold:#ebbd0c;
+      --old-gold:#c99d31;
+      --cream:#f1e7d2;
+      --violet:#871db8;
+      --panel:rgba(8,12,22,.76);
+      --panel-warm:rgba(25,22,27,.78);
+      --ring:rgba(255,255,255,.09);
+      --gold-ring:rgba(235,189,12,.34);
+      --shadow:0 22px 55px rgba(0,0,0,.42);
+      --max:1120px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      background:
+        radial-gradient(900px 640px at 8% 2%, rgba(135,29,184,.2), transparent 64%),
+        radial-gradient(820px 540px at 92% 7%, rgba(235,189,12,.11), transparent 62%),
+        radial-gradient(950px 700px at 50% 54%, rgba(18,47,121,.3), transparent 68%),
+        linear-gradient(180deg, var(--deep-navy) 0%, #121733 34%, #19123d 68%, var(--midnight) 100%);
+      color:var(--ink);
+      font:17px/1.72 Georgia,'Times New Roman',serif;
+      overflow-x:hidden;
+    }
+    body::before{
+      content:"";
+      position:fixed;
+      inset:0;
+      pointer-events:none;
+      z-index:-1;
+      opacity:.18;
+      background-image:
+        linear-gradient(rgba(255,255,255,.018) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.012) 1px, transparent 1px);
+      background-size:48px 48px;
+      mask-image:linear-gradient(to bottom, black, transparent 72%);
+    }
+    a{color:var(--gold);text-decoration:none}
+    a:focus-visible,
+    button:focus-visible{outline:2px solid var(--gold);outline-offset:4px}
+    .wrap{width:min(100% - 40px,var(--max));margin:0 auto}
+    .skip-link{
+      position:absolute;
+      left:18px;
+      top:-80px;
+      z-index:20;
+      padding:10px 14px;
+      border-radius:8px;
+      background:var(--cream);
+      color:var(--deep-navy);
+      font-weight:700;
+    }
+    .skip-link:focus{top:14px}
+    header{
+      position:sticky;
+      top:0;
+      z-index:10;
+      border-bottom:1px solid var(--ring);
+      background:rgba(5,8,16,.72);
+      backdrop-filter:blur(12px);
+    }
+    .nav{display:flex;align-items:center;justify-content:space-between;min-height:70px}
+    .brand{
+      color:var(--ink);
+      font-family:'Cinzel Decorative','Cormorant Garamond',Georgia,serif;
+      font-size:clamp(18px,2.5vw,26px);
+      font-weight:400;
+      letter-spacing:.18em;
+      text-transform:uppercase;
+    }
+    .menu{display:flex;align-items:center;flex-wrap:wrap;gap:0 20px}
+    .menu a{color:var(--ink);font-family:system-ui,Segoe UI,sans-serif;font-size:16px}
+    .menu a:hover{color:var(--gold)}
+    main{isolation:isolate}
+    section{position:relative;padding:88px 0}
+    h1,h2,h3,p{margin-top:0}
+    h1,h2,h3{font-family:'Cormorant Garamond',Georgia,serif;font-weight:500}
+    h1{font-size:clamp(3.2rem,8vw,6.6rem);line-height:.9;letter-spacing:-.035em;margin-bottom:24px}
+    h2{font-size:clamp(2.35rem,5vw,4.2rem);line-height:1;margin-bottom:22px;letter-spacing:-.02em}
+    h3{font-size:clamp(1.45rem,2.5vw,2rem);line-height:1.14;margin-bottom:12px}
+    p{margin-bottom:1.15em}
+    .eyebrow{
+      color:#e7d7b4;
+      font-family:system-ui,Segoe UI,sans-serif;
+      font-size:.76rem;
+      font-weight:700;
+      letter-spacing:.2em;
+      text-transform:uppercase;
+      margin-bottom:16px;
+    }
+    .lead{color:var(--muted);font-size:clamp(1.1rem,2vw,1.32rem);line-height:1.65}
+    .gold-rule{
+      width:88px;
+      height:1px;
+      margin:26px 0;
+      background:linear-gradient(90deg,var(--gold),transparent);
+    }
+    .section-divider{width:min(100% - 40px,var(--max));height:1px;margin:0 auto;background:linear-gradient(90deg,transparent,rgba(235,189,12,.42),rgba(255,255,255,.1),transparent)}
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:9px;
+      min-height:48px;
+      padding:11px 19px;
+      border:1px solid transparent;
+      border-radius:12px;
+      background:linear-gradient(135deg,var(--violet),var(--gold));
+      box-shadow:0 8px 24px rgba(0,0,0,.32);
+      color:#090d17;
+      font-family:system-ui,Segoe UI,sans-serif;
+      font-size:.93rem;
+      font-weight:800;
+      transition:transform .2s ease,box-shadow .2s ease;
+    }
+    .btn:hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(0,0,0,.42)}
+    .hero{min-height:calc(100vh - 70px);display:grid;place-items:center;padding:90px 0 110px;overflow:hidden}
+    .hero::before{
+      content:"";
+      position:absolute;
+      width:min(76vw,900px);
+      aspect-ratio:1;
+      right:-26%;
+      top:-26%;
+      border:1px solid rgba(235,189,12,.13);
+      border-radius:50%;
+      box-shadow:0 0 0 80px rgba(235,189,12,.018),0 0 0 160px rgba(235,189,12,.012);
+    }
+    .hero-grid{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(280px,.75fr);gap:74px;align-items:center}
+    .hero-copy{position:relative;z-index:1}
+    .hero-copy .lead{max-width:700px}
+    .hero-note{max-width:620px;color:#d8deef;font-style:italic}
+    .hero-mark{position:relative;display:grid;place-items:center;min-height:430px}
+    .hero-mark::before,
+    .hero-mark::after{
+      content:"";
+      position:absolute;
+      border-radius:50%;
+      border:1px solid var(--gold-ring);
+    }
+    .hero-mark::before{width:350px;height:350px;box-shadow:inset 0 0 90px rgba(235,189,12,.07),0 0 60px rgba(235,189,12,.06)}
+    .hero-mark::after{width:285px;height:285px;border-color:rgba(255,255,255,.1)}
+    .hero-logo{position:relative;z-index:2;width:min(100%,440px);height:auto;filter:drop-shadow(0 18px 32px rgba(0,0,0,.5))}
+    .compass-star{position:absolute;bottom:10px;z-index:3;width:58px;height:58px;color:var(--gold);filter:drop-shadow(0 0 12px rgba(235,189,12,.36))}
+    .intro-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:72px;align-items:start}
+    .intro-grid h2{position:sticky;top:116px}
+    .prose{max-width:720px}
+    .prose p:last-child{margin-bottom:0}
+    .distinction{
+      margin-top:28px;
+      padding:22px 24px;
+      border-left:2px solid var(--gold);
+      background:linear-gradient(90deg,rgba(235,189,12,.09),transparent);
+      color:#e6e9f4;
+    }
+    .distinction strong{color:var(--cream)}
+    .independence{
+      overflow:hidden;
+      background:
+        radial-gradient(700px 360px at 15% 40%,rgba(235,189,12,.09),transparent 70%),
+        linear-gradient(90deg,rgba(8,12,22,.42),rgba(8,12,22,.74));
+    }
+    .independence-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:64px;align-items:center}
+    .lantern{
+      position:relative;
+      min-height:430px;
+      display:grid;
+      place-items:center;
+    }
+    .lantern-glow{position:absolute;width:230px;height:230px;border-radius:50%;background:radial-gradient(circle,rgba(255,226,127,.3),rgba(235,189,12,.09) 38%,transparent 70%);filter:blur(2px);animation:breathe 5s ease-in-out infinite}
+    .lantern svg{position:relative;width:170px;color:#e9c75e;filter:drop-shadow(0 10px 28px rgba(0,0,0,.45)) drop-shadow(0 0 20px rgba(235,189,12,.15))}
+    @keyframes breathe{50%{transform:scale(1.08);opacity:.82}}
+    @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.lantern-glow{animation:none}.btn{transition:none}}
+    .role-section{padding-bottom:110px}
+    .role-head{max-width:720px;margin-bottom:45px}
+    .role-layout{display:grid;grid-template-columns:.68fr 1.32fr;gap:36px;align-items:stretch}
+    .role-artwork-panel{
+      min-height:620px;
+      border:1px solid var(--gold-ring);
+      border-radius:22px;
+      background-color:var(--panel);
+      background-image:url("assets/beside-never-above.png");
+      background-repeat:no-repeat;
+      background-position:center bottom;
+      background-size:auto 122%;
+      box-shadow:var(--shadow);
+    }
+    .role-list{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+    .role-card{
+      min-height:196px;
+      padding:26px;
+      border:1px solid var(--ring);
+      border-radius:18px;
+      background:rgba(8,12,22,.62);
+      box-shadow:0 14px 30px rgba(0,0,0,.2);
+    }
+    .role-card:nth-child(2),.role-card:nth-child(5){transform:translateY(18px)}
+    .role-card .number{display:block;color:var(--old-gold);font-family:'Cormorant Garamond',Georgia,serif;font-size:1.05rem;font-style:italic;margin-bottom:20px}
+    .role-card p{color:var(--muted);font-size:.98rem;margin-bottom:0}
+    .principles{background:rgba(6,10,20,.28)}
+    .principles-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:28px}
+    .principle{
+      position:relative;
+      min-height:360px;
+      padding:38px;
+      overflow:hidden;
+      border:1px solid var(--ring);
+      border-radius:22px;
+      background:var(--panel);
+      box-shadow:var(--shadow);
+    }
+    .principle::after{content:"";position:absolute;right:-70px;bottom:-70px;width:210px;height:210px;border:1px solid rgba(235,189,12,.18);border-radius:50%;box-shadow:0 0 0 24px rgba(235,189,12,.02),0 0 0 48px rgba(235,189,12,.012)}
+    .principle .eyebrow{margin-bottom:40px}
+    .principle p{position:relative;z-index:1;color:var(--muted)}
+    .principle p:last-child{margin-bottom:0}
+    .lantern-section{text-align:center;overflow:hidden}
+    .lantern-section::before{content:"";position:absolute;left:50%;top:88px;width:1px;height:90px;background:linear-gradient(var(--gold),transparent)}
+    .lantern-copy{max-width:790px;margin:0 auto;padding-top:92px}
+    .lantern-copy h2{font-size:clamp(3rem,7vw,5.8rem)}
+    .lantern-copy .lead{font-style:italic}
+    .navigator-band{padding:66px 0}
+    .navigator-panel{
+      display:grid;
+      grid-template-columns:.8fr 1.2fr;
+      gap:58px;
+      align-items:center;
+      padding:48px;
+      border:1px solid var(--gold-ring);
+      border-radius:22px;
+      background:
+        radial-gradient(620px 260px at 100% 0%,rgba(135,29,184,.18),transparent 65%),
+        var(--panel-warm);
+      box-shadow:var(--shadow);
+    }
+    .navigator-panel h2{margin-bottom:0}
+    .navigator-panel p{color:var(--muted);margin-bottom:0}
+    .ecosystem-head{display:grid;grid-template-columns:.9fr 1.1fr;gap:50px;align-items:end;margin-bottom:50px}
+    .ecosystem-head p{color:var(--muted);margin-bottom:7px}
+    .ecosystem-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:18px}
+    .ecosystem-card{
+      position:relative;
+      min-height:190px;
+      padding:25px;
+      border:1px solid var(--ring);
+      border-radius:18px;
+      background:rgba(8,12,22,.64);
+      transition:transform .2s ease,border-color .2s ease,background .2s ease;
+    }
+    .ecosystem-card:hover{transform:translateY(-3px);border-color:var(--gold-ring);background:rgba(15,18,30,.84)}
+    .ecosystem-card::before{content:"";position:absolute;left:25px;top:0;width:44px;height:1px;background:var(--gold)}
+    .ecosystem-card:nth-child(1),.ecosystem-card:nth-child(2),.ecosystem-card:nth-child(3){grid-column:span 4}
+    .ecosystem-card:nth-child(4),.ecosystem-card:nth-child(5){grid-column:span 6}
+    .ecosystem-card:nth-child(n+6){grid-column:span 3}
+    .ecosystem-card h3{font-size:1.48rem;margin-top:13px}
+    .ecosystem-card p{color:var(--muted);font-size:.94rem;line-height:1.55;margin-bottom:0}
+    .artifact{color:var(--old-gold);font-family:system-ui,Segoe UI,sans-serif;font-size:.7rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase}
+    .measure{padding:115px 0 125px}
+    .measure-grid{display:grid;grid-template-columns:.72fr 1.28fr;gap:78px;align-items:start}
+    .measure-title{position:sticky;top:116px}
+    .measure-title .seal{display:grid;place-items:center;width:86px;height:86px;margin-bottom:28px;border:1px solid var(--gold-ring);border-radius:50%;color:var(--gold)}
+    .measure-copy{font-size:clamp(1.08rem,2vw,1.28rem);color:#dce2f2}
+    .measure-copy .short-line{font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(2rem,4vw,3.15rem);line-height:1;color:var(--cream);margin:34px 0}
+    .measure-copy .closing{margin-top:42px;padding-top:30px;border-top:1px solid var(--gold-ring);color:#f1e7d2;font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(1.55rem,3vw,2.25rem);font-style:italic;line-height:1.35}
+    .final-cta{padding:0 0 120px;text-align:center}
+    .final-cta-inner{max-width:760px;margin:0 auto;padding:52px 30px;border-top:1px solid var(--gold-ring);border-bottom:1px solid var(--gold-ring)}
+    .final-cta h2{font-size:clamp(2rem,4vw,3.25rem)}
+    .final-cta p{color:var(--muted);max-width:610px;margin:0 auto 26px}
+    footer{padding:30px 0 56px;border-top:1px solid var(--ring);color:var(--muted);font-family:system-ui,Segoe UI,sans-serif;font-size:.92rem;text-align:center}
+    @media (max-width:920px){
+      .hero-grid,.intro-grid,.independence-grid,.role-layout,.navigator-panel,.ecosystem-head,.measure-grid{grid-template-columns:1fr}
+      .hero{min-height:auto}
+      .hero-copy{text-align:center}
+      .hero-copy .lead,.hero-note{margin-left:auto;margin-right:auto}
+      .gold-rule{margin-left:auto;margin-right:auto;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
+      .hero-mark{min-height:330px}
+      .hero-mark::before{width:300px;height:300px}
+      .hero-mark::after{width:240px;height:240px}
+      .intro-grid h2,.measure-title{position:static}
+      .lantern{min-height:320px}
+      .role-artwork-panel{min-height:620px;background-size:cover;background-position:center 68%}
+      .role-list{padding-bottom:18px}
+      .navigator-panel{gap:24px;padding:38px}
+      .ecosystem-head{gap:10px}
+      .ecosystem-card:nth-child(n){grid-column:span 6}
+      .measure-grid{gap:35px}
+    }
+    @media (max-width:760px){
+      .nav{min-height:70px;align-items:flex-start;gap:12px;flex-direction:column;padding:14px 0}
+      .brand{font-size:clamp(17px,4.6vw,19px);letter-spacing:.11em}
+      .menu{gap:8px 12px}
+      .menu a{font-size:.95rem}
+      section{padding:68px 0}
+      .hero{padding-top:72px}
+      .hero-grid{gap:30px}
+      .role-list,.principles-grid{grid-template-columns:1fr}
+      .role-artwork-panel{min-height:580px}
+      .role-card:nth-child(n){transform:none;min-height:auto}
+      .principle{min-height:auto;padding:30px}
+      .principle .eyebrow{margin-bottom:24px}
+      .ecosystem-card:nth-child(n){grid-column:1/-1;min-height:auto}
+      .measure{padding:78px 0 90px}
+    }
+    @media (max-width:480px){
+      .wrap{width:min(100% - 28px,var(--max))}
+      .hero-mark{min-height:260px}
+      .hero-mark::before{width:240px;height:240px}
+      .hero-mark::after{width:195px;height:195px}
+      .role-artwork-panel{min-height:540px}
+      .navigator-panel{padding:28px}
+      .role-card,.ecosystem-card{padding:22px}
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <header>
+    <div class="wrap nav">
+      <a class='brand' href='/#home'>Empowered Transcendence</a>
+      <nav class="menu" aria-label="Primary navigation">
+        <a href='/#home'>Home</a>
+        <a href='/#about'>About Kelly</a>
+        <a href='/#books'>Books</a>
+        <a href='/#coaching'>Services</a>
+        <a href='/#audio'>Audio</a>
+        <a href='/#contact-book'>Contact / Book</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section class="hero" aria-labelledby="page-title">
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">A Philosophy of Guided Independence</p>
+          <h1 id="page-title">The Stormwalker Method</h1>
+          <div class="gold-rule" aria-hidden="true"></div>
+          <p class="lead">A practical philosophy for navigating life&rsquo;s storms with awareness, resilience, pattern recognition, adaptability, and self-trust.</p>
+          <p class="hero-note">Not a promise of a life without storms. A way to meet them with clearer eyes, steadier hands, and a growing trust in your own ability to find the path forward.</p>
+        </div>
+        <div class="hero-mark" aria-hidden="true">
+          <img class="hero-logo" src="assets/stormwalker-method-logo-transparent.png" alt="" />
+          <svg class="compass-star" viewBox="0 0 64 64" fill="none">
+            <path d="M32 2l5.8 24.2L62 32l-24.2 5.8L32 62l-5.8-24.2L2 32l24.2-5.8L32 2Z" fill="currentColor" opacity=".92"/>
+            <circle cx="32" cy="32" r="4" fill="#fff3bf"/>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider" aria-hidden="true"></div>
+
+    <section aria-labelledby="what-is-title">
+      <div class="wrap intro-grid">
+        <div>
+          <p class="eyebrow">The Foundation</p>
+          <h2 id="what-is-title">What Is the Stormwalker Method?</h2>
+        </div>
+        <div class="prose">
+          <p class="lead">The Stormwalker Method helps people recognize patterns, understand what difficult experiences may be teaching them, develop practical tools, and become more capable navigators of their own lives.</p>
+          <p>It begins with a simple truth: a storm can disorient you without defining you. When you learn to pause, notice what is repeating, listen for what matters, and respond with intention, difficulty can become a place of honest learning rather than a place where you lose yourself.</p>
+          <p>The Method offers a way to think, reflect, and move. It makes room for the reality that each person&rsquo;s life, values, timing, and inner knowing are their own.</p>
+          <div class="distinction">
+            <strong>The Stormwalker Method is not the same as the <em>Stormwalker Medicine</em> book.</strong> The book reveals how the Method was forged through Kelly&rsquo;s lived experience. The Method helps others walk their own path, discover their own understanding, and carry forward what is truly theirs.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="independence" aria-labelledby="independence-title">
+      <div class="wrap independence-grid">
+        <div>
+          <p class="eyebrow">The Central Promise</p>
+          <h2 id="independence-title">Guided Independence</h2>
+          <p class="lead">The Method does not exist to create dependence on a coach, program, practice, or guide.</p>
+          <p>Its purpose is to help people become capable, confident, and increasingly self-directed. Guidance can offer steadiness while the way ahead is difficult to see. Good guidance also knows when to step back.</p>
+          <p>A Stormwalker shares what may be useful, helps bring hidden patterns into view, and respects the person walking as the one who must ultimately choose the direction.</p>
+        </div>
+        <div class="lantern" aria-hidden="true">
+          <div class="lantern-glow"></div>
+          <svg viewBox="0 0 180 240" fill="none">
+            <path d="M58 58V42c0-26 64-26 64 0v16" stroke="currentColor" stroke-width="5" stroke-linecap="round"/>
+            <path d="M48 70h84l15 142H33L48 70Z" stroke="currentColor" stroke-width="4"/>
+            <path d="M62 88h56l10 99H52L62 88Z" fill="rgba(235,189,12,.12)" stroke="currentColor" stroke-width="3"/>
+            <path d="M90 111c14 17 15 33 0 48-15-15-14-31 0-48Z" fill="#ffe78a"/>
+            <path d="M90 126c7 9 7 17 0 25-7-8-7-16 0-25Z" fill="#fff5c7"/>
+            <path d="M24 212h132M43 228h94" stroke="currentColor" stroke-width="5" stroke-linecap="round"/>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <section class="role-section" aria-labelledby="role-title">
+      <div class="wrap">
+        <div class="role-head">
+          <p class="eyebrow">The Guide Beside You</p>
+          <h2 id="role-title">The Role of a Stormwalker</h2>
+          <p class="lead">A Stormwalker is a trusted, seasoned guide&mdash;not a rescuer, not an authority over another person&rsquo;s life.</p>
+        </div>
+        <div class="role-layout">
+          <div class="role-artwork-panel" role="img" aria-label="A lantern-bearing guide walking beside another person along an illuminated mountain path"></div>
+          <div class="role-list">
+            <article class="role-card">
+              <span class="number">I</span>
+              <h3>Walks beside people</h3>
+              <p>Offers steady company without taking over the journey.</p>
+            </article>
+            <article class="role-card">
+              <span class="number">II</span>
+              <h3>Offers tools and perspective</h3>
+              <p>Shares what may help while leaving room for personal judgment.</p>
+            </article>
+            <article class="role-card">
+              <span class="number">III</span>
+              <h3>Asks thoughtful questions</h3>
+              <p>Creates space for insight rather than supplying every answer.</p>
+            </article>
+            <article class="role-card">
+              <span class="number">IV</span>
+              <h3>Helps illuminate the path</h3>
+              <p>Brings light to what may be difficult to see clearly in the moment.</p>
+            </article>
+            <article class="role-card">
+              <span class="number">V</span>
+              <h3>Encourages self-trust</h3>
+              <p>Strengthens pattern recognition and adaptability so confidence can grow from within.</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="principles" aria-label="Core Stormwalker principles">
+      <div class="wrap principles-grid">
+        <article class="principle" aria-labelledby="principles-title">
+          <p class="eyebrow">How the Method Teaches</p>
+          <h2 id="principles-title">Principles, Not Prescriptions</h2>
+          <p>Real life changes. The right choice in one season may not fit the next.</p>
+          <p>The Method teaches adaptable principles rather than rigid instructions. People need enough understanding to think clearly, adjust wisely, and make sound choices for themselves&mdash;especially when the familiar map no longer matches the ground beneath their feet.</p>
+        </article>
+        <article class="principle" aria-labelledby="medicine-title">
+          <p class="eyebrow">What Cannot Be Given</p>
+          <h2 id="medicine-title">The Medicine Is Personal</h2>
+          <p>No guide can hand another person their medicine or define it for them.</p>
+          <p>The meaning, lesson, strength, truth, or transformation inside a storm belongs to the individual. A guide may help uncover it, but recognition must be personal. What becomes medicine is what is honestly seen, understood, and claimed for oneself.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="lantern-section" aria-labelledby="lantern-title">
+      <div class="wrap lantern-copy">
+        <p class="eyebrow">The Enduring Aim</p>
+        <h2 id="lantern-title">Light Your Own Lantern</h2>
+        <p class="lead">The goal is not for people to follow Kelly&rsquo;s light&mdash;or any guide&rsquo;s light&mdash;forever.</p>
+        <p>The goal is to help them learn to light, trust, and tend their own lantern. To recognize when it burns low. To know what helps it brighten. To carry enough light to take the next honest step, even when the whole road is not yet visible.</p>
+      </div>
+    </section>
+
+    <section class="navigator-band" aria-labelledby="navigator-title">
+      <div class="wrap navigator-panel">
+        <h2 id="navigator-title">Develop Navigators, Not Followers</h2>
+        <p>The Method teaches people how to think, learn, adapt, recognize patterns, and trust themselves. Its purpose is long-term capability, not long-term dependency. The work succeeds when a person can meet change with greater discernment and continue forward under their own direction.</p>
+      </div>
+    </section>
+
+    <section aria-labelledby="ecosystem-title">
+      <div class="wrap">
+        <div class="ecosystem-head">
+          <div>
+            <p class="eyebrow">One Root, Many Branches</p>
+            <h2 id="ecosystem-title">The Stormwalker Ecosystem</h2>
+          </div>
+          <p>Every offering is a different doorway into the same philosophy. Some are made for reading, some for reflection, some for guided practice, and some for learning how to walk beside others.</p>
+        </div>
+        <div class="ecosystem-grid">
+          <article class="ecosystem-card">
+            <span class="artifact">Origin Story</span>
+            <h3>Stormwalker Medicine</h3>
+            <p>The book that reveals how the Method was forged.</p>
+          </article>
+          <article class="ecosystem-card">
+            <span class="artifact">Reflection</span>
+            <h3>Stormwalker Medicine Journal</h3>
+            <p>A companion for noticing patterns and recording personal insight.</p>
+          </article>
+          <article class="ecosystem-card">
+            <span class="artifact">Daily Practice</span>
+            <h3>Stormwalker Medicine Cards</h3>
+            <p>Prompts and principles for meeting the moment with intention.</p>
+          </article>
+          <article class="ecosystem-card">
+            <span class="artifact">Guidance</span>
+            <h3>Stormwalker Method Coaching</h3>
+            <p>Thoughtful, personal support centered on practical tools and increasing independence.</p>
+          </article>
+          <article class="ecosystem-card">
+            <span class="artifact">Collected Work</span>
+            <h3>The Gold Standard Collection</h3>
+            <p>A curated branch of the Stormwalker world grounded in enduring quality and meaning.</p>
+          </article>
+          <article class="ecosystem-card">
+            <span class="artifact">Listening</span>
+            <h3>Guided Audio and Hypnosis</h3>
+            <p>Quiet experiences for reflection, grounding, and intentional inner work.</p>
+          </article>
+          <article class="ecosystem-card">
+            <span class="artifact">To Come</span>
+            <h3>Courses and Workshops</h3>
+            <p>Future spaces for learning and practicing the Method.</p>
+          </article>
+          <article class="ecosystem-card">
+            <span class="artifact">To Come</span>
+            <h3>Retreats</h3>
+            <p>Future immersive gatherings for deeper reflection and connection.</p>
+          </article>
+          <article class="ecosystem-card">
+            <span class="artifact">To Come</span>
+            <h3>Training and Certification</h3>
+            <p>Future preparation for those called to become trusted Stormwalker guides.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider" aria-hidden="true"></div>
+
+    <section class="measure" aria-labelledby="measure-title">
+      <div class="wrap measure-grid">
+        <div class="measure-title">
+          <div class="seal" aria-hidden="true">
+            <svg width="42" height="42" viewBox="0 0 42 42" fill="none">
+              <path d="M21 2l3.9 15.1L40 21l-15.1 3.9L21 40l-3.9-15.1L2 21l15.1-3.9L21 2Z" stroke="currentColor"/>
+              <circle cx="21" cy="21" r="4" fill="currentColor"/>
+            </svg>
+          </div>
+          <p class="eyebrow">The Closing Principle</p>
+          <h2 id="measure-title">The Measure of Success</h2>
+        </div>
+        <div class="measure-copy">
+          <p>The Stormwalker Method is built on guided independence.</p>
+          <p>A Stormwalker may walk beside you, offer tools, ask thoughtful questions, and help illuminate what you cannot yet see clearly. But the goal is never permanent dependence.</p>
+          <p class="short-line">The goal is growth.</p>
+          <p class="short-line">The goal is self-trust.</p>
+          <p>The goal is for you to become more confident in your own ability to recognize patterns, make sound decisions, adapt when life changes, and keep moving forward.</p>
+          <p>Success is not measured by how long someone needs a Stormwalker. Success is measured by how confidently they can continue walking after they no longer do.</p>
+          <p class="closing">The greatest work of a Stormwalker is helping someone learn to light their own lantern.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="final-cta" aria-labelledby="next-step-title">
+      <div class="wrap final-cta-inner">
+        <p class="eyebrow">The Story Behind the Method</p>
+        <h2 id="next-step-title">Begin with <em>Stormwalker Medicine</em></h2>
+        <p>Discover the lived journey that forged the philosophy, and the story at the root of the Stormwalker path.</p>
+        <a class='btn' href='/#featured-book'>Explore the Book <span aria-hidden="true">&rarr;</span></a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">&copy; <script>document.write(new Date().getFullYear());</script> Empowered Transcendence &mdash; The Stormwalker Method</div>
+  </footer>
+</body>
+</html>
