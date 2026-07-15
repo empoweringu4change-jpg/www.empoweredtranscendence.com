@@ -1,0 +1,715 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The Listening Room | Stormwalker Audio Library</title>
+  <meta name="description" content="Enter the Stormwalker Listening Room: a curated library of guided audio experiences produced with the atmosphere and craftsmanship of Spellbound Audio Productions.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --night: #070a18;
+      --navy: #0d1938;
+      --storm: #182b58;
+      --plum: #35122f;
+      --amethyst: #6d356c;
+      --magenta: #9c315e;
+      --amber: #d68a3c;
+      --candle: #f0b765;
+      --gold: #d7b466;
+      --cream: #f3ead8;
+      --paper: #d9ccb7;
+      --muted: #b9ad9f;
+      --wood: #24150f;
+      --line: rgba(215, 180, 102, .28);
+      --glass: rgba(9, 9, 19, .78);
+      --max: 1180px;
+      --serif: "Cormorant Garamond", Georgia, serif;
+      --display: "Cinzel Decorative", Georgia, serif;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--cream);
+      background:
+        radial-gradient(circle at 80% 8%, rgba(156, 49, 94, .2), transparent 26rem),
+        radial-gradient(circle at 12% 32%, rgba(109, 53, 108, .2), transparent 30rem),
+        linear-gradient(180deg, #080914 0%, #111225 32%, #1c1023 67%, #090b18 100%);
+      font-family: var(--serif);
+      font-size: 19px;
+      line-height: 1.65;
+    }
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: 20;
+      pointer-events: none;
+      opacity: .18;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.18'/%3E%3C/svg%3E");
+      mix-blend-mode: soft-light;
+    }
+    img { max-width: 100%; }
+    a { color: inherit; }
+    button, audio { font: inherit; }
+    :focus-visible { outline: 3px solid var(--candle); outline-offset: 4px; }
+    .skip-link {
+      position: fixed;
+      left: 1rem;
+      top: 1rem;
+      z-index: 100;
+      transform: translateY(-180%);
+      padding: .7rem 1rem;
+      color: var(--night);
+      background: var(--cream);
+      border-radius: 4px;
+    }
+    .skip-link:focus { transform: translateY(0); }
+    .wrap { width: min(calc(100% - 2rem), var(--max)); margin-inline: auto; }
+    .eyebrow {
+      margin: 0 0 .7rem;
+      color: var(--gold);
+      font-family: var(--display);
+      font-size: .72rem;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+    }
+    h1, h2, h3, p { margin-top: 0; }
+    h1, h2, h3 { text-wrap: balance; }
+    h1, h2 {
+      font-family: var(--display);
+      font-weight: 400;
+      line-height: 1.13;
+    }
+    h1 { margin-bottom: 1rem; font-size: clamp(2.5rem, 6vw, 5.75rem); }
+    h2 { margin-bottom: 1rem; font-size: clamp(1.9rem, 3.4vw, 3rem); }
+    h3 { font-size: 1.5rem; line-height: 1.2; }
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: .72rem 1.15rem;
+      border: 1px solid var(--gold);
+      border-radius: 3px;
+      color: #160f0b;
+      background: linear-gradient(135deg, #f0cf83, #b47a32);
+      box-shadow: 0 10px 24px rgba(0, 0, 0, .3), inset 0 1px rgba(255, 255, 255, .42);
+      font-family: var(--serif);
+      font-size: .98rem;
+      font-weight: 700;
+      letter-spacing: .045em;
+      text-decoration: none;
+      transition: transform .22s ease, filter .22s ease, box-shadow .22s ease;
+    }
+    .button:hover { transform: translateY(-2px); filter: brightness(1.08); box-shadow: 0 14px 30px rgba(0, 0, 0, .4); }
+    .button.secondary { color: var(--cream); background: rgba(10, 10, 19, .56); }
+
+    .site-header {
+      position: relative;
+      z-index: 10;
+      border-bottom: 1px solid rgba(255, 255, 255, .12);
+      background: rgba(3, 4, 10, .96);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, .22);
+    }
+    .nav-shell { min-height: 78px; display: flex; align-items: center; justify-content: space-between; gap: 2rem; }
+    .brand {
+      font-family: var(--display);
+      font-size: clamp(.78rem, 1.4vw, 1rem);
+      letter-spacing: .13em;
+      text-decoration: none;
+      text-shadow: 0 2px 12px rgba(0, 0, 0, .95);
+      text-transform: uppercase;
+    }
+    .nav-links { display: flex; align-items: center; gap: 1.4rem; }
+    .nav-links a {
+      position: relative;
+      color: var(--paper);
+      font-size: .9rem;
+      letter-spacing: .05em;
+      text-decoration: none;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, .9);
+    }
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      inset: auto 0 -.35rem;
+      height: 1px;
+      transform: scaleX(0);
+      background: var(--gold);
+      transition: transform .2s ease;
+    }
+    .nav-links a:hover::after, .nav-links a[aria-current="page"]::after { transform: scaleX(1); }
+
+    .hero {
+      position: relative;
+      width: min(calc(100% - 2rem), 1440px);
+      margin: clamp(1rem, 2.5vw, 2rem) auto 0;
+      overflow: hidden;
+      background: #05060e;
+      border-bottom: 1px solid var(--line);
+      box-shadow: 0 28px 70px rgba(0, 0, 0, .42);
+    }
+    .hero-media, .hero-media img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+    .hero-player-link {
+      position: absolute;
+      left: 42.2%;
+      top: 53.1%;
+      width: 21.8%;
+      height: 13.8%;
+      z-index: 2;
+      cursor: pointer;
+      border: 0;
+      border-radius: 4px;
+      background: transparent;
+    }
+    .hero-player-link:focus-visible {
+      outline: 3px solid var(--candle);
+      outline-offset: 4px;
+      background: rgba(240, 183, 101, .08);
+    }
+
+    .collection-nav {
+      position: sticky;
+      top: 0;
+      z-index: 8;
+      border-bottom: 1px solid var(--line);
+      background: rgba(8, 9, 20, .9);
+      backdrop-filter: blur(14px);
+    }
+    .collection-nav .wrap { display: flex; gap: 1.5rem; overflow-x: auto; scrollbar-width: thin; }
+    .collection-nav a { flex: none; padding: .82rem 0; color: var(--paper); font-size: .86rem; text-decoration: none; }
+    .collection-nav a:hover { color: var(--candle); }
+
+    .welcome-section { position: relative; padding: clamp(3.75rem, 7vw, 5.5rem) 0; }
+    .welcome-section::before {
+      content: "";
+      position: absolute;
+      width: 28rem;
+      height: 28rem;
+      left: -18rem;
+      top: 0;
+      border-radius: 50%;
+      background: rgba(156, 49, 94, .14);
+      filter: blur(70px);
+    }
+    .welcome-grid { position: relative; display: grid; grid-template-columns: .88fr 1.12fr; gap: clamp(2rem, 5vw, 4.5rem); align-items: center; }
+    .welcome-copy h2 { max-width: 28rem; font-size: clamp(1.85rem, 3.2vw, 2.75rem); }
+    .welcome-copy p:not(.eyebrow) { max-width: 31rem; color: var(--paper); font-size: 1.12rem; }
+    .player-cabinet {
+      position: relative;
+      padding: clamp(1.35rem, 2.6vw, 2rem);
+      border: 1px solid #70452c;
+      border-radius: 5px;
+      background:
+        linear-gradient(110deg, rgba(255, 255, 255, .04), transparent 25%),
+        repeating-linear-gradient(92deg, rgba(255,255,255,.025) 0 2px, transparent 2px 22px),
+        linear-gradient(145deg, #3c2117, #170e0b 58%, #2a1513);
+      box-shadow: 0 26px 55px rgba(0, 0, 0, .48), inset 0 0 0 6px rgba(9, 5, 4, .4), inset 0 0 45px rgba(79, 16, 66, .3);
+    }
+    .player-cabinet::after {
+      content: "";
+      position: absolute;
+      inset: 8px;
+      pointer-events: none;
+      border: 1px solid rgba(215, 180, 102, .22);
+    }
+    .player-label {
+      position: relative;
+      z-index: 1;
+      margin-bottom: 1.4rem;
+      padding: 1rem 1.2rem;
+      border: 1px solid rgba(215, 180, 102, .5);
+      color: #24150f;
+      background: linear-gradient(150deg, #e2c47d, #a66a2f);
+      text-align: center;
+      box-shadow: inset 0 0 18px rgba(91, 50, 16, .32);
+    }
+    .player-label span { display: block; font-family: var(--display); font-size: .72rem; letter-spacing: .15em; text-transform: uppercase; }
+    .player-label strong { display: block; margin-top: .25rem; font-size: 1.25rem; }
+    .player-controls { position: relative; z-index: 1; display: grid; grid-template-columns: auto 1fr; gap: 1.2rem; align-items: center; }
+    .play-button {
+      width: 68px;
+      height: 68px;
+      display: grid;
+      place-items: center;
+      border: 1px solid var(--gold);
+      border-radius: 50%;
+      color: var(--gold);
+      background: radial-gradient(circle at 35% 30%, #352421, #0c0b0e 70%);
+      box-shadow: inset 0 1px rgba(255, 255, 255, .15), 0 8px 18px rgba(0, 0, 0, .42);
+      cursor: pointer;
+    }
+    .play-button svg { width: 22px; fill: currentColor; transform: translateX(2px); }
+    .play-button:disabled { cursor: not-allowed; opacity: .68; }
+    .waveform { height: 56px; display: flex; align-items: center; gap: 5px; overflow: hidden; }
+    .waveform i { width: 3px; height: var(--h); flex: 1; max-width: 7px; background: linear-gradient(var(--candle), var(--magenta)); opacity: .7; }
+    .player-status { position: relative; z-index: 1; margin: 1rem 0 0; color: #cbbba9; font-size: .91rem; }
+    #welcome-audio { display: none; }
+
+    .studio-section { padding: 1rem 0 clamp(4rem, 7vw, 5.75rem); }
+    .studio-panel {
+      display: grid;
+      grid-template-columns: minmax(250px, .72fr) 1.28fr;
+      min-height: 430px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      background:
+        radial-gradient(circle at 78% 18%, rgba(156, 49, 94, .23), transparent 19rem),
+        linear-gradient(125deg, rgba(41, 21, 19, .96), rgba(50, 18, 45, .88) 43%, rgba(8, 12, 29, .95));
+      box-shadow: 0 28px 65px rgba(0,0,0,.42), inset 0 1px rgba(240, 183, 101, .08);
+    }
+    .studio-mark {
+      position: relative;
+      display: grid;
+      place-items: center;
+      min-height: 330px;
+      padding: 2rem;
+      border-right: 1px solid rgba(215, 180, 102, .24);
+      background:
+        linear-gradient(90deg, rgba(255,255,255,.025), transparent 2px),
+        linear-gradient(145deg, #351d15, #170d0b 62%, #291219);
+      background-size: 24px 100%, auto;
+      box-shadow: inset -22px 0 35px rgba(0,0,0,.3), inset 0 0 55px rgba(0,0,0,.42);
+    }
+    .studio-mark::before,
+    .studio-mark::after { content: ""; position: absolute; inset: 1rem; border: 1px solid rgba(215, 180, 102, .26); }
+    .studio-mark::after { inset: 1.45rem; border-color: rgba(215, 180, 102, .1); }
+    .studio-placeholder { position: relative; z-index: 1; max-width: 260px; text-align: center; }
+    .studio-placeholder svg { width: 100%; height: 76px; display: block; margin-bottom: 1.2rem; }
+    .studio-placeholder path { fill: none; stroke: url(#studio-wave); stroke-linecap: round; stroke-width: 3; }
+    .studio-placeholder strong { display: block; color: var(--gold); font-family: var(--display); font-size: clamp(1rem, 2vw, 1.3rem); font-weight: 400; letter-spacing: .08em; text-transform: uppercase; }
+    .studio-placeholder span { display: block; margin-top: .55rem; color: var(--muted); font-size: .82rem; letter-spacing: .06em; }
+    .studio-copy { padding: clamp(2rem, 4.5vw, 4.25rem); align-self: center; }
+    .studio-copy h2 { font-size: clamp(1.9rem, 3.2vw, 2.85rem); }
+    .studio-copy p { max-width: 650px; color: var(--paper); }
+    .craft-list { display: flex; flex-wrap: wrap; gap: .55rem; margin-top: 1.5rem; }
+    .craft-list span { padding: .42rem .72rem; border: 1px solid rgba(215, 180, 102, .34); color: #e9d6b7; background: rgba(0, 0, 0, .16); font-size: .86rem; letter-spacing: .04em; }
+
+    .library { padding: clamp(4rem, 7vw, 6rem) 0; border-top: 1px solid var(--line); }
+    .library-heading { display: grid; grid-template-columns: .8fr 1.2fr; gap: 2.5rem; align-items: end; margin-bottom: 2.75rem; }
+    .library-heading h2 { font-size: clamp(1.95rem, 3.5vw, 3rem); }
+    .library-heading p { max-width: 620px; color: var(--paper); }
+    .shelf { scroll-margin-top: 5rem; margin-top: 3.75rem; }
+    .shelf-heading { display: grid; grid-template-columns: 1fr auto; gap: 1.5rem; align-items: end; margin-bottom: 1.3rem; }
+    .shelf-heading h2 {
+      width: max-content;
+      max-width: 100%;
+      margin: 0;
+      padding: .34rem .78rem .4rem;
+      border: 1px solid #d8b973;
+      color: #21140d;
+      background: linear-gradient(145deg, #e6cb88, #aa702f);
+      box-shadow: inset 0 1px rgba(255,255,255,.48), 0 7px 18px rgba(0,0,0,.28);
+      font-family: var(--serif);
+      font-size: clamp(1.65rem, 3vw, 2.35rem);
+      font-weight: 600;
+      line-height: 1;
+      text-shadow: 0 1px rgba(255,255,255,.2);
+    }
+    .shelf-heading p { max-width: 490px; margin: 0; color: var(--muted); font-size: .96rem; }
+    .record-grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 1.25rem;
+      padding: 1.5rem 1.5rem 2rem;
+      border-top: 10px solid #382016;
+      border-bottom: 16px solid #1c100c;
+      background:
+        radial-gradient(ellipse at 50% -8%, rgba(240, 183, 101, .16), transparent 46%),
+        linear-gradient(rgba(6, 7, 15, .94), rgba(21, 10, 18, .9)),
+        repeating-linear-gradient(90deg, transparent 0 100px, rgba(215, 180, 102, .05) 101px 102px);
+      box-shadow: inset 0 22px 35px rgba(0,0,0,.55), 0 22px 35px rgba(0,0,0,.3);
+    }
+    .record-card {
+      grid-column: span 4;
+      display: grid;
+      grid-template-columns: 104px 1fr;
+      min-height: 240px;
+      overflow: hidden;
+      border: 1px solid rgba(215, 180, 102, .27);
+      border-radius: 2px 7px 7px 2px;
+      color: var(--cream);
+      background: linear-gradient(112deg, #32152b, #141221 56%, #0b1224);
+      box-shadow: -7px 7px 0 #09070b, 0 18px 24px rgba(0,0,0,.4), inset 4px 0 rgba(215,180,102,.12);
+      text-decoration: none;
+      transition: transform .25s ease, border-color .25s ease, filter .25s ease;
+    }
+    .record-card:hover { transform: translateY(-7px) rotate(.25deg); border-color: rgba(240, 183, 101, .72); filter: brightness(1.08); }
+    .record-card img { width: 104px; height: 100%; display: block; object-fit: cover; }
+    .record-copy { display: flex; flex-direction: column; padding: 1.25rem 1.1rem; }
+    .record-number { color: var(--gold); font-family: var(--display); font-size: .62rem; letter-spacing: .13em; text-transform: uppercase; }
+    .record-card h3 { margin: .45rem 0 .6rem; font-weight: 500; }
+    .record-card p { margin-bottom: 1rem; color: #c7bbad; font-size: .88rem; line-height: 1.45; }
+    .record-cta { margin-top: auto; color: var(--candle); font-size: .84rem; font-weight: 700; letter-spacing: .04em; }
+    .record-card.featured-service {
+      grid-column: span 8;
+      grid-template-columns: minmax(300px, .95fr) 1.05fr;
+      min-height: 0;
+      border-color: rgba(240, 183, 101, .48);
+      background: linear-gradient(118deg, #241226, #121425 58%, #101d36);
+    }
+    .record-card.featured-service img {
+      width: 100%;
+      height: auto;
+      align-self: center;
+      object-fit: contain;
+      background: #100d17;
+    }
+    .featured-service .record-copy { padding: clamp(1.5rem, 3vw, 2.4rem); }
+    .featured-service h3 { font-size: clamp(1.45rem, 2.4vw, 2rem); }
+    .featured-service p { max-width: 34rem; font-size: 1rem; line-height: 1.6; }
+    .shelf-note { margin-top: 1.2rem; color: var(--muted); font-size: .9rem; text-align: right; }
+    .future-card {
+      position: relative;
+      min-height: 240px;
+      display: grid;
+      place-items: center;
+      padding: 2.5rem;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      background: linear-gradient(135deg, rgba(24, 43, 88, .75), rgba(53, 18, 47, .82));
+      text-align: center;
+    }
+    .future-card::before, .future-card::after { content: ""; position: absolute; inset: 1.2rem; border: 1px solid rgba(215,180,102,.18); }
+    .future-card::after { inset: 1.65rem; border-color: rgba(215,180,102,.08); }
+    .future-card div { position: relative; z-index: 1; max-width: 650px; }
+    .future-card h3 { margin-bottom: .6rem; font-family: var(--display); font-size: clamp(1.5rem, 2.6vw, 2.15rem); font-weight: 400; }
+    .future-card p { color: var(--paper); }
+
+    .gold-standard { position: relative; padding: clamp(4rem, 7vw, 6rem) 0; overflow: hidden; border-block: 1px solid var(--line); background: #0a0b15; }
+    .gold-standard::before { content: ""; position: absolute; inset: 0; background: radial-gradient(circle at 22% 50%, rgba(214, 138, 60, .17), transparent 30rem), radial-gradient(circle at 80% 20%, rgba(109, 53, 108, .13), transparent 26rem); }
+    .gold-grid { position: relative; display: grid; grid-template-columns: minmax(240px, .72fr) 1.28fr; gap: clamp(2rem, 5vw, 4.75rem); align-items: center; }
+    .gold-seal { position: relative; }
+    .gold-seal::before { content: ""; position: absolute; inset: 15%; border-radius: 50%; background: rgba(214,138,60,.22); filter: blur(45px); }
+    .gold-seal img { position: relative; display: block; width: min(100%, 360px); margin: auto; filter: drop-shadow(0 20px 22px rgba(0,0,0,.55)); }
+    .gold-copy h2 { font-size: clamp(1.9rem, 3.2vw, 2.8rem); }
+    .gold-copy p { max-width: 650px; color: var(--paper); }
+    .standards { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .6rem 1.2rem; margin: 1.6rem 0 0; padding: 0; list-style: none; }
+    .standards li { padding-bottom: .55rem; border-bottom: 1px solid rgba(215,180,102,.18); color: #dfccb0; font-size: .92rem; }
+
+    .sample-section { padding: clamp(3.5rem, 6vw, 5rem) 0; }
+    .sample-panel { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; align-items: center; padding: clamp(1.5rem, 3vw, 2.75rem); border: 1px solid var(--line); background: rgba(9, 10, 22, .72); }
+    .sample-panel h2 { font-size: clamp(1.85rem, 3vw, 2.6rem); }
+    .sample-panel p { color: var(--paper); }
+    .sample-panel audio { width: 100%; accent-color: var(--gold); }
+
+    footer { padding: 3rem 0; border-top: 1px solid var(--line); color: var(--muted); background: #070812; }
+    .footer-grid { display: flex; justify-content: space-between; gap: 2rem; align-items: center; }
+    .footer-grid p { margin: 0; }
+    .footer-links { display: flex; flex-wrap: wrap; gap: 1.2rem; }
+    .footer-links a { color: var(--paper); font-size: .9rem; text-decoration: none; }
+
+    @media (max-width: 980px) {
+      .record-card { grid-column: span 6; }
+      .record-card.featured-service { grid-column: 1 / -1; }
+      .welcome-grid, .gold-grid { grid-template-columns: 1fr 1fr; gap: 2.5rem; }
+      .studio-panel { grid-template-columns: .85fr 1.15fr; }
+      .library-heading { grid-template-columns: 1fr; gap: 1rem; }
+    }
+    @media (max-width: 760px) {
+      body { font-size: 18px; }
+      .nav-shell { min-height: 88px; align-items: flex-start; flex-direction: column; justify-content: center; gap: .5rem; padding-block: .8rem; }
+      .nav-links { width: 100%; gap: 1rem; overflow-x: auto; }
+      .nav-links a { flex: none; }
+      .hero { width: min(calc(100% - 1rem), 1440px); margin-top: .5rem; }
+      .welcome-grid, .studio-panel, .gold-grid, .sample-panel { grid-template-columns: 1fr; }
+      .welcome-copy { max-width: 620px; }
+      .studio-mark { min-height: 280px; border-right: 0; border-bottom: 1px solid rgba(215, 180, 102, .24); }
+      .shelf-heading { grid-template-columns: 1fr; }
+      .record-card { grid-column: 1 / -1; }
+      .record-card.featured-service { grid-template-columns: 1fr; }
+      .shelf-note { text-align: left; }
+      .gold-seal { max-width: 340px; margin: auto; }
+      .footer-grid { align-items: flex-start; flex-direction: column; }
+    }
+    @media (max-width: 480px) {
+      .wrap { width: min(calc(100% - 1.25rem), var(--max)); }
+      .player-controls { grid-template-columns: 1fr; justify-items: center; }
+      .waveform { width: 100%; }
+      .record-grid { padding-inline: .8rem; }
+      .record-card { grid-template-columns: 88px 1fr; }
+      .record-card img { width: 88px; }
+      .standards { grid-template-columns: 1fr; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to the Listening Room</a>
+
+  <header class="site-header">
+    <div class="wrap nav-shell">
+      <a class='brand' href='/'>Empowered Transcendence</a>
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href='/'>Home</a>
+        <a href='/stormwalker-method'>Stormwalker Method</a>
+        <a aria-current='page' href='/audio'>Audio Library</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section class="hero" aria-label="Stormwalker Listening Room">
+      <div class="hero-media">
+        <img src="assets/listening-room-wide.png" alt="The Stormwalker Listening Room artwork, including a personal welcome and Begin Here audio player from Kelly.">
+      </div>
+      <button class="hero-player-link" id="hero-welcome-play" type="button" aria-label="Play Kelly’s personal welcome"></button>
+    </section>
+
+    <nav class="collection-nav" aria-label="Audio library collections">
+      <div class="wrap">
+        <a href="#everyday">Everyday Collection</a>
+        <a href="#quiet-night">Quiet Night Series</a>
+        <a href="#specialty">Specialty Recordings</a>
+        <a href="#member-library">Future Member Library</a>
+        <a href="#gold-standard">Gold Standard</a>
+      </div>
+    </nav>
+
+    <section class="welcome-section" id="welcome" tabindex="-1" aria-labelledby="welcome-title">
+      <div class="wrap welcome-grid">
+        <div class="welcome-copy">
+          <p class="eyebrow">A note from the Original Stormwalker</p>
+          <h2 id="welcome-title">Welcome to the Stormwalker World</h2>
+          <p>Kick your shoes off. Let your shoulders drop. Stay awhile.</p>
+          <p>When you’re ready, press play for a personal welcome from Kelly—the Original Stormwalker.</p>
+        </div>
+        <div class="player-cabinet">
+          <div class="player-label">
+            <span>The Listening Room presents</span>
+            <strong>A Personal Welcome from Kelly</strong>
+          </div>
+          <div class="player-controls">
+            <button class="play-button" id="welcome-play" type="button" aria-label="Play Kelly’s personal welcome" disabled>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+            </button>
+            <div class="waveform" aria-hidden="true">
+              <i style="--h:18%"></i><i style="--h:36%"></i><i style="--h:58%"></i><i style="--h:30%"></i><i style="--h:72%"></i><i style="--h:44%"></i><i style="--h:84%"></i><i style="--h:52%"></i><i style="--h:68%"></i><i style="--h:34%"></i><i style="--h:76%"></i><i style="--h:48%"></i><i style="--h:92%"></i><i style="--h:56%"></i><i style="--h:40%"></i><i style="--h:66%"></i><i style="--h:28%"></i><i style="--h:74%"></i><i style="--h:46%"></i><i style="--h:22%"></i>
+            </div>
+          </div>
+          <p class="player-status" id="welcome-status">Kelly’s personal welcome is being prepared. This player is ready for the finished recording.</p>
+          <!-- Add the finished welcome recording path to data-src; the player enables automatically. -->
+          <audio id="welcome-audio" data-src="" preload="none"></audio>
+        </div>
+      </div>
+    </section>
+
+    <section class="studio-section" aria-labelledby="spellbound-title">
+      <div class="wrap studio-panel">
+        <div class="studio-mark" aria-label="Reserved location for the official Spellbound Audio Productions logo">
+          <div class="studio-placeholder">
+            <svg viewBox="0 0 280 76" aria-hidden="true">
+              <defs><linearGradient id="studio-wave" x1="0" x2="1"><stop stop-color="#d7b466"/><stop offset=".5" stop-color="#f0b765"/><stop offset="1" stop-color="#9c315e"/></linearGradient></defs>
+              <path d="M4 38h28l8-18 13 39 14-31 15 20 13-9h17l10-26 15 47 14-36 16 28 13-14h18l8-19 14 39 12-26 12 6h34"/>
+            </svg>
+            <strong>Spellbound Audio Productions</strong>
+            <span>Official studio mark reserved</span>
+          </div>
+        </div>
+        <div class="studio-copy">
+          <p class="eyebrow">Behind every recording</p>
+          <h2 id="spellbound-title">Spellbound Audio Productions</h2>
+          <p>The Stormwalker Audio Library is the listening library. Spellbound Audio Productions is the studio behind the recordings.</p>
+          <p>Spellbound brings together scripting, Kelly’s voice, music, pacing, atmosphere, editing, and sound design. When you hear “A Spellbound Audio Production,” it is a production mark—and a promise that every detail has been considered with care.</p>
+          <div class="craft-list" aria-label="Spellbound Audio disciplines">
+            <span>Scripting</span><span>Kelly’s voice</span><span>Music</span><span>Pacing</span><span>Atmosphere</span><span>Editing</span><span>Sound design</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="library" id="library" aria-labelledby="library-title">
+      <div class="wrap">
+        <div class="library-heading">
+          <div>
+            <p class="eyebrow">The Stormwalker Audio Library</p>
+            <h2 id="library-title">Choose what you need today.</h2>
+          </div>
+          <p>These recordings are arranged like well-used volumes in a private library: easy to find, made to keep, and ready to return to whenever the weather changes.</p>
+        </div>
+
+        <section class="shelf" id="everyday" aria-labelledby="everyday-title">
+          <div class="shelf-heading">
+            <h2 id="everyday-title">Everyday Collection</h2>
+            <p>Grounding support for the moments when life feels loud, fast, crowded, or uncertain.</p>
+          </div>
+          <div class="record-grid">
+            <a class="record-card" href="https://square.link/u/yDi2KFPB" target="_blank" rel="noopener">
+              <img src="assets/emotional-overload-reset.jpg" alt="Emotional Overload Reset cover art" loading="lazy">
+              <span class="record-copy"><span class="record-number">Everyday · 01</span><h3>Emotional Overload Reset</h3><p>A short, grounding return to calm when emotions feel like too much.</p><span class="record-cta">Purchase MP3 · $9</span></span>
+            </a>
+            <a class="record-card" href="https://square.link/u/IloyFc5e" target="_blank" rel="noopener">
+              <img src="assets/grounding-and-nervous-system-reset.jpg" alt="Grounding and Nervous System Reset cover art" loading="lazy">
+              <span class="record-copy"><span class="record-number">Everyday · 02</span><h3>Grounding &amp; Nervous System Reset</h3><p>A gentle return to stability, balance, and the present moment.</p><span class="record-cta">Purchase MP3 · $9</span></span>
+            </a>
+            <a class="record-card" href="https://square.link/u/z8Kg4U5c" target="_blank" rel="noopener">
+              <img src="assets/panic-reset.jpg" alt="Panic Reset cover art" loading="lazy">
+              <span class="record-copy"><span class="record-number">Everyday · 03</span><h3>Panic Reset</h3><p>Grounding support for moments when anxiety rises quickly.</p><span class="record-cta">Purchase MP3 · $9</span></span>
+            </a>
+            <a class="record-card" href="https://square.link/u/ArI3fGkB" target="_blank" rel="noopener">
+              <img src="assets/driving-anxiety-relief.jpg" alt="Driving Anxiety Relief cover art" loading="lazy">
+              <span class="record-copy"><span class="record-number">Everyday · 04</span><h3>Driving Anxiety Relief</h3><p>Calm, confidence, and ease before getting behind the wheel.</p><span class="record-cta">Purchase MP3 · $9</span></span>
+            </a>
+            <a class="record-card" href="https://square.link/u/ASSuSSXf" target="_blank" rel="noopener">
+              <img src="assets/travel-calm.jpg" alt="Travel Calm cover art" loading="lazy">
+              <span class="record-copy"><span class="record-number">Everyday · 05</span><h3>Travel Calm</h3><p>A steadier sense of comfort through cars, planes, and unfamiliar routes.</p><span class="record-cta">Purchase MP3 · $9</span></span>
+            </a>
+            <a class="record-card" href="https://square.link/u/hrRB46wt" target="_blank" rel="noopener">
+              <img src="assets/crowded-spaces-grounding.jpg" alt="Crowded Spaces Grounding cover art" loading="lazy">
+              <span class="record-copy"><span class="record-number">Everyday · 06</span><h3>Crowded Spaces Grounding</h3><p>Stay centered and connected to yourself in busy environments.</p><span class="record-cta">Purchase MP3 · $9</span></span>
+            </a>
+          </div>
+          <p class="shelf-note">Best experienced with earbuds or headphones.</p>
+        </section>
+
+        <section class="shelf" id="quiet-night" aria-labelledby="quiet-title">
+          <div class="shelf-heading">
+            <h2 id="quiet-title">Quiet Night Series</h2>
+            <p>Gentle evening companions for releasing the day, settling the mind, and making room for rest.</p>
+          </div>
+          <div class="record-grid">
+            <a class="record-card" href="https://square.link/u/PxoZXULH" target="_blank" rel="noopener">
+              <img src="assets/you-can-let-go-now.jpg" alt="You Can Let Go Now cover art" loading="lazy">
+              <span class="record-copy"><span class="record-number">Quiet Night · 01</span><h3>You Can Let Go Now</h3><p>Release what you have been carrying and return to a more relaxed state.</p><span class="record-cta">Purchase MP3 · $9</span></span>
+            </a>
+            <a class="record-card" href="https://square.link/u/4duns99h" target="_blank" rel="noopener">
+              <img src="assets/Quiet-mind.jpg" alt="Enter the Quiet Mind cover art" loading="lazy">
+              <span class="record-copy"><span class="record-number">Quiet Night · 02</span><h3>Enter the Quiet Mind</h3><p>Step out of mental noise and let your thoughts slow naturally.</p><span class="record-cta">Purchase MP3 · $9</span></span>
+            </a>
+            <a class="record-card" href="https://square.link/u/N0vJ9uxe" target="_blank" rel="noopener">
+              <img src="assets/sleep-durning-stress.jpg" alt="Sleep During Stress cover art" loading="lazy">
+              <span class="record-copy"><span class="record-number">Quiet Night · 03</span><h3>Sleep During Stress</h3><p>Guide the mind and body toward rest when stress follows you into evening.</p><span class="record-cta">Purchase MP3 · $9</span></span>
+            </a>
+          </div>
+          <p class="shelf-note">Best experienced with earbuds or headphones.</p>
+        </section>
+
+        <section class="shelf" id="specialty" aria-labelledby="specialty-title">
+          <div class="shelf-heading">
+            <h2 id="specialty-title">Specialty Recordings</h2>
+            <p>Focused listening experiences created for particular settings, seasons, and personal needs.</p>
+          </div>
+          <div class="record-grid">
+            <a class="record-card" href="https://square.link/u/ENoG5v8G" target="_blank" rel="noopener">
+              <img src="assets/medical-calm.jpg" alt="Medical Calm cover art" loading="lazy">
+              <span class="record-copy"><span class="record-number">Specialty · 01</span><h3>Medical Calm</h3><p>A gentle companion for treatments, procedures, appointments, or recovery.</p><span class="record-cta">Purchase MP3 · $9</span></span>
+            </a>
+            <a class="record-card featured-service" href="https://square.link/u/QV36OjBX" target="_blank" rel="noopener">
+              <img src="assets/personalized-recording-cover.png" alt="Personalized Audio Experience cover art" loading="lazy">
+              <span class="record-copy"><span class="record-number">Made for you</span><h3>Personalized Audio Experience</h3><p>A guided recording created for your personal goal, emotional season, or area of support.</p><span class="record-cta">Request a personalized audio</span></span>
+            </a>
+          </div>
+          <p class="shelf-note">Personalized recording pricing varies by length, customization, and intended use.</p>
+        </section>
+
+        <section class="shelf" id="member-library" aria-labelledby="member-title">
+          <div class="shelf-heading">
+            <h2 id="member-title">Future Member Library</h2>
+            <p>A reserved shelf for the next chapter of the Stormwalker listening experience.</p>
+          </div>
+          <div class="future-card">
+            <div>
+              <p class="eyebrow">The shelf is being prepared</p>
+              <h3>A deeper library is taking shape.</h3>
+              <p>No new recordings are being announced yet. This space remains intentionally reserved for the future member library.</p>
+            </div>
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <section class="gold-standard" id="gold-standard" aria-labelledby="gold-title">
+      <div class="wrap gold-grid">
+        <div class="gold-seal">
+          <img src="assets/stormwalker-gold-standard-seal.png" alt="Official Stormwalker Gold Standard seal" loading="lazy">
+        </div>
+        <div class="gold-copy">
+          <p class="eyebrow">A designation of excellence</p>
+          <h2 id="gold-title">The Stormwalker Gold Standard</h2>
+          <p>The Stormwalker Gold Standard represents Kelly Trett-Thomason’s highest level of audio craftsmanship. Every recording bearing this seal has been intentionally created to meet her highest standards for writing, production, pacing, atmosphere, emotional depth, and lasting value.</p>
+          <p>It is not a collection. It is a distinction earned by select recordings.</p>
+          <ul class="standards">
+            <li>Writing</li><li>Recording quality</li><li>Production</li><li>Pacing</li><li>Atmosphere</li><li>Emotional depth</li><li>Craftsmanship</li><li>Replay value</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="sample-section" aria-labelledby="sample-title">
+      <div class="wrap sample-panel">
+        <div>
+          <p class="eyebrow">A sample from the shelf</p>
+          <h2 id="sample-title">Listen before you choose.</h2>
+          <p>Experience the voice, pacing, and atmosphere used throughout the guided recordings.</p>
+        </div>
+        <audio controls preload="none" controlslist="nodownload">
+          <source src="assets/audio-samples/calm-series-sample.mp3" type="audio/mpeg">
+          Your browser does not support the audio element. <a href="assets/audio-samples/calm-series-sample.mp3">Play the sample here</a>.
+        </audio>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap footer-grid">
+      <p>© <span id="year"></span> Empowered Transcendence</p>
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href='/'>Homepage</a>
+        <a href='/stormwalker-method'>Stormwalker Method</a>
+        <a href="#main-content">Return to the room</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    const welcomeAudio = document.getElementById("welcome-audio");
+    const welcomeButton = document.getElementById("welcome-play");
+    const heroWelcomeButton = document.getElementById("hero-welcome-play");
+    const welcomeSection = document.getElementById("welcome");
+    const welcomeStatus = document.getElementById("welcome-status");
+    const welcomeSource = welcomeAudio.dataset.src;
+
+    if (welcomeSource) {
+      welcomeAudio.src = welcomeSource;
+      welcomeButton.disabled = false;
+      welcomeStatus.textContent = "Press play when you’re ready.";
+      welcomeButton.addEventListener("click", () => {
+        if (welcomeAudio.paused) {
+          welcomeAudio.play();
+          welcomeButton.setAttribute("aria-label", "Pause Kelly’s personal welcome");
+          welcomeButton.querySelector("path").setAttribute("d", "M7 5h4v14H7zm6 0h4v14h-4z");
+        } else {
+          welcomeAudio.pause();
+          welcomeButton.setAttribute("aria-label", "Play Kelly’s personal welcome");
+          welcomeButton.querySelector("path").setAttribute("d", "M8 5v14l11-7z");
+        }
+      });
+    }
+
+    heroWelcomeButton.addEventListener("click", () => {
+      if (welcomeSource) {
+        welcomeButton.click();
+        return;
+      }
+
+      const scrollBehavior = window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth";
+      welcomeSection.scrollIntoView({ behavior: scrollBehavior, block: "start" });
+      welcomeSection.focus({ preventScroll: true });
+    });
+  </script>
+</body>
+</html>
