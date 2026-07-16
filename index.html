@@ -306,6 +306,31 @@
       .about-photo{max-width:430px;margin:0 auto}
     }
 
+    .featured-art-grid{
+      display:grid;
+      grid-template-columns:minmax(280px,1fr) minmax(0,.9fr);
+      gap:42px;
+      align-items:center;
+    }
+    .featured-art-image{
+      width:100%;
+      height:auto;
+      display:block;
+      border-radius:18px;
+      border:1px solid var(--ring);
+      box-shadow:var(--shadow);
+      background:#050914;
+    }
+    .featured-art-copy p{margin:0 0 16px}
+    .featured-art-details{
+      color:#e7d7b4;
+      font-size:.95rem;
+    }
+    @media (max-width: 760px){
+      .featured-art-grid{grid-template-columns:1fr;gap:28px}
+      .featured-art-copy{text-align:center}
+    }
+
     /* --- Empowered Transcendence intro --- */
     .et-hero{position:relative;top:-20px;margin-bottom:-20px;padding-top:22px;padding-bottom:36px;text-align:center}
     .et-hero .sr-only{
@@ -488,6 +513,27 @@
             The goal is not dependence or fixing. Kelly walks beside people while they recognize patterns, return to center, and strengthen trust in their own ability to navigate.
           </p>
           <p class="credentials">Author &bull; Certified Hypnotherapist (CHt.) &bull; Spiritual Empowerment Coach &bull; Reiki Practitioner &bull; Appalachian Energy &amp; Folk Medicine Practitioner</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider" aria-hidden="true"></div>
+
+    <!-- FEATURED ORIGINAL ART -->
+    <section id="featured-art">
+      <div class="wrap panel featured-art-grid">
+        <div>
+          <img class="featured-art-image" src="assets/the-witness-three-states.webp" alt="The Witness original oil painting shown in daylight, under black light, and in its lingering afterglow" loading="lazy">
+        </div>
+        <div class="featured-art-copy">
+          <p class="eyebrow">Featured Original Art</p>
+          <h2>The Witness</h2>
+          <p class="lead">One original painting. Three distinct presentations.</p>
+          <p>
+            Handmade UV-reactive glowing oils transform <em>The Witness</em> from an aurora beneath ordinary light, to a vivid black-light experience, and finally to a lingering afterglow after the light is gone.
+          </p>
+          <p class="featured-art-details">Original 10 &times; 20 &times; &frac12;-inch oil painting &bull; Signed and fingerprinted by Kelly &bull; One available</p>
+          <p><a class="btn" href="https://square.link/u/RL3LdYCh" target="_blank" rel="noopener">View &amp; Purchase</a></p>
         </div>
       </div>
     </section>
