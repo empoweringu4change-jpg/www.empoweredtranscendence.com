@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
@@ -292,8 +292,8 @@
     .studio-copy { padding: clamp(2rem, 4.5vw, 4.25rem); align-self: center; }
     .studio-copy h2 { font-size: clamp(1.9rem, 3.2vw, 2.85rem); }
     .studio-copy p { max-width: 650px; color: var(--paper); }
-    .craft-list { display: flex; flex-wrap: wrap; gap: .55rem; margin-top: 1.5rem; }
-    .craft-list span { padding: .42rem .72rem; border: 1px solid rgba(215, 180, 102, .34); color: #e9d6b7; background: rgba(0, 0, 0, .16); font-size: .86rem; letter-spacing: .04em; }
+    .craft-list { display: flex; flex-wrap: wrap; gap: .55rem; margin: 1.5rem 0 0; padding: 0; list-style: none; }
+    .craft-list li { padding: .42rem .72rem; border: 1px solid rgba(215, 180, 102, .34); color: #e9d6b7; background: rgba(0, 0, 0, .16); font-size: .86rem; letter-spacing: .04em; }
 
     .library { padding: clamp(4rem, 7vw, 6rem) 0; border-top: 1px solid var(--line); }
     .library-heading { display: grid; grid-template-columns: .8fr 1.2fr; gap: 2.5rem; align-items: end; margin-bottom: 2.75rem; }
@@ -421,7 +421,7 @@
       h2 { font-size: clamp(1.75rem, 8.2vw, 2.15rem); }
       .nav-shell { min-height: 0; align-items: stretch; flex-direction: column; justify-content: center; gap: .65rem; padding-block: .85rem; }
       .brand { font-size: .82rem; line-height: 1.35; letter-spacing: .1em; }
-      .nav-links { width: 100%; justify-content: space-between; gap: .5rem; overflow: visible; }
+      .nav-links { width: 100%; justify-content: flex-start; flex-wrap: wrap; gap: .55rem 1rem; overflow: visible; }
       .nav-links a { flex: 0 auto; font-size: .78rem; letter-spacing: .02em; white-space: nowrap; }
       .hero {
         width: 100%;
@@ -526,11 +526,13 @@
 
   <header class="site-header">
     <div class="wrap nav-shell">
-      <a class='brand' href='/'>Empowered Transcendence</a>
+      <a class="brand" href="/">Empowered Transcendence</a>
       <nav class="nav-links" aria-label="Primary navigation">
-        <a href='/'>Home</a>
-        <a href='/stormwalker-method'>Stormwalker Method</a>
-        <a aria-current='page' href='/audio'>Audio Library</a>
+        <a href="/#home">Home</a>
+        <a href="/#books">Books</a>
+        <a href="/#coaching">Work With Kelly</a>
+        <a aria-current="page" href="/audio">Audio Library</a>
+        <a href="/#contact">Contact</a>
       </nav>
     </div>
   </header>
@@ -538,7 +540,7 @@
   <main id="main-content">
     <section class="hero" aria-label="Stormwalker Listening Room">
       <div class="hero-media">
-        <img src="assets/listening-room-wide.png" alt="The Stormwalker Listening Room artwork, including a personal welcome and Begin Here audio player from Kelly.">
+        <img src="assets/listening-room-wide.webp" alt="The Stormwalker Listening Room artwork, including a personal welcome and Begin Here audio player from Kelly.">
       </div>
       <button class="hero-player-link" id="hero-welcome-play" type="button" aria-label="Play Kelly’s personal welcome"></button>
       <div class="mobile-hero-content">
@@ -588,7 +590,7 @@
 
     <section class="studio-section" aria-labelledby="spellbound-title">
       <div class="wrap studio-panel">
-        <div class="studio-mark" aria-label="Reserved location for the official Spellbound Audio Productions logo">
+        <div class="studio-mark" role="img" aria-label="Reserved location for the official Spellbound Audio Productions logo">
           <div class="studio-placeholder">
             <svg viewBox="0 0 280 76" aria-hidden="true">
               <defs><linearGradient id="studio-wave" x1="0" x2="1"><stop stop-color="#d7b466"/><stop offset=".5" stop-color="#f0b765"/><stop offset="1" stop-color="#9c315e"/></linearGradient></defs>
@@ -603,9 +605,9 @@
           <h2 id="spellbound-title">Spellbound Audio Productions</h2>
           <p>The Stormwalker Audio Library is the listening library. Spellbound Audio Productions is the studio behind the recordings.</p>
           <p>Spellbound brings together scripting, Kelly’s voice, music, pacing, atmosphere, editing, and sound design. When you hear “A Spellbound Audio Production,” it is a production mark—and a promise that every detail has been considered with care.</p>
-          <div class="craft-list" aria-label="Spellbound Audio disciplines">
-            <span>Scripting</span><span>Kelly’s voice</span><span>Music</span><span>Pacing</span><span>Atmosphere</span><span>Editing</span><span>Sound design</span>
-          </div>
+          <ul class="craft-list" aria-label="Spellbound Audio disciplines">
+            <li>Scripting</li><li>Kelly’s voice</li><li>Music</li><li>Pacing</li><li>Atmosphere</li><li>Editing</li><li>Sound design</li>
+          </ul>
         </div>
       </div>
     </section>
@@ -628,27 +630,27 @@
           <div class="record-grid">
             <a class="record-card" href="https://square.link/u/yDi2KFPB" target="_blank" rel="noopener">
               <img src="assets/emotional-overload-reset.jpg" alt="Emotional Overload Reset cover art" loading="lazy">
-              <span class="record-copy"><span class="record-number">Everyday · 01</span><h3>Emotional Overload Reset</h3><p>A short, grounding return to calm when emotions feel like too much.</p><span class="record-cta">Purchase MP3 · $9</span></span>
+              <div class="record-copy"><span class="record-number">Everyday · 01</span><h3>Emotional Overload Reset</h3><p>A short, grounding return to calm when emotions feel like too much.</p><span class="record-cta">Purchase MP3 · $9</span></div>
             </a>
             <a class="record-card" href="https://square.link/u/IloyFc5e" target="_blank" rel="noopener">
               <img src="assets/grounding-and-nervous-system-reset.jpg" alt="Grounding and Nervous System Reset cover art" loading="lazy">
-              <span class="record-copy"><span class="record-number">Everyday · 02</span><h3>Grounding &amp; Nervous System Reset</h3><p>A gentle return to stability, balance, and the present moment.</p><span class="record-cta">Purchase MP3 · $9</span></span>
+              <div class="record-copy"><span class="record-number">Everyday · 02</span><h3>Grounding &amp; Nervous System Reset</h3><p>A gentle return to stability, balance, and the present moment.</p><span class="record-cta">Purchase MP3 · $9</span></div>
             </a>
             <a class="record-card" href="https://square.link/u/z8Kg4U5c" target="_blank" rel="noopener">
               <img src="assets/panic-reset.jpg" alt="Panic Reset cover art" loading="lazy">
-              <span class="record-copy"><span class="record-number">Everyday · 03</span><h3>Panic Reset</h3><p>Grounding support for moments when anxiety rises quickly.</p><span class="record-cta">Purchase MP3 · $9</span></span>
+              <div class="record-copy"><span class="record-number">Everyday · 03</span><h3>Panic Reset</h3><p>Grounding support for moments when anxiety rises quickly.</p><span class="record-cta">Purchase MP3 · $9</span></div>
             </a>
             <a class="record-card" href="https://square.link/u/ArI3fGkB" target="_blank" rel="noopener">
               <img src="assets/driving-anxiety-relief.jpg" alt="Driving Anxiety Relief cover art" loading="lazy">
-              <span class="record-copy"><span class="record-number">Everyday · 04</span><h3>Driving Anxiety Relief</h3><p>Calm, confidence, and ease before getting behind the wheel.</p><span class="record-cta">Purchase MP3 · $9</span></span>
+              <div class="record-copy"><span class="record-number">Everyday · 04</span><h3>Driving Anxiety Relief</h3><p>Calm, confidence, and ease before getting behind the wheel.</p><span class="record-cta">Purchase MP3 · $9</span></div>
             </a>
             <a class="record-card" href="https://square.link/u/ASSuSSXf" target="_blank" rel="noopener">
               <img src="assets/travel-calm.jpg" alt="Travel Calm cover art" loading="lazy">
-              <span class="record-copy"><span class="record-number">Everyday · 05</span><h3>Travel Calm</h3><p>A steadier sense of comfort through cars, planes, and unfamiliar routes.</p><span class="record-cta">Purchase MP3 · $9</span></span>
+              <div class="record-copy"><span class="record-number">Everyday · 05</span><h3>Travel Calm</h3><p>A steadier sense of comfort through cars, planes, and unfamiliar routes.</p><span class="record-cta">Purchase MP3 · $9</span></div>
             </a>
             <a class="record-card" href="https://square.link/u/hrRB46wt" target="_blank" rel="noopener">
               <img src="assets/crowded-spaces-grounding.jpg" alt="Crowded Spaces Grounding cover art" loading="lazy">
-              <span class="record-copy"><span class="record-number">Everyday · 06</span><h3>Crowded Spaces Grounding</h3><p>Stay centered and connected to yourself in busy environments.</p><span class="record-cta">Purchase MP3 · $9</span></span>
+              <div class="record-copy"><span class="record-number">Everyday · 06</span><h3>Crowded Spaces Grounding</h3><p>Stay centered and connected to yourself in busy environments.</p><span class="record-cta">Purchase MP3 · $9</span></div>
             </a>
           </div>
           <p class="shelf-note">Best experienced with earbuds or headphones.</p>
@@ -662,15 +664,15 @@
           <div class="record-grid">
             <a class="record-card" href="https://square.link/u/PxoZXULH" target="_blank" rel="noopener">
               <img src="assets/you-can-let-go-now.jpg" alt="You Can Let Go Now cover art" loading="lazy">
-              <span class="record-copy"><span class="record-number">Quiet Night · 01</span><h3>You Can Let Go Now</h3><p>Release what you have been carrying and return to a more relaxed state.</p><span class="record-cta">Purchase MP3 · $9</span></span>
+              <div class="record-copy"><span class="record-number">Quiet Night · 01</span><h3>You Can Let Go Now</h3><p>Release what you have been carrying and return to a more relaxed state.</p><span class="record-cta">Purchase MP3 · $9</span></div>
             </a>
             <a class="record-card" href="https://square.link/u/4duns99h" target="_blank" rel="noopener">
               <img src="assets/Quiet-mind.jpg" alt="Enter the Quiet Mind cover art" loading="lazy">
-              <span class="record-copy"><span class="record-number">Quiet Night · 02</span><h3>Enter the Quiet Mind</h3><p>Step out of mental noise and let your thoughts slow naturally.</p><span class="record-cta">Purchase MP3 · $9</span></span>
+              <div class="record-copy"><span class="record-number">Quiet Night · 02</span><h3>Enter the Quiet Mind</h3><p>Step out of mental noise and let your thoughts slow naturally.</p><span class="record-cta">Purchase MP3 · $9</span></div>
             </a>
             <a class="record-card" href="https://square.link/u/N0vJ9uxe" target="_blank" rel="noopener">
               <img src="assets/sleep-durning-stress.jpg" alt="Sleep During Stress cover art" loading="lazy">
-              <span class="record-copy"><span class="record-number">Quiet Night · 03</span><h3>Sleep During Stress</h3><p>Guide the mind and body toward rest when stress follows you into evening.</p><span class="record-cta">Purchase MP3 · $9</span></span>
+              <div class="record-copy"><span class="record-number">Quiet Night · 03</span><h3>Sleep During Stress</h3><p>Guide the mind and body toward rest when stress follows you into evening.</p><span class="record-cta">Purchase MP3 · $9</span></div>
             </a>
           </div>
           <p class="shelf-note">Best experienced with earbuds or headphones.</p>
@@ -684,11 +686,11 @@
           <div class="record-grid">
             <a class="record-card" href="https://square.link/u/ENoG5v8G" target="_blank" rel="noopener">
               <img src="assets/medical-calm.jpg" alt="Medical Calm cover art" loading="lazy">
-              <span class="record-copy"><span class="record-number">Specialty · 01</span><h3>Medical Calm</h3><p>A gentle companion for treatments, procedures, appointments, or recovery.</p><span class="record-cta">Purchase MP3 · $9</span></span>
+              <div class="record-copy"><span class="record-number">Specialty · 01</span><h3>Medical Calm</h3><p>A gentle companion for treatments, procedures, appointments, or recovery.</p><span class="record-cta">Purchase MP3 · $9</span></div>
             </a>
             <a class="record-card featured-service" href="https://square.link/u/QV36OjBX" target="_blank" rel="noopener">
-              <img src="assets/personalized-recording-cover.png" alt="Personalized Audio Experience cover art" loading="lazy">
-              <span class="record-copy"><span class="record-number">Made for you</span><h3>Personalized Audio Experience</h3><p>A guided recording created for your personal goal, emotional season, or area of support.</p><span class="record-cta">Request a personalized audio</span></span>
+              <img src="assets/personalized-recording-cover.webp" alt="Personalized Audio Experience cover art" loading="lazy">
+              <div class="record-copy"><span class="record-number">Made for you</span><h3>Personalized Audio Experience</h3><p>A guided recording created for your personal goal, emotional season, or area of support.</p><span class="record-cta">Request a personalized audio</span></div>
             </a>
           </div>
           <p class="shelf-note">Personalized recording pricing varies by length, customization, and intended use.</p>
@@ -700,7 +702,7 @@
     <section class="gold-standard" id="gold-standard" aria-labelledby="gold-title">
       <div class="wrap gold-grid">
         <div class="gold-seal">
-          <img src="assets/stormwalker-gold-standard-seal.png" alt="Official Stormwalker Gold Standard seal" loading="lazy">
+          <img src="assets/stormwalker-gold-standard-seal.webp" alt="Official Stormwalker Gold Standard seal" loading="lazy">
         </div>
         <div class="gold-copy">
           <p class="eyebrow">A designation of excellence</p>
@@ -733,8 +735,10 @@
     <div class="wrap footer-grid">
       <p>© <span id="year"></span> Empowered Transcendence</p>
       <nav class="footer-links" aria-label="Footer navigation">
-        <a href='/'>Homepage</a>
-        <a href='/stormwalker-method'>Stormwalker Method</a>
+        <a href="/">Homepage</a>
+        <a href="/#books">Books</a>
+        <a href="/#coaching">Work With Kelly</a>
+        <a href="/#contact">Contact</a>
         <a href="#main-content">Return to the room</a>
       </nav>
     </div>
