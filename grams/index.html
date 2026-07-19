@@ -58,30 +58,14 @@
       place-items: end center;
       position: relative;
       isolation: isolate;
-      background: var(--wood);
-      overflow: hidden;
-    }
-    .hero-room {
-      position: absolute;
-      inset: 0;
-      z-index: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center 47%;
-    }
-    .hero::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      z-index: 1;
       background:
-        linear-gradient(180deg, rgba(30,16,13,.2) 0%, rgba(30,16,13,.04) 37%, rgba(30,16,13,.72) 100%),
-        linear-gradient(90deg, rgba(38,17,14,.2), transparent 42%, rgba(38,17,14,.08));
+        linear-gradient(180deg, rgba(30,16,13,.16) 0%, rgba(30,16,13,.03) 40%, rgba(30,16,13,.55) 100%),
+        url("assets/grams-reading-room.png") center 47% / cover no-repeat;
+      overflow: hidden;
     }
     .hero-copy {
       position: relative;
-      z-index: 2;
+      z-index: 1;
       width: min(calc(100% - 36px), 880px);
       margin: 0 auto;
       padding: 96px 0 70px;
@@ -213,7 +197,7 @@
       .site-header { padding: 15px 0; }
       .nav { align-items: flex-start; }
       .brand { max-width: 190px; line-height: 1.25; }
-      .hero-room { object-position: 52% center; }
+      .hero { background-position: center center, 52% center; }
       .hero-copy { padding-bottom: 44px; }
       section { padding: 64px 0; }
       .book-card, .rules { padding: 24px; }
@@ -232,7 +216,6 @@
 
   <main>
     <section class="hero" aria-labelledby="page-title">
-      <img class="hero-room" src="assets/grams-reading-room.png" alt="Grams’ quiet evening reading room with a bay-window story nook, bookshelves, dark wood, and dusty-rose details">
       <div class="hero-copy">
         <p class="eyebrow">Come in. Supper’s done and the house is quiet.</p>
         <h1 id="page-title">Grams’ Sleepy Time Stories</h1>
