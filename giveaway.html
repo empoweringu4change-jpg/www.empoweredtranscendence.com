@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="robots" content="noindex,nofollow">
+  <meta name="robots" content="index,follow">
   <title>Stormwalker Summer Celebration Giveaway | Empowered Transcendence</title>
   <meta name="description" content="Official entry page and rules for the Stormwalker Summer Celebration Giveaway from Empowered Transcendence.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -33,9 +33,7 @@
     .brand{font-family:'Cinzel Decorative',Georgia,serif;text-transform:uppercase;letter-spacing:.13em;color:var(--ink);text-decoration:none}
     .back{text-decoration:none;font-weight:700}
     main{padding:42px 0 72px}
-    .hero,.panel{
-      border:1px solid var(--ring);border-radius:20px;background:var(--panel);box-shadow:var(--shadow)
-    }
+    .hero,.panel{border:1px solid var(--ring);border-radius:20px;background:var(--panel);box-shadow:var(--shadow)}
     .hero{padding:clamp(26px,6vw,58px);text-align:center;border-color:rgba(235,189,12,.42)}
     .eyebrow{text-transform:uppercase;letter-spacing:.16em;color:var(--cream);font-size:.8rem;margin:0 0 10px}
     h1,h2{font-family:'Cormorant Garamond',Georgia,serif;line-height:1.08}
@@ -50,30 +48,19 @@
     .prize-list li{margin:7px 0}
     form{display:grid;gap:16px}
     label{display:block;font-weight:700;margin-bottom:6px}
-    input,select{
-      width:100%;padding:12px 14px;border-radius:11px;border:1px solid var(--ring);
-      background:rgba(255,255,255,.055);color:var(--ink);font:inherit
-    }
+    input,select{width:100%;padding:12px 14px;border-radius:11px;border:1px solid var(--ring);background:rgba(255,255,255,.055);color:var(--ink);font:inherit}
     select option{color:#111}
     .two{display:grid;grid-template-columns:1fr 1fr;gap:14px}
     .check{display:grid;grid-template-columns:auto 1fr;gap:10px;align-items:start;font-weight:400}
     .check input{width:auto;margin-top:5px}
     fieldset{border:0;padding:0;margin:0;display:grid;gap:16px}
-    fieldset[disabled]{opacity:.68}
-    .btn{
-      border:0;border-radius:12px;padding:13px 18px;font:800 1rem system-ui;background:linear-gradient(135deg,#d6a900,var(--gold));color:#0a0d12;cursor:pointer
-    }
-    .btn:disabled{cursor:not-allowed;filter:grayscale(.35)}
+    .btn{border:0;border-radius:12px;padding:13px 18px;font:800 1rem system-ui;background:linear-gradient(135deg,#d6a900,var(--gold));color:#0a0d12;cursor:pointer}
     .note{font-size:.92rem;color:var(--muted)}
     .rules{margin-top:26px}
     .rules p,.rules li{color:#dfe5f7}
-    .rules ol{padding-left:22px}
-    .placeholder{color:#ffd86b;font-weight:800}
     footer{padding:26px;text-align:center;color:var(--muted);border-top:1px solid var(--ring)}
     .visually-hidden{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
-    @media(max-width:760px){
-      .nav{align-items:flex-start;flex-direction:column;padding:14px 0}.grid,.two{grid-template-columns:1fr}.wrap{width:min(var(--max),calc(100% - 28px))}
-    }
+    @media(max-width:760px){.nav{align-items:flex-start;flex-direction:column;padding:14px 0}.grid,.two{grid-template-columns:1fr}.wrap{width:min(var(--max),calc(100% - 28px))}}
   </style>
 </head>
 <body>
@@ -89,7 +76,7 @@
       <p class="eyebrow">A Community Celebration</p>
       <h1 id="page-title">The Stormwalker Summer Celebration</h1>
       <p class="lead">A thank-you celebration for 1,600 followers and the growing Stormwalker community—with one special Stormwalker prize package.</p>
-      <p class="status">Preview Only — Entries Open When TikTok Reaches 1,600</p>
+      <p class="status">Entries Are Open Through August 5, 2026 at 8:00 p.m. Eastern</p>
     </section>
 
     <div class="grid">
@@ -110,12 +97,12 @@
       <section class="panel" aria-labelledby="entry-title">
         <p class="eyebrow">Free Daily Entry</p>
         <h2 id="entry-title">Enter the Giveaway</h2>
-        <p class="note"><strong>Entry is not open yet.</strong> When the celebration begins, eligible visitors may submit one free entry per person per calendar day during the seven-day entry period.</p>
+        <p class="note">Eligible visitors may submit one free entry per person and per email address per calendar day during the seven-day entry period.</p>
 
         <form name="stormwalker-summer-giveaway" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/giveaway-thank-you.html" aria-label="Stormwalker Summer Celebration giveaway entry form">
           <input type="hidden" name="form-name" value="stormwalker-summer-giveaway">
           <div class="visually-hidden"><label>Do not fill this out <input type="text" name="bot-field"></label></div>
-          <fieldset disabled>
+          <fieldset>
             <div class="two">
               <div><label for="entry-name">Full name</label><input id="entry-name" name="name" type="text" autocomplete="name" required></div>
               <div><label for="entry-email">Email address</label><input id="entry-email" name="email" type="email" autocomplete="email" required></div>
@@ -132,7 +119,7 @@
             </div>
             <label class="check"><input name="eligibility-confirmation" type="checkbox" value="yes" required><span>I confirm that I am at least 18 years old, an eligible legal resident of one of the 50 United States or the District of Columbia, and that I have read and agree to the Official Rules.</span></label>
             <label class="check"><input name="email-opt-in" type="checkbox" value="yes"><span>Optional: Send me occasional Stormwalker news, letters, and offers. Giveaway entry does not require marketing consent.</span></label>
-            <button class="btn" type="submit" disabled>Entries Open Soon</button>
+            <button class="btn" type="submit">Submit My Free Entry</button>
           </fieldset>
         </form>
       </section>
@@ -150,7 +137,7 @@
       <p>Open only to legal residents of the 50 United States and the District of Columbia who are 18 years of age or older at the time of entry. Employees, contractors, household members, and immediate family members of Sponsor are not eligible. Void in Puerto Rico, United States territories and possessions, and wherever prohibited or restricted by law.</p>
 
       <h3>3. Giveaway Period</h3>
-      <p>The Giveaway begins at <span class="placeholder">[OPENING DATE AND TIME] Eastern Time</span> and ends at <span class="placeholder">[CLOSING DATE AND TIME] Eastern Time</span> (“Giveaway Period”). Sponsor’s website records are the official timekeeping device.</p>
+      <p>The Giveaway begins July 29, 2026 at 8:00 p.m. Eastern Time and ends August 5, 2026 at 8:00 p.m. Eastern Time (“Giveaway Period”). Sponsor’s website records are the official timekeeping device.</p>
 
       <h3>4. How to Enter</h3>
       <p>During the Giveaway Period, visit this page and submit the official online entry form. Limit one entry per person and per email address per calendar day. Entries exceeding the daily limit, generated by automated means, containing inaccurate information, or otherwise not complying with these Official Rules may be disqualified. Entry is free. A purchase does not improve the odds of winning.</p>
@@ -159,7 +146,7 @@
       <p>One winner will receive one signed copy of <em>Stormwalker Medicine</em>, one signed copy of the <em>Stormwalker Medicine Journal</em>, one Calm Series recording selected in coordination with the winner from available titles, one original hand-painted laminated Stormwalker bookmark with handmade tassel signed by Kelly and dated 2026, and one handwritten thank-you note. Total approximate retail value (“ARV”): $60.98. Prize is non-transferable, has no cash equivalent, and no substitution is permitted except that Sponsor may substitute an item of equal or greater value if necessary. Sponsor will pay standard prize-delivery costs within the eligible area.</p>
 
       <h3>6. Winner Selection and Odds</h3>
-      <p>One potential winner will be selected at random from all eligible entries received during the Giveaway Period. The drawing is planned for <span class="placeholder">[DRAWING DATE] at approximately 6:00 p.m. Eastern Time</span> and may be conducted live. Odds of winning depend on the number of eligible entries received.</p>
+      <p>One potential winner will be selected at random from all eligible entries received during the Giveaway Period. The drawing is planned for August 6, 2026 at approximately 6:00 p.m. Eastern Time and may be conducted live. Odds of winning depend on the number of eligible entries received.</p>
 
       <h3>7. Winner Notification and Verification</h3>
       <p>The potential winner will be contacted using the email address provided on the entry form and must respond within 48 hours. Sponsor may require confirmation of eligibility, a valid mailing address, and acceptance of the prize. Failure to respond on time, inability to verify eligibility, an undeliverable notification, or noncompliance with these Official Rules may result in disqualification and selection of an alternate potential winner.</p>
@@ -184,8 +171,6 @@
 
       <h3>14. Winner Information</h3>
       <p>After the winner has been verified, Sponsor may publish the winner’s first name and state, subject to applicable law and the winner’s consent where required.</p>
-
-      <p class="note"><strong>Preview note:</strong> Exact dates, final activation language, and the live-page indexing setting must be completed before launch.</p>
     </section>
   </main>
 
