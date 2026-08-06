@@ -394,73 +394,6 @@
       .et-hero .et-actions .btn:first-child{width:100%;min-width:0;max-width:360px}
     }
 
-    /* --- Temporary Stormwalker Summer Celebration campaign --- */
-    .summer-celebration{padding:20px 0 28px}
-    .summer-celebration-card{
-      position:relative;
-      overflow:hidden;
-      display:grid;
-      grid-template-columns:minmax(240px,.72fr) minmax(0,1.28fr);
-      gap:clamp(28px,5vw,58px);
-      align-items:center;
-      padding:clamp(24px,4vw,44px);
-      border:1px solid rgba(235,189,12,.42);
-      border-radius:18px;
-      background:
-        radial-gradient(520px 260px at 8% 15%, rgba(235,189,12,.13), transparent 68%),
-        linear-gradient(135deg, rgba(8,12,22,.88), rgba(18,47,121,.62));
-      box-shadow:var(--shadow);
-    }
-    .summer-celebration-card::after{
-      content:"";
-      position:absolute;
-      inset:12px;
-      border:1px solid rgba(231,215,180,.12);
-      border-radius:12px;
-      pointer-events:none;
-    }
-    .summer-celebration-image{
-      position:relative;
-      z-index:1;
-      display:block;
-      min-height:260px;
-      padding:0;
-      box-sizing:border-box;
-      overflow:hidden;
-      border:1px solid rgba(235,189,12,.56);
-      border-radius:14px;
-      background:rgba(5,8,16,.34);
-    }
-    .summer-celebration-image img{display:block;width:100%;height:auto}
-    .summer-celebration-copy{position:relative;z-index:1}
-    .summer-celebration-copy h2{
-      max-width:680px;
-      font-family:'Cormorant Garamond',Georgia,serif;
-      font-size:clamp(2rem,4.2vw,3.3rem);
-      font-weight:600;
-      line-height:1.04;
-      color:#fff;
-      margin-bottom:14px;
-    }
-    .summer-celebration-supporting{
-      color:#e7d7b4;
-      font-family:'Cormorant Garamond',Georgia,serif;
-      font-size:clamp(1.18rem,2vw,1.45rem);
-      font-style:italic;
-      line-height:1.35;
-      margin:0 0 14px;
-    }
-    .summer-celebration-copy .lead{max-width:620px;margin:0 0 22px}
-    @media (max-width:760px){
-      .summer-celebration{padding:14px 0 22px}
-      .summer-celebration-card{grid-template-columns:1fr;gap:24px;text-align:center}
-      .summer-celebration-image{min-height:210px}
-      .summer-celebration-copy h2,
-      .summer-celebration-copy .lead{margin-left:auto;margin-right:auto}
-    }
-    /* --- End temporary campaign --- */
-
-
   </style>
 </head>
 <body>
@@ -497,26 +430,6 @@
         </p>
       </div>
     </section>
-
-    <!-- TEMPORARY CAMPAIGN: Remove this section and its matching CSS after the celebration. -->
-    <section class="summer-celebration" id="stormwalker-summer-celebration" aria-labelledby="summer-celebration-title">
-      <div class="wrap">
-        <div class="summer-celebration-card">
-          <div class="summer-celebration-image">
-            <img src="assets/stormwalker-summer-celebration-giveaway.jpeg" alt="Stormwalker Summer Celebration giveaway celebrating 1,600 TikTok followers and featuring the Stormwalker Starter Collection">
-          </div>
-          <div class="summer-celebration-copy">
-            <p class="eyebrow">A Community Celebration</p>
-            <h2 id="summer-celebration-title">The Stormwalker Summer Celebration</h2>
-            <p class="summer-celebration-supporting">Celebrating 1,600 followers and the growing Stormwalker community.</p>
-            <p class="lead">The celebration is officially open. Enter the giveaway and join us in marking 1,600 followers.</p>
-            <!-- Temporary non-interactive button until approved celebration details are available. -->
-            <a class="btn" href="/giveaway.html">🎉 Enter the Giveaway</a>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- END TEMPORARY CAMPAIGN -->
 
     <!-- FEATURED BOOK -->
     <section id="featured-book">
