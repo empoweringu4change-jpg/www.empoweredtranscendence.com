@@ -119,7 +119,7 @@
 
     .books { background: var(--paper); border-block: 1px solid var(--line); }
     .section-head { max-width: 650px; margin-bottom: 38px; }
-    .book-grid { display: grid; grid-template-columns: 1.08fr .92fr; gap: 30px; }
+    .book-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 30px; }
     .book-card {
       min-height: 100%;
       padding: 32px;
@@ -128,7 +128,7 @@
       background: #fff;
       box-shadow: 0 14px 40px rgba(75,33,28,.08);
     }
-    .book-card.featured { display: grid; grid-template-columns: 190px 1fr; gap: 28px; align-items: center; }
+    .book-card.featured { display: grid; grid-template-columns: minmax(140px, 180px) 1fr; gap: 28px; align-items: center; }
     .book-cover { border-radius: 12px; box-shadow: 0 15px 30px rgba(75,33,28,.2); }
     .label { color: var(--rose); font-size: .72rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; }
     h3 { margin: 8px 0 10px; color: var(--wood); font-size: clamp(1.8rem, 3vw, 2.5rem); }
@@ -255,11 +255,14 @@
               <a class="button" href="https://square.link/u/6yGaelnk">Shop the book</a>
             </div>
           </article>
-          <article class="book-card">
-            <span class="label">Currently in development</span>
-            <h3>Mermaid Lake</h3>
-            <p>The first story in <em>The Wild Adventures of Princess Bug and the Marvelous Maddie Mae</em>. Their next adventure is still being lovingly made.</p>
-            <a class="button soft" href="#letters">Hear when it’s ready</a>
+          <article class="book-card featured">
+            <img class="book-cover" src="assets/mermaid-lake-coming-soon.jpg" alt="Cover of The Wild Adventures of Princess Bug and the Marvelous Maddie Mae at Mermaid Lake">
+            <div>
+              <span class="label">Coming soon</span>
+              <h3>Mermaid Lake</h3>
+              <p>The first adventure in <em>The Wild Adventures of Princess Bug and the Marvelous Maddie Mae</em>. The story is complete and receiving its final polish before publication.</p>
+              <a class="button soft" href="../index.html#updates">Get story news</a>
+            </div>
           </article>
         </div>
       </div>
@@ -304,3 +307,4 @@
   </footer>
 </body>
 </html>
+
